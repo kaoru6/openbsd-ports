@@ -1,15 +1,40 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2003/05/12 18:02:45 sturm Exp $
+# $OpenBSD: INSTALL,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
 #
-# Pre/post-installation setup of zebra
+# Pre/post-installation setup of Quagga
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${CONFDIR}
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/zebra
+STATE_DIR=${STATEDIR}
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/quagga
+QUAGGAUSER=_quagga
+QUAGGAGROUP=_quagga
+ID=525
+
+do_usergroup_install()
+{
+  # Create Quagga user and group
+  groupinfo -e $QUAGGAGROUP
+  if [ $? -eq 0 ]; then
+    echo "===> Using $QUAGGAGROUP group for Quagga"
+  else
+    echo "===> Creating $QUAGGAGROUP group for Quagga"
+    groupadd -g $ID $QUAGGAGROUP
+  fi
+  userinfo -e $QUAGGAUSER
+  if [ $? -eq 0 ]; then
+    echo "===> Using $QUAGGAUSER user for Quagga"
+  else
+    echo "===> Creating $QUAGGAUSER user for Quagga"
+    useradd -g $QUAGGAGROUP -d /nonexistent -L daemon -c 'Quagga Account' -s /sbin/nologin -u $ID $QUAGGAUSER
+  fi
+}
+
+do_statedir_install()
+{
+  install -d -o $QUAGGAUSER -g $QUAGGAGROUP -m 755 $STATE_DIR
+}
 
 do_notice()
 {
@@ -25,7 +50,7 @@ do_notice()
 
 do_notice_conf()
 {
-    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    install -d -o $QUAGGAUSER -g $QUAGGAGROUP -m 755 $CONFIG_DIR
     echo
     echo "+---------------"
     echo "| Sample $1 configuration files have been installed in"
@@ -46,9 +71,12 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-	: nothing to pre-install for this port
+	do_usergroup_install
 	;;
     POST-INSTALL)
+	if [ ! -d $STATE_DIR ]; then
+	  do_statedir_install
+	fi
 	if [ ! -d $CONFIG_DIR ]; then
 	   do_notice_conf $1
 	else
