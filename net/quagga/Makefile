@@ -4,7 +4,7 @@
 
 COMMENT=	"multi-threaded routing daemon with patch"
 
-DISTNAME=	zebra-pj-0.94-20030628
+DISTNAME=	zebra-pj-0.94-20030629
 CATEGORIES=	net
 MASTER_SITES=	http://zebra.dishone.st/snapshots/cvs/
 
