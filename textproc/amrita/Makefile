@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.1 2003/07/02 19:58:35 taka Exp $
+# $Id: Makefile,v 1.2 2003/07/03 20:15:23 taka Exp $
 # Originally by: taka@trans-nt.com
 
 COMMENT=	" html/xhtml template library for Ruby"
@@ -17,10 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUBY_SITEDIR=	`ruby -rrbconfig -e 'print Config::CONFIG["sitelibdir"]'`
+RUBY_SITEDIR=	`
 
 do-install:
 	(cd ${WRKSRC}; \
-	env PREFIX=${WRKINST} SITE_DIR=${RUBY_SITEDIR} make install )
+	sd=`ruby -rrbconfig -e 'print Config::CONFIG["sitelibdir"]'`; \
+	make PREFIX=${WRKINST}${LOCALBASE} SITE_DIR=${WRKINST}$${sd} install )
 
 .include <bsd.port.mk>

@@ -1,19 +1,19 @@
-@comment $Id: PLIST,v 1.1 2003/07/02 19:58:35 taka Exp $
+@comment $Id: PLIST,v 1.2 2003/07/03 20:15:24 taka Exp $
 bin/amshandler
 bin/amx
 bin/ams
-lib/site_ruby/1.6/amrita/parts.rb
-lib/site_ruby/1.6/amrita/cgikit.rb
-lib/site_ruby/1.6/amrita/handlers.rb
-lib/site_ruby/1.6/amrita/merge.rb
-lib/site_ruby/1.6/amrita/ams.rb
-lib/site_ruby/1.6/amrita/amx.rb
-lib/site_ruby/1.6/amrita/xml.rb
-lib/site_ruby/1.6/amrita/parser.rb
-lib/site_ruby/1.6/amrita/tag.rb
-lib/site_ruby/1.6/amrita/template.rb
-lib/site_ruby/1.6/amrita/format.rb
-lib/site_ruby/1.6/amrita/node.rb
-lib/site_ruby/1.6/amrita/node_expand.rb
-lib/site_ruby/1.6/amrita/compiler.rb
-@dirrm lib/site_ruby/1.6/amrita
+lib/ruby/site_ruby/1.6/amrita/parts.rb
+lib/ruby/site_ruby/1.6/amrita/cgikit.rb
+lib/ruby/site_ruby/1.6/amrita/handlers.rb
+lib/ruby/site_ruby/1.6/amrita/merge.rb
+lib/ruby/site_ruby/1.6/amrita/ams.rb
+lib/ruby/site_ruby/1.6/amrita/amx.rb
+lib/ruby/site_ruby/1.6/amrita/xml.rb
+lib/ruby/site_ruby/1.6/amrita/parser.rb
+lib/ruby/site_ruby/1.6/amrita/tag.rb
+lib/ruby/site_ruby/1.6/amrita/template.rb
+lib/ruby/site_ruby/1.6/amrita/format.rb
+lib/ruby/site_ruby/1.6/amrita/node.rb
+lib/ruby/site_ruby/1.6/amrita/node_expand.rb
+lib/ruby/site_ruby/1.6/amrita/compiler.rb
+@dirrm lib/ruby/site_ruby/1.6/amrita
