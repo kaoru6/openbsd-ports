@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/26 15:18:30 camield Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/16 23:06:06 espie Exp $
 
 DISTNAME=	dot-forward-0.71
 HOMEPAGE=	http://cr.yp.to/dot-forward.html
 CATEGORIES=	mail
 NEED_VERSION=	1.230
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/26 14:20:18 camield Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/16 23:06:14 espie Exp $
 
 DISTNAME=	daemontools-0.70
 HOMEPAGE=	http://cr.yp.to/daemontools.html
 CATEGORIES=	sysutils
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/26 14:43:51 camield Exp $
+# $OpenBSD: Makefile,v 1.5 2000/06/16 23:06:05 espie Exp $
 
 DISTNAME=	checkpassword-0.81
 HOMEPAGE=	http://cr.yp.to/checkpwd.html
 CATEGORIES=	mail
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
@@ -28,6 +28,7 @@ pre-build:
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 pre-install:
+	sleep 1
 	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

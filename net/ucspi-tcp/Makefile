@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/26 14:12:14 camield Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:10 espie Exp $
 
 DISTNAME=	ucspi-tcp-0.88
 HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
 CATEGORIES=	net
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \

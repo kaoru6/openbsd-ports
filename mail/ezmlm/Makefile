@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/08/30 12:47:10 camield Exp $
 
 DISTNAME=	ezmlm-0.53
 HOMEPAGE=	http://cr.yp.to/ezmlm.html
 CATEGORIES=	mail
 NEED_VERSION=	1.319
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
