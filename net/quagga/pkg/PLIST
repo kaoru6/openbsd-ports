@@ -15,7 +15,7 @@ sbin/ospfd
 sbin/ripd
 sbin/ripngd
 sbin/zebra
-share/doc/zebra/README
+@comment share/doc/zebra/README
 share/examples/zebra/bgpd.conf.sample
 share/examples/zebra/bgpd.conf.sample2
 share/examples/zebra/ospf6d.conf.sample
@@ -25,5 +25,5 @@ share/examples/zebra/ripngd.conf.sample
 share/examples/zebra/vtysh.conf.sample
 share/examples/zebra/zebra.conf.sample
 @dirrm share/examples/zebra
-@dirrm share/doc/zebra
+@comment @dirrm share/doc/zebra
 @exec install-info --info-dir=%D/info %D/info/zebra.info
