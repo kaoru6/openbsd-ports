@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/21 16:13:04 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/27 06:14:15 camield Exp $
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
@@ -21,13 +21,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX=		/var/qmail
-NO_CONFIGURE=	Yes
-NO_MTREE=	Yes
 ALL_TARGET=	it man
 INSTALL_TARGET=	setup check
 IS_INTERACTIVE= "if qmail users/groups do not exist yet"
-
-FAKE=	Yes
 
 RUN_DEPENDS=    tcpserver::net/ucspi-tcp
 
