@@ -26,7 +26,7 @@ LDFLAGS+=	-static
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
-RUN_DEPENDS=	supervise::sysutils/daemontools
+#RUN_DEPENDS=	supervise::sysutils/daemontools
 #		tcpclient::net/ucspi-tcp
 
 MAN5LIST=	qualification
