@@ -11,7 +11,7 @@ info/bison.info-6
 info/bison.info-7
 @exec install-info --info-dir=%D/info %D/info/bison.info
 lib/liby.a
-an/man1/bison.1
+man/man1/bison.1
 share/bison
 share/bison/README
 share/bison/c.m4
