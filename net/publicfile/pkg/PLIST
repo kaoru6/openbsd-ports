@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-publicfile/bin/configure
-publicfile/bin/ftpd
-publicfile/bin/httpd
-@dirrm publicfile/bin
-@dirrm publicfile
