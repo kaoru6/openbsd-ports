@@ -31,12 +31,23 @@ ALL_TARGET=	it man
 INSTALL_TARGET=	setup check
 IS_INTERACTIVE= "if qmail users/groups do not exist yet"
 
-RUN_DEPENDS=    tcpserver::net/ucspi-tcp
+# We can use inetd instead.
+#RUN_DEPENDS=    tcpserver::net/ucspi-tcp
 
 SETUPBINARIES=	${WRKSRC}/dnsfq		${WRKSRC}/dnsip		\
 		${WRKSRC}/dnsptr	${WRKSRC}/hostname	\
 		${WRKSRC}/ipmeprint	${WRKSRC}/install
 SETUPSCRIPTS=	${WRKSRC}/config	${WRKSRC}/config-fast
+
+## flavor
+FLAVORS=	localtime
+FLAVOR?=	localtime
+
+PATCH_LIST=	patch-Makefile	patch-qmail-smtpd-relay-reject
+
+.if ${FLAVOR:L:Mlocaltime}
+PATCH_LIST+=	patch-qmail-date-localtime
+.endif
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
