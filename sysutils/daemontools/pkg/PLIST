@@ -13,6 +13,9 @@ bin/svscan
 bin/svstat
 bin/tai64n
 bin/tai64nlocal
+bin/pgrphack
+bin/readproctitle
+bin/svscanboot
 man/man8/envdir.8
 man/man8/envuidgid.8
 man/man8/fghack.8
@@ -27,3 +30,6 @@ man/man8/svscan.8
 man/man8/svstat.8
 man/man8/tai64n.8
 man/man8/tai64nlocal.8
+man/man8/pgrphack.8
+man/man8/readproctitle.8
+man/man8/svscanboot.8
