@@ -5,7 +5,7 @@ COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.3.2
+VERSION=	7.3.3
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
@@ -23,6 +23,8 @@ PERMIT_DISTFILES_CDROM=	"without fee clause"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	\
+	ftp://asahi-net.ring.gr.jp/pub/misc/db/postgresql/source/v${VERSION}/ \
+	ftp://ftp6.jp.postgresql.org/postgresql/source/v${VERSION}/ \
 	ftp://ftp.us.postgresql.org/source/v${VERSION}/ \
 	ftp://ftp.au.postgresql.org/pub/postgresql/source/v${VERSION}/ \
 	ftp://ftp.at.postgresql.org/db/www.postgresql.org/pub/source/v${VERSION}/ \
