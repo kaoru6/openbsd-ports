@@ -36,6 +36,6 @@ post-install:
 	${INSTALL_MAN} ${WRKDIST}/nkf.doc ${PREFIX}/man/ja_JP.EUC/cat1/nkf.0
 
 do-regress:
-	cd ${WRKSRC} && make test
+	cd ${WRKDIST} && make test
 
 .include <bsd.port.mk>
