@@ -516,4 +516,6 @@ share/doc/postgresql/TODO
 @dirrm include/postgresql/internal/libpq
 @dirrm include/postgresql/internal/lib
 @dirrm include/postgresql/internal
+@dirrm include/postgresql/informix/esql
+@dirrm include/postgresql/informix
 @dirrm include/postgresql
