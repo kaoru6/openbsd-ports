@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile,v 1.7 2000/03/28 07:22:31 camield Exp $
 
+COMMENT=        "easy-to-use, high-speed mailing list manager for qmail"
+
 DISTNAME=	ezmlm-idx-0.53.40-tnt-1
 HOMEPAGE=	http://ftp.ezmlm.org
 CATEGORIES=	mail
