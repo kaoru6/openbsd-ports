@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Needed for fake installation.
+
+--- Makefile.orig	Mon Mar 13 12:23:11 2000
++++ Makefile	Mon Mar 13 12:23:24 2000
+@@ -33,7 +33,7 @@
+ 
+ auto_qmail.c: \
+ auto-str conf-qmail
+-	./auto-str auto_qmail `head -1 conf-qmail` > auto_qmail.c
++	./auto-str auto_qmail ${WRKINST}`head -1 conf-qmail` > auto_qmail.c
+ 
+ auto_qmail.o: \
+ compile auto_qmail.c
