@@ -1,16 +1,0 @@
-Index: ./bgpd/bgp_route.c
-===================================================================
-RCS file: /var/cvsroot/quagga/bgpd/bgp_route.c,v
-retrieving revision 1.8
-diff -u -r1.8 bgp_route.c
---- ./bgpd/bgp_route.c	24 Oct 2003 19:02:03 -0000	1.8
-+++ ./bgpd/bgp_route.c	2 Nov 2003 19:38:35 -0000
-@@ -8308,7 +8308,7 @@
-        "Detailed information on TCP and BGP neighbor connections\n"
-        "Neighbor to display information about\n"
-        "Neighbor to display information about\n"
--       "Display the dampened routes received from neighbor\n")      
-+       "Display the dampened routes received from neighbor\n")
- #endif /* HAVE_IPV6 */
- 
- struct bgp_table *bgp_distance_table;
