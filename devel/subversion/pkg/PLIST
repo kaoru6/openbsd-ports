@@ -7,8 +7,8 @@ bin/svndumpfilter
 bin/svnlook
 bin/svnserve
 bin/svnversion
-build/apr_rules.mk
-build/libtool
+@comment build/apr_rules.mk
+@comment build/libtool
 include/apr-0/apr.h
 include/apr-0/apr_allocator.h
 include/apr-0/apr_anylock.h
@@ -155,4 +155,21 @@ share/locale/zh_TW/LC_MESSAGES/subversion.mo
 %%SHARED%%
 @dirrm include/subversion-1
 @dirrm include/apr-0
-@dirrm build
+@comment @dirrm build
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/nb/LC_MESSAGES
+@dirrm share/locale/nb
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale
