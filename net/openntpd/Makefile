@@ -6,11 +6,7 @@ COMES_WITH=		3.6
 
 COMMENT=                "OpenBSD-3.6's Network Time Protocol daemon"
 
-#
-# What port/package will be created
-#
-DISTNAME=		openntpd-20040718p
-#PKGNAME=		openntpd
+DISTNAME=		openntpd-20040719p
 CATEGORIES=		net
 
 HOMEPAGE=	http://www.openntpd.org/
