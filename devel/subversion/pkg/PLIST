@@ -152,6 +152,7 @@ share/locale/pl/LC_MESSAGES/subversion.mo
 share/locale/pt_BR/LC_MESSAGES/subversion.mo
 share/locale/sv/LC_MESSAGES/subversion.mo
 share/locale/zh_TW/LC_MESSAGES/subversion.mo
+share/locale/zh_CN/LC_MESSAGES/subversion.mo
 %%SHARED%%
 @dirrm include/subversion-1
 @dirrm include/apr-0
@@ -170,6 +171,8 @@ share/locale/zh_TW/LC_MESSAGES/subversion.mo
 @dirrm share/locale/pt_BR
 @dirrm share/locale/sv/LC_MESSAGES
 @dirrm share/locale/sv
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
 @dirrm share/locale/zh_TW/LC_MESSAGES
 @dirrm share/locale/zh_TW
 @dirrm share/locale
