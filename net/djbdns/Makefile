@@ -26,8 +26,8 @@ LDFLAGS+=	-static
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
-RUN_DEPENDS=	supervise::sysutils/daemontools \
-		tcpclient::net/ucspi-tcp
+RUN_DEPENDS=	supervise::sysutils/daemontools
+#		tcpclient::net/ucspi-tcp
 
 MAN5LIST=	qualification
 MAN1LIST=	dnsfilter dnsipq dnsname dnsqr dnstxt dnsip \
