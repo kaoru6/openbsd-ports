@@ -32,6 +32,8 @@ MASTER_SITES=	\
 	ftp://ftp.cz.postgresql.org/pub/ftp.postgresql.org/source/v${VERSION}/ \
 	ftp://ftp.dk.postgresql.org/mirrors/postgresql/source/v${VERSION}/
 
+BUILD_DEPENDS=	:bison->=1.875:devel/bison
+
 PSEUDO_FLAVORS=	tcl
 FLAVOR?=
 
