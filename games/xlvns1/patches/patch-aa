@@ -1,0 +1,12 @@
+--- config.tmpl.orig	Sat May 13 05:35:05 2000
++++ config.tmpl	Tue May 30 12:08:34 2000
+@@ -6,8 +6,8 @@
+ XCOMM CDEBUGFLAGS= -g -Wall
+ XCOMM CCOPTIONS= -DDEBUG
+ 
+-XLVNSPACKDIR = $(LIBDIR)/xlvns
++XLVNSPACKDIR = $(X11BASE)/lib/xlvns
+ CDDEVICE = /dev/cdrom
+ AUDIODEVICE = /dev/audio
+ 
+ XCOMM - Solaris -
