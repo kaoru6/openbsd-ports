@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 2004/11/10 14:00:27 kaoru Exp $
+# $Id: Makefile,v 1.6 2004/11/10 14:00:53 kaoru Exp $
 # Originally by: taka@trans-nt.com
 
 COMMENT=	" html/xhtml template library for Ruby"
@@ -9,8 +9,7 @@ CATEGORIES=	textproc
 
 MASTER_SITES=	http://keihannna.dl.sourceforge.jp/amrita/10939/ \
 		http://kyushu-u.dl.sourceforge.jp/amrita/10939/ \
-		http://osdn.dl.sourceforge.jp/amrita/10939/ \
-	http://www.brain-tokyo.jp/research/amrita/
+		http://osdn.dl.sourceforge.jp/amrita/10939/
 HOMEPAGE=	http://amrita.sourceforge.jp/
 MAINTAINER=	taka@trans-nt.com
 
