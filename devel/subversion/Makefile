@@ -2,7 +2,7 @@
 
 COMMENT=		"Compelling replacement for CVS"
 
-DISTNAME=		subversion-0.33.1
+DISTNAME=		subversion-0.34.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://subversion.tigris.org/
@@ -21,6 +21,7 @@ MASTER_SITES=		http://svn.collab.net/tarballs/
 #BUILD_DEPENDS=		???
 #RUN_DEPENDS=		???
 #LIB_DEPENDS=		???
+LIB_DEPENDS=		neon.24:neon->=0.24.0:net/neon
 #REGRESS_DEPENDS=	???
 
 #MAKE_FLAGS=		???
