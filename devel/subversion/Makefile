@@ -1,45 +1,31 @@
-# $OpenBSD$
-
-COMMENT=		"Compelling replacement for CVS"
-
-DISTNAME=		subversion-1.0.1
+COMMENT=		"Subversion revision control system"
+DISTNAME=		subversion-1.0.4
 CATEGORIES=		devel
 
 HOMEPAGE=		http://subversion.tigris.org/
-
-MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
+MAINTAINER=		Michael Paddon <michael@paddon.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# where the source files and patches can be fetched
-#
-MASTER_SITES=		http://svn.collab.net/tarballs/
+MASTER_SITES=		http://subversion.tigris.org/tarballs/
 
-#BUILD_DEPENDS=		???
-#RUN_DEPENDS=		???
-#LIB_DEPENDS=		???
-LIB_DEPENDS=		neon.24:neon->=0.24.0:net/neon
-#REGRESS_DEPENDS=	???
+LIB_DEPENDS+=		neon.24:neon->=0.24:net/neon
+LIB_DEPENDS+=		db.4:db->=4:databases/db/v4
 
-#MAKE_FLAGS=		???
-#MAKE_ENV=		???
-#FAKE_FLAGS=		???
-#REGRESS_FLAGS=		???
-
-#USE_GMAKE=		Yes
-#USE_LIBTOOL=		Yes
-
+SEPARATE_BUILD=		simple
+CONFIGURE_ENV+=		INSTALL_DATA= INSTALL_MAN=
+CONFIGURE_ENV+=		INSTALL_PROGRAM= INSTALL_SCRIPT=
+CONFIGURE_ENV+=		LDFLAGS=-pthread
+CONFIGURE_ARGS+=	--with-neon=/usr/local
+CONFIGURE_ARGS+=	--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib
 CONFIGURE_STYLE=	gnu
-#CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-#CONFIGURE_ENV=		???
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+MAKE_ENV+=		LD_LIBRARY_PATH=${WRKINST}${LOCALBASE}/lib
 
-# Assume you have one multiple choice flavor: 1 2 3 and switches a b.
-# You would write
-#
-#FLAVORS=
-#FLAVOR?=
+REGRESS_DEPENDS+=	:python->=2:lang/python/2.2
+REGRESS_FLAGS+=		LD_LIBRARY_PATH=`find ${WRKBUILD} -name .libs | tr '\012' :`
 
 .include <bsd.port.mk>
