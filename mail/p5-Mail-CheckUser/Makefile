@@ -12,6 +12,7 @@ HOMEPAGE=	http://sourceforge.net/projects/mail-checkuser/
 
 MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=Yes

@@ -17,9 +17,10 @@ HOMEPAGE=	http://www.postgresql.org/
 MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>, \
 		Peter Galbavy <peter.galbavy@knowtion.net>
 
-PERMIT_PACKAGE_CDROM=	"without fee clause"
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"without fee clause"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	\
