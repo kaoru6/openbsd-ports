@@ -11,3 +11,17 @@ ${P5SITE}/Spreadsheet/WriteExcel/WorkbookBig.pm
 ${P5SITE}/Spreadsheet/WriteExcel/Worksheet.pm
 @dirrm ${P5SITE}/Spreadsheet/WriteExcel
 @dirrm ${P5SITE}/Spreadsheet
+man/man1/chartex.1
+man/man3p/Spreadsheet::WriteExcel.3
+man/man3p/Spreadsheet::WriteExcel::BIFFwriter.3
+man/man3p/Spreadsheet::WriteExcel::Big.3
+man/man3p/Spreadsheet::WriteExcel::Chart.3
+man/man3p/Spreadsheet::WriteExcel::Format.3
+man/man3p/Spreadsheet::WriteExcel::Formula.3
+man/man3p/Spreadsheet::WriteExcel::OLEwriter.3
+man/man3p/Spreadsheet::WriteExcel::Utility.3
+man/man3p/Spreadsheet::WriteExcel::Workbook.3
+man/man3p/Spreadsheet::WriteExcel::WorkbookBig.3
+man/man3p/Spreadsheet::WriteExcel::Worksheet.3
+@dirrm man/man3p
+
