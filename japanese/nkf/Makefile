@@ -21,17 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-#WRKDIST=${WRKDIR}
 WRKSRC=${WRKDIST}/NKF.mod
-#WRKBUILD=${WRKSRC}/NKF.mod
 
 CONFIGURE_STYLE=perl
-#ALL_TARGET=	nkf perl
-
-#pre-configure:
-#	@echo ${WRKBUILD}
-#do-configure:
-#	@echo nothing to do
 
 # make nkf binary
 pre-build:
