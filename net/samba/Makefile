@@ -2,9 +2,11 @@
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
-DISTNAME=	samba-3.0.3
+DISTNAME=	samba-3.0.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/SAMBA/samba/
+MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/SAMBA/samba/ \
+		http://www.jp.samba.org/samba/ftp/ \
+		ftp://ftp.samba.gr.jp/pub/samba/
 
 HOMEPAGE=	http://www.samba.org/
 
