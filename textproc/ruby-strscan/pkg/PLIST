@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.11 2002/07/10 20:14:46 mickey Exp $
+lib/ruby/site_ruby/1.6/rscan.rb
+lib/ruby/site_ruby/1.6/scanner.rb
+lib/ruby/site_ruby/1.6/strscan.rb
+lib/ruby/site_ruby/1.6/i386-openbsd3.3/cscan.so
+share/doc/strscan/doc.ja/umanual.rd
+share/doc/strscan/doc.ja/umanual.html
+share/doc/strscan/doc.ja/ChangeLog
+share/doc/strscan/doc.en/umanual.rd
+share/doc/strscan/doc.en/umanual.html
+share/doc/strscan/doc.en/ChangeLog
+@dirrm share/doc/strscan/doc.ja
+@dirrm share/doc/strscan/doc.en
+@dirrm share/doc/strscan
