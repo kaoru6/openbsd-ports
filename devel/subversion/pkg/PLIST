@@ -119,8 +119,14 @@ lib/libsvn_diff-1.a
 lib/libsvn_diff-1.la
 lib/libsvn_fs-1.a
 lib/libsvn_fs-1.la
+lib/libsvn_fs_base-1.a
+lib/libsvn_fs_base-1.la
+lib/libsvn_fs_fs-1.a
+lib/libsvn_fs_fs-1.la
 lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
+lib/libsvn_ra_dav-1.a
+lib/libsvn_ra_dav-1.la
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
 lib/libsvn_ra_svn-1.a
@@ -138,6 +144,14 @@ man/man1/svnlook.1
 man/man1/svnversion.1
 man/man5/svnserve.conf.5
 man/man8/svnserve.8
+share/locale/de/LC_MESSAGES/subversion.mo
+share/locale/es/LC_MESSAGES/subversion.mo
+share/locale/ja/LC_MESSAGES/subversion.mo
+share/locale/nb/LC_MESSAGES/subversion.mo
+share/locale/pl/LC_MESSAGES/subversion.mo
+share/locale/pt_BR/LC_MESSAGES/subversion.mo
+share/locale/sv/LC_MESSAGES/subversion.mo
+share/locale/zh_TW/LC_MESSAGES/subversion.mo
 %%SHARED%%
 @dirrm include/subversion-1
 @dirrm include/apr-0

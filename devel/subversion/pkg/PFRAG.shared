@@ -5,6 +5,8 @@ lib/libsvn_client-1.so.0.0
 lib/libsvn_delta-1.so.0.0
 lib/libsvn_diff-1.so.0.0
 lib/libsvn_fs-1.so.0.0
+lib/libsvn_fs_base-1.so.0.0
+lib/libsvn_fs_fs-1.so.0.0
 lib/libsvn_ra-1.so.0.0
 lib/libsvn_ra_dav-1.so.0.0
 lib/libsvn_ra_local-1.so.0.0
