@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.4 2003/02/23 17:18:52 espie Exp $
+bin/nkf
+@comment ${P5ARCH}/NKF.pm
+@comment ${P5ARCH}/auto/NKF/NKF.bs
+@comment ${P5ARCH}/auto/NKF/NKF.so
+man/ja_JP.EUC/cat1/nkf.0
+man/man1/nkf.1
+@comment man/man3p/NKF.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/NKF
+@comment @dirrm ${P5ARCH}/auto
