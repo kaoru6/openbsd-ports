@@ -1,3 +1,4 @@
+@comment $OpenBSD$
 bin/dot-forward
 man/cat1/dot-forward.0
 man/man1/dot-forward.1

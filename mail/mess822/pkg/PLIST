@@ -1,3 +1,4 @@
+@comment $OpenBSD$
 bin/822date
 bin/822field
 bin/822header

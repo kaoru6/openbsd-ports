@@ -1,3 +1,4 @@
+@comment $OpenBSD$
 bin/fastforward
 bin/newaliases
 bin/newinclude
