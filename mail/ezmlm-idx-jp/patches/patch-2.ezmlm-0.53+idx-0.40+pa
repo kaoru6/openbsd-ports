@@ -1,0 +1,40 @@
+diff -cr ezmlm-0.53+idx-0.40/ezmlm-send.c ezmlm-0.53+idx-0.40+pa/ezmlm-send.c
+*** ezmlm-send.c	Sat Dec 25 05:15:00 1999
+--- ezmlm-send.c	Sat Jun 10 14:15:44 2000
+***************
+*** 95,100 ****
+--- 95,101 ----
+  				/* acceptable mime part. If 0 -> reject */
+  int flagreceived;
+  int flagprefixed;
++ int flagprefixalways;
+  unsigned int serial = 0;
+  int flagarchived;
+  int fdarchive;
+***************
+*** 437,442 ****
+--- 438,444 ----
+      if (!stralloc_copy(&dcprefix,&line)) die_nomem();
+      serial = byte_rchr(prefix.s,prefix.len,'#');
+    }
++   flagprefixalways = getconf_line(&line,"prefixalways",0,FATAL,dir);
+    if ((fd = open_read("text/trailer")) == -1) {	/* see if there is a trailer */
+      if (errno == error_noent) flagtrailer = 0;
+      else strerr_die2sys(111,ERR_OPEN,"text/trailer: ");
+***************
+*** 576,582 ****
+              r = unfoldHDR(qline.s,qline.len,&lines,
+  			charset.s,&dcprefix,1,FATAL);
+            }
+!           if (!(r & 2)) {
+              qmail_puts(&qq," ");
+              if (serial == prefix.len)
+                qmail_put(&qq,prefix.s,prefix.len);
+--- 578,584 ----
+              r = unfoldHDR(qline.s,qline.len,&lines,
+  			charset.s,&dcprefix,1,FATAL);
+            }
+!           if (!(r & 2) || flagprefixalways) {
+              qmail_puts(&qq," ");
+              if (serial == prefix.len)
+                qmail_put(&qq,prefix.s,prefix.len);

@@ -1,0 +1,76 @@
+diff -cr ezmlm-0.53+idx-0.40+pa/ezmlm-send.c ezmlm-0.53+idx-0.40+pa+pr/ezmlm-send.c
+*** ezmlm-send.c	Sat Jun 10 14:15:44 2000
+--- ezmlm-send.c	Sat Jun 10 14:25:03 2000
+***************
+*** 66,71 ****
+--- 66,72 ----
+  stralloc from = {0};
+  stralloc received = {0};
+  stralloc prefix = {0};
++ stralloc replyindicator = {0};
+  stralloc content = {0};
+  stralloc boundary = {0};
+  stralloc charset = {0};
+***************
+*** 96,101 ****
+--- 97,104 ----
+  int flagreceived;
+  int flagprefixed;
+  int flagprefixalways;
++ int flagprefixremove;
++ int flagreplyindicator;
+  unsigned int serial = 0;
+  int flagarchived;
+  int fdarchive;
+***************
+*** 439,444 ****
+--- 442,449 ----
+      serial = byte_rchr(prefix.s,prefix.len,'#');
+    }
+    flagprefixalways = getconf_line(&line,"prefixalways",0,FATAL,dir);
++   flagprefixremove = getconf_line(&line,"prefixremove",0,FATAL,dir);
++   flagreplyindicator = getconf_line(&replyindicator,"replyindicator",0,FATAL,dir);
+    if ((fd = open_read("text/trailer")) == -1) {	/* see if there is a trailer */
+      if (errno == error_noent) flagtrailer = 0;
+      else strerr_die2sys(111,ERR_OPEN,"text/trailer: ");
+***************
+*** 578,583 ****
+--- 583,593 ----
+              r = unfoldHDR(qline.s,qline.len,&lines,
+  			charset.s,&dcprefix,1,FATAL);
+            }
++           if (flagprefixremove) {
++             concatHDR(subject.s,subject.len,&qline,FATAL);
++             /* don't decode because of unability to encode MIME again... */
++             unfoldHDR(qline.s,qline.len,&lines,charset.s,&prefix,1,FATAL);
++           }
+            if (!(r & 2) || flagprefixalways) {
+              qmail_puts(&qq," ");
+              if (serial == prefix.len)
+***************
+*** 588,594 ****
+                qmail_put(&qq,prefix.s+serial+1,prefix.len-serial-1);
+              }
+            }
+!           qa_put(subject.s,subject.len);
+          }
+  		/* do other stuff to do with post header processing here */
+  	if (content.len) {		/* get MIME boundary, if exists */
+--- 598,614 ----
+                qmail_put(&qq,prefix.s+serial+1,prefix.len-serial-1);
+              }
+            }
+!           if (flagprefixremove) {
+!             qa_puts(" ");
+!             if ((r & 1) && flagreplyindicator) {
+!               qa_put(replyindicator.s,replyindicator.len);
+!               qa_puts(" ");
+!             }
+!             qa_put(lines.s,lines.len);
+!             qa_puts("\n");
+!           } else {
+!             qa_put(subject.s,subject.len);
+!           }
+          }
+  		/* do other stuff to do with post header processing here */
+  	if (content.len) {		/* get MIME boundary, if exists */
