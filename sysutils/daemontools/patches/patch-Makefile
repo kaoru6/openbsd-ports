@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Needed for fake installation.
+
+--- Makefile.orig	Mon Mar 13 10:10:01 2000
++++ Makefile	Mon Mar 13 10:10:17 2000
+@@ -22,7 +22,7 @@
+ 
+ auto_home.c: \
+ auto-str conf-home
+-	./auto-str auto_home `head -1 conf-home` > auto_home.c
++	./auto-str auto_home ${WRKINST}`head -1 conf-home` > auto_home.c
+ 
+ auto_home.o: \
+ compile auto_home.c
