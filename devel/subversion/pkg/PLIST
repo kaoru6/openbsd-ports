@@ -121,8 +121,6 @@ lib/libsvn_fs-1.a
 lib/libsvn_fs-1.la
 lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
-lib/libsvn_ra_dav-1.a
-lib/libsvn_ra_dav-1.la
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
 lib/libsvn_ra_svn-1.a
