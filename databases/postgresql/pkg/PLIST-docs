@@ -387,7 +387,11 @@ share/doc/postgresql/html/release-7-3-1.html
 share/doc/postgresql/html/release-7-3-2.html
 share/doc/postgresql/html/release-7-3-3.html
 share/doc/postgresql/html/release-7-3-4.html
+share/doc/postgresql/html/release-7-3-5.html
+share/doc/postgresql/html/release-7-3-6.html
 share/doc/postgresql/html/release-7-3.html
+share/doc/postgresql/html/release-7-4-1.html
+share/doc/postgresql/html/release-7-4.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html
 share/doc/postgresql/html/routine-reindex.html
@@ -404,6 +408,7 @@ share/doc/postgresql/html/server-programming.html
 share/doc/postgresql/html/source.html
 share/doc/postgresql/html/spi-examples.html
 share/doc/postgresql/html/spi-interface-support.html
+share/doc/postgresql/html/spi-memory.html
 share/doc/postgresql/html/spi-realloc.html
 share/doc/postgresql/html/spi-spi-connect.html
 share/doc/postgresql/html/spi-spi-copytuple.html
@@ -432,7 +437,6 @@ share/doc/postgresql/html/spi-spi-palloc.html
 share/doc/postgresql/html/spi-spi-pfree.html
 share/doc/postgresql/html/spi-spi-prepare.html
 share/doc/postgresql/html/spi-spi-saveplan.html
-share/doc/postgresql/html/spi-memory.html
 share/doc/postgresql/html/spi-visibility.html
 share/doc/postgresql/html/spi.html
 share/doc/postgresql/html/sql-abort.html
