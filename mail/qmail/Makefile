@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/03/22 22:06:39 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/04/22 12:04:45 camield Exp $
+
+COMMENT=	"secure, reliable, efficient, simple MTA"
 
 DISTNAME=	qmail-1.03
 HOMEPAGE=	http://cr.yp.to/qmail.html
 CATEGORIES=	mail
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/25 07:40:12 camield Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/22 12:04:46 camield Exp $
+
+COMMENT=	"tools to analyze qmail-send's activity record"
 
 DISTNAME=	qmailanalog-0.70
 HOMEPAGE=	http://cr.yp.to/qmailanalog.html
 CATEGORIES=	mail
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \
