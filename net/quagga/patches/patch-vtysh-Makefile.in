@@ -1,0 +1,15 @@
+--- vtysh/Makefile.in.orig	Sun Jun 29 18:36:17 2003
++++ vtysh/Makefile.in	Sun Jun 29 18:36:50 2003
+@@ -377,10 +377,10 @@
+ 
+ 
+ rebuild4:
+-	./extract.pl ../zebra/*.c ../ripd/*.c ../ospfd/*.c ../bgpd/*.c ../lib/keychain.c ../lib/routemap.c ../lib/filter.c ../lib/plist.c ../lib/distribute.c ../lib/if_rmap.c > vtysh_cmd.c
++	( cd $(srcdir) && ./extract.pl ../zebra/*.c ../ripd/*.c ../ospfd/*.c ../bgpd/*.c ../lib/keychain.c ../lib/routemap.c ../lib/filter.c ../lib/plist.c ../lib/distribute.c ../lib/if_rmap.c ) > vtysh_cmd.c
+ 
+ rebuild:
+-	./extract.pl ../zebra/*.c ../ripd/*.c ../ripngd/*.c ../ospfd/*.c ../ospf6d/*.c ../bgpd/*.c ../lib/keychain.c ../lib/routemap.c ../lib/filter.c ../lib/plist.c ../lib/distribute.c ../lib/if_rmap.c > vtysh_cmd.c
++	( cd $(srcdir) && ./extract.pl ../zebra/*.c ../ripd/*.c ../ripngd/*.c ../ospfd/*.c ../ospf6d/*.c ../bgpd/*.c ../lib/keychain.c ../lib/routemap.c ../lib/filter.c ../lib/plist.c ../lib/distribute.c ../lib/if_rmap.c ) > vtysh_cmd.c
+ 
+ vtysh_cmd.c: rebuild
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
