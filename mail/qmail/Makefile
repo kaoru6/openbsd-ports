@@ -8,6 +8,11 @@ CATEGORIES=	mail
 NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/ \
@@ -16,12 +21,13 @@ MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
 		http://koobera.math.uic.edu/www/software/ \
-		http://pobox.com/~djb/software/ 
+		http://pobox.com/~djb/software/
+MASTER_SITES0=	http://www.nlc.net.au/pub/unix/mail/qmail/
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} qmail-date-localtime.patch:0
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+DIST_SUBDIR=	qmail
 
 # Override prefix here or on the 'make' commandline.
 # Using the prefix option of pkg_add will not work, because
@@ -43,11 +49,11 @@ SETUPSCRIPTS=	${WRKSRC}/config	${WRKSRC}/config-fast
 FLAVORS=	localtime
 FLAVOR?=	localtime
 
-PATCH_LIST=	patch-Makefile	patch-qmail-smtpd-relay-reject patch-long-smtp-session
-
 .if ${FLAVOR:L:Mlocaltime}
-PATCH_LIST+=	patch-qmail-date-localtime
+PATCHFILES=	qmail-date-localtime.patch
+PATCH_DIST_STRIP=	-p1
 .endif
+
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
