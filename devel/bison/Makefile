@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	::devel/m4
+BUILD_DEPENDS=	:m4->=1.4:devel/m4
 
 # Info included tarball
 #MAKE_ENV=	MAKEINFOFLAGS="--no-split"
