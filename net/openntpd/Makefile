@@ -9,7 +9,7 @@ COMMENT=                "OpenBSD-3.6's Network Time Protocol daemon"
 #
 # What port/package will be created
 #
-DISTNAME=		openntpd-20040713p
+DISTNAME=		openntpd-20040714p
 #PKGNAME=		openntpd
 CATEGORIES=		net
 
@@ -17,39 +17,15 @@ HOMEPAGE=	http://dtucker.freeshell.org/
 
 MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
-# Licensing:  This determines what we can distribute.
-# When you determine the license type, make sure to look at ALL distfiles.
-# Every distfile can have a different license.  The PERMIT_* values are
-# determined by the most restrictive license.  If you have two licenses
-# that are in conflict, set PERMIT_* based on the most restrictive one.
-# Make SURE you get these values right.
-
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# where the source files and patches can be fetched
-#
 MASTER_SITES=	http://www.zip.com.au/~dtucker/openntpd/ \
 		http://dtucker.freeshell.org/openntpd/
-#MASTER_SITES=		${MASTER_SITE_foo:=subdir/}
-# if more master sites are needed...
-#MASTER_SITES0=
-# ...
-#DISTFILES=		???
-#EXTRACT_ONLY=		???
-#EXTRACT_SUFX=		.tar.Z
 
-#DIST_SUBDIR=		???
-
-# PATCHFILES are also retrieved from MASTER_SITES*
-#PATCHFILES=		???
-#PATCH_DIST_STRIP=	-p0
-
-# Dependencies
-#
 #FETCH_DEPENDS=		???
 #BUILD_DEPENDS=		???
 #RUN_DEPENDS=		???
@@ -71,7 +47,7 @@ CONFIGURE_STYLE=	gnu
 # The time gained is not worth it.
 #
 #NO_DEPENDS=		Yes
-#NO_REGRESS=		Yes
+NO_REGRESS=		Yes
 
 # Overrides for default values
 #
