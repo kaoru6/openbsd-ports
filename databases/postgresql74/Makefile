@@ -46,7 +46,7 @@ SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LIBS=-lcurses
+CONFIGURE_ENV=	LIBS=-lcurses YACC=bison
 CONFIGURE_ARGS=	--disable-rpath \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
