@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/23 10:26:13 camield Exp $
-
-BROKEN=		installs files automatically in /etc
+# $OpenBSD: Makefile,v 1.4 2000/03/03 11:44:56 turan Exp $
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
@@ -16,10 +14,11 @@ MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		http://pobox.com/~djb/software/ 
 
 PREFIX=		/var/qmail
-NO_CONFIGURE=	yes
+NO_CONFIGURE=	Yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-NO_MTREE=	yes
+NO_MTREE=	Yes
+IS_INTERACTIVE= "if qmail users/groups do not exist yet"
 
 RUN_DEPENDS=    tcpserver:${PORTSDIR}/net/ucspi-tcp
 
