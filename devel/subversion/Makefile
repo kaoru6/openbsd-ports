@@ -3,6 +3,9 @@ DISTNAME=		subversion-1.1.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://subversion.tigris.org/
+
+MODULES=		devel/gettext
+
 MAINTAINER=		Michael Paddon <michael@paddon.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
