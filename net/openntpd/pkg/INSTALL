@@ -1,0 +1,53 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
+#
+# Pre/post-installation setup of Quagga
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+NTPUSER=_ntp
+NTPGROUP=${NTPUSER}
+ID=83
+
+do_usergroup_install()
+{
+  # Create Quagga user and group
+  groupinfo -e $NTPGROUP
+  if [ $? -eq 0 ]; then
+    echo "===> Using $NTPGROUP group for ntpd"
+  else
+    echo "===> Creating $NTPGROUP group for ntpd"
+    groupadd -g $ID $NTPGROUP
+  fi
+  userinfo -e $NTPUSER
+  if [ $? -eq 0 ]; then
+    echo "===> Using $NTPUSER user for ntpd"
+  else
+    echo "===> Creating $NTPUSER user for ntpd"
+    useradd -g $NTPGROUP -d /var/empty -c 'NTP Daemon' -s /sbin/nologin -u $ID $NTPUSER
+  fi
+}
+
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	do_usergroup_install
+	;;
+    POST-INSTALL)
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
