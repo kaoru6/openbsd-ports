@@ -27,8 +27,6 @@ MASTER_SITES0=	http://www.nlc.net.au/pub/unix/mail/qmail/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} qmail-date-localtime.patch:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-DIST_SUBDIR=	qmail
-
 # Override prefix here or on the 'make' commandline.
 # Using the prefix option of pkg_add will not work, because
 # the prefix is hardwired in the qmail installer.
