@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:31 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/13 10:09:09 camield Exp $
 
 DISTNAME=	dot-forward-0.71
 HOMEPAGE=	http://cr.yp.to/dot-forward.html
 CATEGORIES=	mail
+NEED_VERSION=	1.230
 MAINTAINER=	cd@sentia.nl
 
 MASTER_SITES=	http://cr.yp.to/software/ \
@@ -25,7 +26,7 @@ INSTALL_TARGET=	setup check
 # when package is created
 FAKE=	Yes
 
-RUN_DEPENDS=	${PREFIX}/bin/qmail-local:mail/qmail
+RUN_DEPENDS=	${PREFIX}/bin/qmail-local::mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
