@@ -4,7 +4,7 @@
 
 COMMENT=	"multi-threaded routing daemon with patch"
 
-DISTNAME=	zebra-pj-0.94-20030627
+DISTNAME=	zebra-pj-0.94-20030628
 CATEGORIES=	net
 MASTER_SITES=	http://zebra.dishone.st/snapshots/cvs/
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WRKDIST=	${WRKDIR}/zebra-0.94
+
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
 
@@ -25,7 +27,7 @@ CONFDIR=	${SYSCONFDIR}/zebra
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu old
 CONFIGURE_ARGS+= --enable-vtysh --sysconfdir=${CONFDIR}
-CONFIGURE_ENV=	LIBS=-lcurses
+#CONFIGURE_ENV=	LIBS=-lcurses
 
 FLAVORS=	snmp
 FLAVOR?=
