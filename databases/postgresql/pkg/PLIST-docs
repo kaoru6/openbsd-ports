@@ -192,12 +192,11 @@ share/doc/postgresql/html/libpq-threading.html
 share/doc/postgresql/html/libpq-trace.html
 share/doc/postgresql/html/libpq.html
 share/doc/postgresql/html/ln17977.html
-share/doc/postgresql/html/ln24727.html
+share/doc/postgresql/html/ln24741.html
 share/doc/postgresql/html/ln25.html
-share/doc/postgresql/html/ln37171.html
-share/doc/postgresql/html/ln51887.html
+share/doc/postgresql/html/ln37185.html
+share/doc/postgresql/html/ln51901.html
 share/doc/postgresql/html/ln659.html
-share/doc/postgresql/html/ln8.html
 share/doc/postgresql/html/lo-funcs.html
 share/doc/postgresql/html/lo-implementation.html
 share/doc/postgresql/html/lo-interfaces.html
@@ -389,6 +388,7 @@ share/doc/postgresql/html/release-7-2-4.html
 share/doc/postgresql/html/release-7-2.html
 share/doc/postgresql/html/release-7-3-1.html
 share/doc/postgresql/html/release-7-3-2.html
+share/doc/postgresql/html/release-7-3-3.html
 share/doc/postgresql/html/release-7-3.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html

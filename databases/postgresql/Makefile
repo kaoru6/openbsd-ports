@@ -5,7 +5,7 @@ COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.3.3
+VERSION=	7.3.4
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
