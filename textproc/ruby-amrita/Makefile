@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.3 2004/11/10 13:47:15 kaoru Exp $
+# $Id: Makefile,v 1.4 2004/11/10 13:48:54 kaoru Exp $
 # Originally by: taka@trans-nt.com
 
 COMMENT=	" html/xhtml template library for Ruby"
 
 DISTNAME=	amrita-1.0.2
+PKGNAME=        ruby-${DISTNAME}
 CATEGORIES=	textproc
 
 MASTER_SITES=	http://www.brain-tokyo.jp/research/amrita/
