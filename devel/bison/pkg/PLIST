@@ -17,7 +17,6 @@ share/bison/README
 share/bison/c.m4
 share/bison/glr.c
 share/bison/lalr1.cc
-share/bison/m4sugar
 share/bison/m4sugar/m4sugar.m4
 share/bison/yacc.c
 share/locale/da/LC_MESSAGES/bison.mo
