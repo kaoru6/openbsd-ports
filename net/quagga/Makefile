@@ -1,33 +1,37 @@
-# $OpenBSD: Makefile,v 1.24 2003/05/12 18:02:45 sturm Exp $
-# KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
-# Originally by: peter.galbavy@knowledge.com
+# $OpenBSD: Makefile,v 1.2 2004/01/02 06:50:55 david Exp $
 
-COMMENT=	"multi-threaded routing daemon with patch"
+COMMENT=	"multi-threaded routing daemon"
 
-DISTNAME=	quagga-0.96.4
+DISTNAME=	quagga-0.96.5
 CATEGORIES=	net
-MASTER_SITES=	http://quagga.net/download/
+MASTER_SITES=	http://www.quagga.net/download/
 
 HOMEPAGE=	http://www.quagga.net/
 
-MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
+MAINTAINER=	David Krause <david@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-#WRKDIST=	${WRKDIR}/${DISTNAME}
+STATEDIR?=	/var/zebra
+SUBST_VARS=	CONFDIR STATEDIR
 
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
 
 USE_GMAKE=	Yes
-CONFDIR=	${SYSCONFDIR}/quagga
+CONFDIR=	${SYSCONFDIR}/zebra
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu old
-CONFIGURE_ARGS+= --enable-vtysh --sysconfdir=${CONFDIR} --enable-user=_quagga --enable-group=_quagga
-#CONFIGURE_ENV=	LIBS=-lcurses
+CONFIGURE_STYLE=gnu old
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include
+CONFIGURE_ARGS+=--sysconfdir=${CONFDIR}
+CONFIGURE_ARGS+=--localstatedir=${STATEDIR}
+CONFIGURE_ARGS+=--enable-user=_quagga
+CONFIGURE_ARGS+=--enable-group=_quagga
+CONFIGURE_ENV=	LIBS=-lcurses
 
 FLAVORS=	snmp
 FLAVOR?=
@@ -38,8 +42,6 @@ CONFIGURE_ARGS+= --enable-snmp
 .else
 CONFIGURE_ARGS+= --disable-snmp
 .endif
-
-SUBST_VARS=	CONFDIR
 
 post-extract:
 .for f in vtysh.1 bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 quagga.info
@@ -54,6 +56,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/quagga
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/quagga
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/quagga
-	${INSTALL_DATA} ${WRKINST}${CONFDIR}/* ${PREFIX}/share/examples/quagga
+	${INSTALL_DATA} ${WRKSRC}/SERVICES ${PREFIX}/share/doc/quagga
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/zebra/* ${PREFIX}/share/examples/quagga
 
 .include <bsd.port.mk>
