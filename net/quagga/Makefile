@@ -4,9 +4,9 @@
 
 COMMENT=	"multi-threaded routing daemon with patch"
 
-DISTNAME=	zebra-pj-0.94-20030811
+DISTNAME=	quagga-0.96.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.quagga.net/snapshots/cvs/
+MASTER_SITES=	http://quagga.net/download/quagga-0.96.2.tar.gz
 
 HOMEPAGE=	http://www.quagga.net/
 
@@ -17,13 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/zebra-0.94
+WRKDIST=	${WRKDIR}/quagga-0.96.2
 
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
 
 USE_GMAKE=	Yes
-CONFDIR=	${SYSCONFDIR}/zebra
+CONFDIR=	${SYSCONFDIR}/quagga
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu old
 CONFIGURE_ARGS+= --enable-vtysh --sysconfdir=${CONFDIR} --enable-user=no --enable-group=no
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+= --disable-snmp
 SUBST_VARS=	CONFDIR
 
 post-extract:
-.for f in vtysh.1 bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 zebra.info
+.for f in vtysh.1 bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 quagga.info
 	@cd ${WRKSRC}/doc; sed \
 		-e s#/usr/local/etc#@sysconfdir@#g \
 		-e s#/usr/local/sbin#@prefix@/sbin#g \
@@ -51,9 +51,9 @@ post-extract:
 .endfor
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zebra
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/zebra
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/zebra
-	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/zebra/* ${PREFIX}/share/examples/zebra
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/quagga
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/quagga
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/quagga
+	${INSTALL_DATA} ${WRKINST}${CONFDIR}/* ${PREFIX}/share/examples/quagga
 
 .include <bsd.port.mk>
