@@ -34,6 +34,7 @@ include/postgresql/internal/pqexpbuffer.h
 include/postgresql/libpq-fe.h
 include/postgresql/libpq/libpq-fs.h
 include/postgresql/pg_config.h
+include/postgresql/pg_config_manual.h
 include/postgresql/pg_config_os.h
 include/postgresql/pgtypes_date.h
 include/postgresql/pgtypes_error.h
@@ -368,8 +369,6 @@ include/postgresql/server/utils/typcache.h
 include/postgresql/server/utils/varbit.h
 include/postgresql/sql3types.h
 include/postgresql/sqlca.h
-include/postgresql/sqlda.h
-include/postgresql/sqltypes.h
 lib/libecpg.a
 lib/libecpg_compat.a
 lib/libpgtypes.a
