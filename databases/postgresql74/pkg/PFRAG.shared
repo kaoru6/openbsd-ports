@@ -1,6 +1,6 @@
 @comment $OpenBSD: PFRAG.shared,v 1.11 2003/02/12 17:09:03 naddy Exp $
-lib/libecpg.so.4.0
-lib/libecpg_compat.so.1.0
-lib/libpgtypes.so.1.0
+lib/libecpg.so.4.1
+lib/libecpg_compat.so.1.1
+lib/libpgtypes.so.1.2
 lib/libpq.so.3.1
 DYNLIBDIR(%B)
