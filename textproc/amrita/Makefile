@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 2003/07/03 20:15:23 taka Exp $
+# $Id: Makefile,v 1.3 2004/11/10 13:47:15 kaoru Exp $
 # Originally by: taka@trans-nt.com
 
 COMMENT=	" html/xhtml template library for Ruby"
@@ -10,14 +10,14 @@ MASTER_SITES=	http://www.brain-tokyo.jp/research/amrita/
 HOMEPAGE=	http://www.brain-tokyo.jp/research/amrita/index_ja.html
 MAINTAINER=	taka@trans-nt.com
 
+MODULES=                lang/ruby
+
 #RUN_DEPENDS=	::lang/ruby ::textproc/ruby-strscan
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-RUBY_SITEDIR=	`
 
 do-install:
 	(cd ${WRKSRC}; \
