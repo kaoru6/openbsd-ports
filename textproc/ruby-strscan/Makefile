@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.23 2002/07/10 20:14:45 mickey Exp $
-# KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
-# Originally by: peter.galbavy@knowledge.com
+# $Id: Makefile,v 1.2 2003/07/02 20:02:02 taka Exp $
+# Originally by: taka@trans-nt.com
 
 COMMENT=	"fast scanning library for ruby program"
 
