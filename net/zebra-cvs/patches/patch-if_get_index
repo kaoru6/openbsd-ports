@@ -1,0 +1,21 @@
+--- zebra/if_ioctl.c.orig	Thu Sep  4 11:57:17 2003
++++ zebra/if_ioctl.c	Thu Sep  4 11:50:55 2003
+@@ -132,6 +132,7 @@
+ {
+   static int if_fake_index = 1;
+ 
++#if 0
+ #ifdef HAVE_BROKEN_ALIASES
+   /* Linux 2.2.X does not provide individual interface index for aliases. */
+   ifp->ifindex = if_fake_index++;
+@@ -164,6 +165,10 @@
+   return ifp->ifindex;
+ #endif /* SIOCGIFINDEX */
+ #endif /* HAVE_BROKEN_ALIASES */
++#else /* 0 */
++  ifp->ifindex = if_nametoindex (ifp->if_name);
++  return ifp->ifindex;
++#endif /* 0 */
+ }
+ 
+ #ifdef SIOCGIFHWADDR
