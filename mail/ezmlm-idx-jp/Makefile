@@ -31,7 +31,7 @@ INSTALL_TARGET=	setup WRKINST=${WRKINST}
 
 FAKE=	Yes
 
-RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local::mail/qmail
+#RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local::mail/qmail
 
 post-extract:
 	@echo "merging ezmlm and idx..."

@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Now b.root-servers.net is 192.228.79.201.
+Now b.root-servers.net is 192.228.79.201. (SERIAL 2004012900)
 Now j.root-servers.net is 192.158.128.30. (SERIAL 2002110501)
 Use m.root-servers.net first for Japenese user.
 Move a.root-servers.net to last.
