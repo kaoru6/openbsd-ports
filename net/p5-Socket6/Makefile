@@ -1,5 +1,8 @@
 # $OpenBSD: Makefile,v 1.3 2002/11/21 01:19:48 naddy Exp $
 
+# Use /usr/ports/net/p5-Socket6 instead
+COMES_WITH=             3.6
+
 COMMENT=	"Perl module to support getaddrinfo() and getnameinfo()"
 
 VERSION=	0.17
