@@ -9,11 +9,11 @@ COMMENT=                "OpenBSD-3.6's Network Time Protocol daemon"
 #
 # What port/package will be created
 #
-DISTNAME=		openntpd-20040714p
+DISTNAME=		openntpd-20040718p
 #PKGNAME=		openntpd
 CATEGORIES=		net
 
-HOMEPAGE=	http://dtucker.freeshell.org/
+HOMEPAGE=	http://www.openntpd.org/
 
 MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.zip.com.au/~dtucker/openntpd/ \
-		http://dtucker.freeshell.org/openntpd/
+		http://dtucker.freeshell.org/openntpd/ \
+		http://www.openntpd.org/dist/portable/
 
 #FETCH_DEPENDS=		???
 #BUILD_DEPENDS=		???
