@@ -32,8 +32,6 @@ MASTER_SITES=	\
 	ftp://ftp.cz.postgresql.org/pub/ftp.postgresql.org/source/v${VERSION}/ \
 	ftp://ftp.dk.postgresql.org/mirrors/postgresql/source/v${VERSION}/
 
-BUILD_DEPENDS=	:bison->=1.875:devel/bison
-
 PSEUDO_FLAVORS=	tcl
 FLAVOR?=
 
@@ -46,7 +44,7 @@ SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LIBS=-lcurses YACC=bison
+CONFIGURE_ENV=	LIBS=-lcurses
 CONFIGURE_ARGS=	--disable-rpath \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
