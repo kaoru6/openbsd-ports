@@ -10,9 +10,9 @@ NEED_VERSION=	1.402
 
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/
-MASTER_SITES0=	ftp://ftp.innominate.org/gpa/djb/
+MASTER_SITES0=	http://smarden.org/pape/djb/manpages/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-man${EXTRACT_SUFX}:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-man-20021211${EXTRACT_SUFX}:0
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
