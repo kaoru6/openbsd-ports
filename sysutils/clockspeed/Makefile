@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/22 12:12:33 camield Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 03:58:59 lebel Exp $
 
 COMMENT=	"clock synchronization tools"
 
@@ -15,6 +15,9 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+# Not perfect; clockspeed won't work on non-Pentiums
+ONLY_FOR_ARCHS=	i386
 
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
