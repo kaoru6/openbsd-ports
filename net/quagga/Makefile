@@ -4,9 +4,9 @@
 
 COMMENT=	"multi-threaded routing daemon with patch"
 
-DISTNAME=	quagga-0.96.2
+DISTNAME=	quagga-0.96.4
 CATEGORIES=	net
-MASTER_SITES=	http://quagga.net/download/quagga-0.96.2.tar.gz
+MASTER_SITES=	http://quagga.net/download/
 
 HOMEPAGE=	http://www.quagga.net/
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/quagga-0.96.2
+#WRKDIST=	${WRKDIR}/${DISTNAME}
 
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
@@ -26,7 +26,7 @@ USE_GMAKE=	Yes
 CONFDIR=	${SYSCONFDIR}/quagga
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu old
-CONFIGURE_ARGS+= --enable-vtysh --sysconfdir=${CONFDIR} --enable-user=no --enable-group=no
+CONFIGURE_ARGS+= --enable-vtysh --sysconfdir=${CONFDIR} --enable-user=_quagga --enable-group=_quagga
 #CONFIGURE_ENV=	LIBS=-lcurses
 
 FLAVORS=	snmp
