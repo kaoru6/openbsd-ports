@@ -3,30 +3,37 @@
 # Date created:		12 August 1999
 # Whom:			Hironori Ikura <hikura@trans-nt.com>
 #
-# $Id: Makefile,v 1.2 2002/07/01 19:57:36 kaoru Exp $
+# $Id: Makefile,v 1.3 2002/11/18 12:57:44 kaoru Exp $
 #
 
 COMMENT=	"qmail-popup passwd checking agent with APOP support"
 
 DISTNAME=	qm-poppw-0.3
 CATEGORIES=	mail
+
+HOMEPAGE=	http://www.cas.trans-nt.com/~cas/
+
+MAINTAINER=	kaoru@trans-nt.com
+
+PERMIT_PACKAGE_CDROM=  No
+PERMIT_PACKAGE_FTP=    No
+PERMIT_DISTFILES_CDROM=No
+PERMIT_DISTFILES_FTP=  Yes
+
 MASTER_SITES=	ftp://ftp.cas.trans-nt.com/pub/network/qmail/
 
-MAINTAINER=	hikura@trans-nt.com
-
-.if exists(${PREFIX}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${PREFIX}/qmail
-.else
-QMAIL_DIR?=	/var/qmail
-.endif
-
-#RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-popup::/mail/qmail
 RUN_DEPENDS=	qmail-popup::mail/qmail
+
+#.if exists(${PREFIX}/qmail/bin/qmail-send)
+#QMAIL_DIR?=	${PREFIX}/qmail
+#.else
+#QMAIL_DIR?=	/var/qmail
+#.endif
 
 post-install:
 	@mkdir -p ${PREFIX}/share/doc/qm-poppw
-	@cp ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/qm-poppw
-	@cp ${WRKSRC}/README.en ${PREFIX}/share/doc/qm-poppw
-	@cp ${WRKSRC}/README.ja ${PREFIX}/share/doc/qm-poppw
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/qm-poppw
+	${INSTALL_DATA} ${WRKSRC}/README.en ${PREFIX}/share/doc/qm-poppw
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${PREFIX}/share/doc/qm-poppw
 
 .include <bsd.port.mk>
