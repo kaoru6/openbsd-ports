@@ -1,0 +1,5 @@
+bin/cufilter
+${P5SITE}/Mail/CheckUser.pm
+man/man1/cufilter.1
+man/man3p/Mail::CheckUser.3
+@dirrm man/man3p
