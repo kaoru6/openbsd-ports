@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2003/05/20 13:52:00 lebel Exp $
+# $OpenBSD: Makefile,v 1.66 2003/11/11 15:11:34 margarida Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.4RC2
+VERSION=	7.4
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
