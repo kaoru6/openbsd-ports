@@ -2,7 +2,7 @@
 
 COMMENT=		"Compelling replacement for CVS"
 
-DISTNAME=		subversion-0.34.0
+DISTNAME=		subversion-1.0.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://subversion.tigris.org/
