@@ -10,7 +10,6 @@
  
  .SUFFIXES:
  .SUFFIXES: .c .o .obj
-
 @@ -377,15 +377,15 @@
  
  
