@@ -22,19 +22,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 #WRKDIST=${WRKDIR}
-#WRKSRC=${WRKDIR}/NKF
+WRKSRC=${WRKDIST}/NKF.mod
+#WRKBUILD=${WRKSRC}/NKF.mod
 
-#CONFIGURE_STYLE=perl
-ALL_TARGET=	nkf
+CONFIGURE_STYLE=perl
+#ALL_TARGET=	nkf perl
 
-#pre-extract:
-#	@mkdir -p ${WRKSRC}
+#pre-configure:
+#	@echo ${WRKBUILD}
+#do-configure:
+#	@echo nothing to do
 
-do-configure:
-	@echo nothing to do
+# make nkf binary
+pre-build:
+	cd ${WRKDIST} && ${MAKE} nkf
 
 # original english man page was rather difficult to follow
-do-install:	
+post-install:	
 	${INSTALL_PROGRAM} ${WRKDIST}/nkf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIST}/nkf.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIST}/nkf.doc ${PREFIX}/man/ja_JP.EUC/cat1/nkf.0
