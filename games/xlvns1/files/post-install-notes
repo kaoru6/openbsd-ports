@@ -1,0 +1,15 @@
+
+You must install original data of the Shizuku for Windows.
+To do so:
+
+    - Mount the Shizuku's CD-ROM:
+
+	# mount /cdrom
+
+    - Copy /cdrom/MAX_DATA.PAK to ${PREFIX}/lib/xlvns.
+
+	# cd /usr/X11R6/lib/xlnvs
+	# cp -p /cdrom/MAX_DATA.PAK .
+
+This port makes default CD-ROM device /dev/cdrom.
+

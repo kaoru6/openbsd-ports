@@ -1,0 +1,4 @@
+bin/xlvns
+lib/X11/app-defaults/XLvns
+lib/xlvns/sizfont.tbl
+@dirrm lib/xlvns
