@@ -1,3 +1,4 @@
+@comment $OpenBSD$
 @group qmail
 @comment qmailq:qmail 04711
 @owner qmailq
