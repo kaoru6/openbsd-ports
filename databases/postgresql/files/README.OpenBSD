@@ -13,7 +13,7 @@ steps are required:
 
 1. Create the PostgreSQL user and group:
 
-	# useradd -c "PostgreSQL Admin User" -g =uid -m -d /var/postgresql \
+	# useradd -c "PostgreSQL Admin User" -g '=uid' -m -d /var/postgresql \
 		-s /bin/sh -u 5432 _postgresql
 
 2. su to the postgresql account and initialize the database:
