@@ -2,7 +2,7 @@
 
 COMMENT=	"Perl module to support getaddrinfo() and getnameinfo()"
 
-VERSION=	0.10
+VERSION=	0.17
 DISTNAME=	Socket6-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
