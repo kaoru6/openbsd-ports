@@ -43,7 +43,7 @@ SETUPSCRIPTS=	${WRKSRC}/config	${WRKSRC}/config-fast
 FLAVORS=	localtime
 FLAVOR?=	localtime
 
-PATCH_LIST=	patch-Makefile	patch-qmail-smtpd-relay-reject
+PATCH_LIST=	patch-Makefile	patch-qmail-smtpd-relay-reject patch-long-smtp-session
 
 .if ${FLAVOR:L:Mlocaltime}
 PATCH_LIST+=	patch-qmail-date-localtime
