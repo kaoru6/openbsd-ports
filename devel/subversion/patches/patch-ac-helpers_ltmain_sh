@@ -1,0 +1,11 @@
+$OpenBSD$
+--- ac-helpers/ltmain.sh.orig	2004-02-23 14:04:19.000000000 +1100
++++ ac-helpers/ltmain.sh	2004-02-26 14:18:02.000000000 +1100
+@@ -1774,7 +1774,6 @@ compiler."
+ 
+ 	  if test "$installed" = no; then
+ 	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+ 	  fi
+ 
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then
