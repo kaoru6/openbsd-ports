@@ -4,11 +4,11 @@
 
 COMMENT=	"multi-threaded routing daemon with patch"
 
-DISTNAME=	zebra-pj-0.94-20030629
+DISTNAME=	zebra-pj-0.94-20030811
 CATEGORIES=	net
-MASTER_SITES=	http://zebra.dishone.st/snapshots/cvs/
+MASTER_SITES=	http://www.quagga.net/snapshots/cvs/
 
-HOMEPAGE=	http://zebra.dishone.st/
+HOMEPAGE=	http://www.quagga.net/
 
 MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
