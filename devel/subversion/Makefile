@@ -1,5 +1,5 @@
 COMMENT=		"Subversion revision control system"
-DISTNAME=		subversion-1.0.4
+DISTNAME=		subversion-1.0.5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://subversion.tigris.org/
