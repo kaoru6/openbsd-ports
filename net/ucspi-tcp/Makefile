@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2000/09/25 07:40:15 camield Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/22 12:07:52 camield Exp $
+
+COMMENT=	"tools for building TCP client-server applications"
 
 DISTNAME=	ucspi-tcp-0.88
 HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
 CATEGORIES=	net
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
