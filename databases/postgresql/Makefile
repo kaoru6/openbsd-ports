@@ -5,7 +5,7 @@ COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.3.4
+VERSION=	7.4RC2
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-clients=postgresql-clients-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
@@ -69,7 +69,6 @@ NO_REGRESS=	Yes
 DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/INSTALL ${WRKSRC}/README \
 	${WRKSRC}/doc/README.mb.big5 ${WRKSRC}/doc/README.mb.jp \
-	${WRKSRC}/register.txt \
 	${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
 
 # For tcl
