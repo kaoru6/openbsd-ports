@@ -26,7 +26,7 @@ USE_GMAKE=	Yes
 CONFDIR=	${SYSCONFDIR}/zebra
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu old
-CONFIGURE_ARGS+= --enable-vtysh --sysconfdir=${CONFDIR}
+CONFIGURE_ARGS+= --enable-vtysh --sysconfdir=${CONFDIR} --enable-user=no --enable-group=no
 #CONFIGURE_ENV=	LIBS=-lcurses
 
 FLAVORS=	snmp
