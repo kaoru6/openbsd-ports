@@ -4,7 +4,7 @@
 
 COMMENT=		"Write to a cross-platform Excel binary file"
 
-DISTNAME=	Spreadsheet-WriteExcel-2.11
+DISTNAME=	Spreadsheet-WriteExcel-2.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5	
 
