@@ -69,5 +69,3 @@ lib/mh/slocal
 lib/mh/spost
 lib/mh/tmac.h
 lib/mh/viamail
-lib/libmh.so
-lib/libmh.so.3.2
