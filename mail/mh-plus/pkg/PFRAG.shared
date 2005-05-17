@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libmh.so.3.2
