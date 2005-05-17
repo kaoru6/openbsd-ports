@@ -17,6 +17,12 @@ HOMEPAGE=	http://media.laic.u-hyogo.ac.jp/%7Ehayashi/internet/mh-plus.html
 
 MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}	\
+	${DISTNAME}-20030114.patch.gz:0	\
+	${DISTNAME}-20030326.patch.gz:0	\
+	${DISTNAME}-20031023.patch.gz:0	\
+	${DISTNAME}-20031106.patch.gz:0
+
 # ???
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -27,6 +33,12 @@ PERMIT_DISTFILES_FTP=	Yes
 #
 MASTER_SITES=	ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
 	ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/
+MASTER_SITES0=	 ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/mh-6.8.4-JP-3.05-patch/
+
+PATCHFILES=	${DISTNAME}-20030114.patch.gz	\
+	${DISTNAME}-20030326.patch.gz	\
+	${DISTNAME}-20031023.patch.gz	\
+	${DISTNAME}-20031106.patch.gz
 
 # Dependencies
 #
