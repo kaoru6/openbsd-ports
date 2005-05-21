@@ -2,7 +2,7 @@
 
 COMMENT=		"Powerful Multilingual File Viewer"
 
-DISTNAME=		lv451
+DISTNAME=		${PKGNAME:C/[-\.]//g}
 PKGNAME=		lv-4.51
 CATEGORIES=		misc
 
