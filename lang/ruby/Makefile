@@ -3,7 +3,7 @@
 COMMENT=		"object oriented script language with threads"
 
 SHARED_ONLY=		Yes
-VERSION=		1.8.2
+VERSION=		1.8.3
 DISTNAME=		ruby-${VERSION}
 CATEGORIES=		lang
 

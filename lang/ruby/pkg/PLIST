@@ -19,7 +19,6 @@ lib/ruby/${REV}/bigdecimal/jacobian.rb
 lib/ruby/${REV}/bigdecimal/ludcmp.rb
 lib/ruby/${REV}/bigdecimal/math.rb
 lib/ruby/${REV}/bigdecimal/newton.rb
-lib/ruby/${REV}/bigdecimal/nlsolve.rb
 lib/ruby/${REV}/bigdecimal/util.rb
 lib/ruby/${REV}/cgi/
 lib/ruby/${REV}/cgi-lib.rb
@@ -123,6 +122,7 @@ lib/ruby/${REV}/irb.rb
 lib/ruby/${REV}/irb/cmd/
 lib/ruby/${REV}/irb/cmd/chws.rb
 lib/ruby/${REV}/irb/cmd/fork.rb
+lib/ruby/${REV}/irb/cmd/help.rb
 lib/ruby/${REV}/irb/cmd/load.rb
 lib/ruby/${REV}/irb/cmd/nop.rb
 lib/ruby/${REV}/irb/cmd/pushws.rb
@@ -135,6 +135,7 @@ lib/ruby/${REV}/irb/ext/history.rb
 lib/ruby/${REV}/irb/ext/loader.rb
 lib/ruby/${REV}/irb/ext/math-mode.rb
 lib/ruby/${REV}/irb/ext/multi-irb.rb
+lib/ruby/${REV}/irb/ext/save-history.rb
 lib/ruby/${REV}/irb/ext/tracer.rb
 lib/ruby/${REV}/irb/ext/use-loader.rb
 lib/ruby/${REV}/irb/ext/workspaces.rb
@@ -150,6 +151,8 @@ lib/ruby/${REV}/irb/lc/ja/
 lib/ruby/${REV}/irb/lc/ja/error.rb
 lib/ruby/${REV}/irb/lc/ja/help-message
 lib/ruby/${REV}/irb/locale.rb
+lib/ruby/${REV}/irb/notifier.rb
+lib/ruby/${REV}/irb/output-method.rb
 lib/ruby/${REV}/irb/ruby-lex.rb
 lib/ruby/${REV}/irb/ruby-token.rb
 lib/ruby/${REV}/irb/slex.rb
@@ -176,7 +179,6 @@ lib/ruby/${REV}/net/https.rb
 lib/ruby/${REV}/net/imap.rb
 lib/ruby/${REV}/net/pop.rb
 lib/ruby/${REV}/net/protocol.rb
-lib/ruby/${REV}/net/protocols.rb
 lib/ruby/${REV}/net/smtp.rb
 lib/ruby/${REV}/net/telnet.rb
 lib/ruby/${REV}/net/telnets.rb
@@ -328,6 +330,7 @@ lib/ruby/${REV}/rexml/rexml.rb
 lib/ruby/${REV}/rexml/sax2listener.rb
 lib/ruby/${REV}/rexml/source.rb
 lib/ruby/${REV}/rexml/streamlistener.rb
+lib/ruby/${REV}/rexml/syncenumerator.rb
 lib/ruby/${REV}/rexml/text.rb
 lib/ruby/${REV}/rexml/validation/relaxng.rb
 lib/ruby/${REV}/rexml/validation/validation.rb
@@ -340,12 +343,14 @@ lib/ruby/${REV}/rinda/
 lib/ruby/${REV}/rinda/rinda.rb
 lib/ruby/${REV}/rinda/ring.rb
 lib/ruby/${REV}/rinda/tuplespace.rb
+lib/ruby/${REV}/rss.rb
 lib/ruby/${REV}/rss/0.9.rb
 lib/ruby/${REV}/rss/1.0.rb
 lib/ruby/${REV}/rss/2.0.rb
 lib/ruby/${REV}/rss/content.rb
 lib/ruby/${REV}/rss/converter.rb
 lib/ruby/${REV}/rss/dublincore.rb
+lib/ruby/${REV}/rss/image.rb
 lib/ruby/${REV}/rss/maker.rb
 lib/ruby/${REV}/rss/maker/0.9.rb
 lib/ruby/${REV}/rss/maker/1.0.rb
@@ -353,6 +358,7 @@ lib/ruby/${REV}/rss/maker/2.0.rb
 lib/ruby/${REV}/rss/maker/base.rb
 lib/ruby/${REV}/rss/maker/content.rb
 lib/ruby/${REV}/rss/maker/dublincore.rb
+lib/ruby/${REV}/rss/maker/image.rb
 lib/ruby/${REV}/rss/maker/syndication.rb
 lib/ruby/${REV}/rss/maker/trackback.rb
 lib/ruby/${REV}/rss/parser.rb
@@ -402,6 +408,7 @@ lib/ruby/${REV}/soap/generator.rb
 lib/ruby/${REV}/soap/header/handler.rb
 lib/ruby/${REV}/soap/header/handlerset.rb
 lib/ruby/${REV}/soap/header/simplehandler.rb
+lib/ruby/${REV}/soap/httpconfigloader.rb
 lib/ruby/${REV}/soap/mapping/
 lib/ruby/${REV}/soap/mapping.rb
 lib/ruby/${REV}/soap/mapping/factory.rb
@@ -409,7 +416,6 @@ lib/ruby/${REV}/soap/mapping/mapping.rb
 lib/ruby/${REV}/soap/mapping/registry.rb
 lib/ruby/${REV}/soap/mapping/rubytypeFactory.rb
 lib/ruby/${REV}/soap/mapping/typeMap.rb
-lib/ruby/${REV}/soap/mapping/wsdlRegistry.rb
 lib/ruby/${REV}/soap/mapping/wsdlencodedregistry.rb
 lib/ruby/${REV}/soap/mapping/wsdlliteralregistry.rb
 lib/ruby/${REV}/soap/marshal.rb
@@ -843,10 +849,12 @@ lib/ruby/${REV}/wsdl/soap/methodDefCreator.rb
 lib/ruby/${REV}/wsdl/soap/operation.rb
 lib/ruby/${REV}/wsdl/soap/servantSkeltonCreator.rb
 lib/ruby/${REV}/wsdl/soap/standaloneServerStubCreator.rb
+lib/ruby/${REV}/wsdl/soap/wsdl2ruby.rb
 lib/ruby/${REV}/wsdl/types.rb
 lib/ruby/${REV}/wsdl/wsdl.rb
 lib/ruby/${REV}/wsdl/xmlSchema/
 lib/ruby/${REV}/wsdl/xmlSchema/all.rb
+lib/ruby/${REV}/wsdl/xmlSchema/annotation.rb
 lib/ruby/${REV}/wsdl/xmlSchema/any.rb
 lib/ruby/${REV}/wsdl/xmlSchema/attribute.rb
 lib/ruby/${REV}/wsdl/xmlSchema/choice.rb
@@ -857,13 +865,19 @@ lib/ruby/${REV}/wsdl/xmlSchema/data.rb
 lib/ruby/${REV}/wsdl/xmlSchema/element.rb
 lib/ruby/${REV}/wsdl/xmlSchema/enumeration.rb
 lib/ruby/${REV}/wsdl/xmlSchema/import.rb
+lib/ruby/${REV}/wsdl/xmlSchema/importer.rb
+lib/ruby/${REV}/wsdl/xmlSchema/include.rb
+lib/ruby/${REV}/wsdl/xmlSchema/length.rb
 lib/ruby/${REV}/wsdl/xmlSchema/parser.rb
+lib/ruby/${REV}/wsdl/xmlSchema/pattern.rb
 lib/ruby/${REV}/wsdl/xmlSchema/schema.rb
 lib/ruby/${REV}/wsdl/xmlSchema/sequence.rb
 lib/ruby/${REV}/wsdl/xmlSchema/simpleContent.rb
+lib/ruby/${REV}/wsdl/xmlSchema/simpleExtension.rb
 lib/ruby/${REV}/wsdl/xmlSchema/simpleRestriction.rb
 lib/ruby/${REV}/wsdl/xmlSchema/simpleType.rb
 lib/ruby/${REV}/wsdl/xmlSchema/unique.rb
+lib/ruby/${REV}/wsdl/xmlSchema/xsd2ruby.rb
 lib/ruby/${REV}/xmlrpc/
 lib/ruby/${REV}/xmlrpc/base64.rb
 lib/ruby/${REV}/xmlrpc/client.rb
@@ -887,6 +901,7 @@ lib/ruby/${REV}/xsd/codegen/moduledef.rb
 lib/ruby/${REV}/xsd/datatypes.rb
 lib/ruby/${REV}/xsd/datatypes1999.rb
 lib/ruby/${REV}/xsd/iconvcharset.rb
+lib/ruby/${REV}/xsd/mapping.rb
 lib/ruby/${REV}/xsd/namedelements.rb
 lib/ruby/${REV}/xsd/ns.rb
 lib/ruby/${REV}/xsd/qname.rb
@@ -902,7 +917,6 @@ lib/ruby/${REV}/yaml/baseemitter.rb
 lib/ruby/${REV}/yaml/basenode.rb
 lib/ruby/${REV}/yaml/constants.rb
 lib/ruby/${REV}/yaml/dbm.rb
-lib/ruby/${REV}/yaml/emitter.rb
 lib/ruby/${REV}/yaml/encoding.rb
 lib/ruby/${REV}/yaml/error.rb
 lib/ruby/${REV}/yaml/loader.rb
@@ -911,6 +925,7 @@ lib/ruby/${REV}/yaml/store.rb
 lib/ruby/${REV}/yaml/stream.rb
 lib/ruby/${REV}/yaml/stringio.rb
 lib/ruby/${REV}/yaml/syck.rb
+lib/ruby/${REV}/yaml/tag.rb
 lib/ruby/${REV}/yaml/types.rb
 lib/ruby/${REV}/yaml/yamlnode.rb
 lib/ruby/${REV}/yaml/ypath.rb
