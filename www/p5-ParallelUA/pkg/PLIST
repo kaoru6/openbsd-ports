@@ -1,0 +1,25 @@
+${P5SITE}/Bundle/ParallelUA.pm
+${P5SITE}/LWP/Parallel.pm
+${P5SITE}/LWP/Parallel/Protocol.pm
+${P5SITE}/LWP/Parallel/Protocol/file.pm
+${P5SITE}/LWP/Parallel/Protocol/ftp.pm
+${P5SITE}/LWP/Parallel/Protocol/http.pm
+${P5SITE}/LWP/Parallel/Protocol/https.pm
+${P5SITE}/LWP/Parallel/RobotUA.pm
+${P5SITE}/LWP/Parallel/UserAgent.pm
+${P5SITE}/LWP/ParallelUA.pm
+${P5SITE}/LWP/RobotPUA.pm
+${P5ARCH}/auto/LWP/Parallel/.packlist
+${P5SITE}/LWP/Parallel/Protocol/
+${P5SITE}/LWP/Parallel/
+@unexec rmdir ${P5SITE}/LWP 2>/dev/null || true
+@unexec rmdir ${P5SITE}/Bundle 2>/dev/null || true
+${P5ARCH}/auto/LWP/Parallel/
+${P5ARCH}/auto/LWP/
+@man man/man3p/Bundle::ParallelUA.3p
+@man man/man3p/LWP::Parallel.3p
+@man man/man3p/LWP::Parallel::Protocol.3p
+@man man/man3p/LWP::Parallel::RobotUA.3p
+@man man/man3p/LWP::Parallel::UserAgent.3p
+@man man/man3p/LWP::ParallelUA.3p
+@man man/man3p/LWP::RobotPUA.3p
