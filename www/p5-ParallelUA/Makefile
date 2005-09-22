@@ -4,8 +4,9 @@
 
 COMMENT=	"Perl5 Parallel LWP User Agent for WWW access"
 
-DISTNAME=	ParallelUserAgent-2.57
-PKGNAME=	p5-ParallelUA
+VERSION=	2.57
+DISTNAME=	ParallelUserAgent-${VERSION}
+PKGNAME=	p5-ParallelUA-${VERSION}
 CATEGORIES=	www perl5
 
 HOMEPAGE=	http://www.inf.ethz.ch/personal/langhein/ParallelUA/
