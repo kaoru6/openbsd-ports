@@ -1,0 +1,192 @@
+From: Sergio Gelato <Sergio.Gelato@astro.su.se>
+To: Andy Repton <pm-outgoingip@boomerangdomains.com>,
+	Russell Nelson <nelson@crynwr.com>
+Subject: Bug in Andy Repton's outgoingip patch for qmail
+Date: Fri, 4 Jul 2003 14:20:43 +0200
+
+I have found a bug in Andy Repton's outgoingip patch for qmail 1.03
+(http://www.qmail.org/outgoingip.patch).
+
+The problem is the call to stralloc_copy(&outgoingip, "0.0.0.0");
+the correct function to use is stralloc_copys().
+
+An updated version of the patch follows. Besides fixing this bug,
+I also added some documentation to the man pages and to qmail-showctl.c.
+
+Best wishes,
+Sergio Gelato
+
+Index: qmail-control.9
+===================================================================
+RCS file: /home/software/CVSREPOS/qmail/qmail-control.9,v
+retrieving revision 1.2
+retrieving revision 1.3
+diff -u -u -r1.2 -r1.3
+--- qmail-control.9	2001/08/14 17:35:30	1.2
++++ qmail-control.9	2003/07/04 09:02:58	1.3
+@@ -57,6 +57,7 @@
+ .I locals	\fIme	\fRqmail-send
+ .I mfcheck	\fR0	\fRqmail-smtpd
+ .I morercpthosts	\fR(none)	\fRqmail-smtpd
++.I outgoingip	\fR0.0.0.0	\fRqmail-remote
+ .I percenthack	\fR(none)	\fRqmail-send
+ .I plusdomain	\fIme	\fRqmail-inject
+ .I qmqpservers	\fR(none)	\fRqmail-qmqpc
+Index: qmail-remote.8
+===================================================================
+RCS file: /home/software/CVSREPOS/qmail/qmail-remote.8,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -u -r1.1.1.1 -r1.2
+--- qmail-remote.8	2001/05/30 16:55:45	1.1.1.1
++++ qmail-remote.8	2003/07/04 09:02:58	1.2
+@@ -124,6 +124,13 @@
+ .B qmail-remote
+ refuses to run.
+ .TP 5
++.I outgoingip
++IP address to be used on outgoing connections.
++Default: system-defined.
++The value 
++.IR 0.0.0.0 
++is equivalent to the system default.
++.TP 5
+ .I smtproutes
+ Artificial SMTP routes.
+ Each route has the form
+Index: qmail-remote.c
+===================================================================
+RCS file: /home/software/CVSREPOS/qmail/qmail-remote.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -u -u -r1.1.1.1 -r1.3
+--- qmail-remote.c	2001/05/30 16:55:46	1.1.1.1
++++ qmail-remote.c	2003/07/04 11:38:57	1.3
+@@ -39,6 +39,7 @@
+ static stralloc sauninit = {0};
+ 
+ stralloc helohost = {0};
++stralloc outgoingip = {0};
+ stralloc routes = {0};
+ struct constmap maproutes;
+ stralloc host = {0};
+@@ -47,6 +48,7 @@
+ saa reciplist = {0};
+ 
+ struct ip_address partner;
++struct ip_address outip;
+ 
+ void out(s) char *s; { if (substdio_puts(subfdoutsmall,s) == -1) _exit(0); }
+ void zero() { if (substdio_put(subfdoutsmall,"\0",1) == -1) _exit(0); }
+@@ -56,6 +58,7 @@
+ ch = sa->s[i]; if (ch < 33) ch = '?'; if (ch > 126) ch = '?';
+ if (substdio_put(subfdoutsmall,&ch,1) == -1) _exit(0); } }
+ 
++void temp_noip() { out("Zinvalid ipaddr in control/outgoingip (#4.3.0)\n"); zerodie(); }
+ void temp_nomem() { out("ZOut of memory. (#4.3.0)\n"); zerodie(); }
+ void temp_oserr() { out("Z\
+ System resources temporarily unavailable. (#4.3.0)\n"); zerodie(); }
+@@ -310,6 +313,7 @@
+ 
+ void getcontrols()
+ {
++  int r;
+   if (control_init() == -1) temp_control();
+   if (control_readint(&timeout,"control/timeoutremote") == -1) temp_control();
+   if (control_readint(&timeoutconnect,"control/timeoutconnect") == -1)
+@@ -324,6 +328,12 @@
+     case 1:
+       if (!constmap_init(&maproutes,routes.s,routes.len,1)) temp_nomem(); break;
+   }
++ r = control_readline(&outgoingip,"control/outgoingip");
++ if (-1 == r) { if (errno == error_nomem) temp_nomem(); temp_control(); }
++ if (0 == r && !stralloc_copys(&outgoingip, "0.0.0.0")) temp_nomem();
++ if (str_equal(outgoingip.s, "0.0.0.0"))
++   { outip.d[0]=outip.d[1]=outip.d[2]=outip.d[3]=(unsigned long) 0; }
++ else if (!ip_scan(outgoingip.s, &outip)) temp_noip();
+ }
+ 
+ void main(argc,argv)
+@@ -414,7 +424,7 @@
+     smtpfd = socket(AF_INET,SOCK_STREAM,0);
+     if (smtpfd == -1) temp_oserr();
+  
+-    if (timeoutconn(smtpfd,&ip.ix[i].ip,(unsigned int) port,timeoutconnect) == 0) {
++    if (timeoutconn(smtpfd,&ip.ix[i].ip,&outip,(unsigned int) port,timeoutconnect) == 0) {
+       tcpto_err(&ip.ix[i].ip,0);
+       partner = ip.ix[i].ip;
+       smtp(); /* does not return */
+Index: qmail-showctl.c
+===================================================================
+RCS file: /home/software/CVSREPOS/qmail/qmail-showctl.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -u -r1.1.1.1 -r1.2
+--- qmail-showctl.c	2001/05/30 16:55:46	1.1.1.1
++++ qmail-showctl.c	2003/07/04 11:45:48	1.2
+@@ -230,6 +230,7 @@
+   do_str("localiphost",1,"localiphost","Local IP address becomes ");
+   do_lst("locals","Messages for me are delivered locally.","Messages for "," are delivered locally.");
+   do_str("me",0,"undefined! Uh-oh","My name is ");
++  do_str("outgoingip",0,"0.0.0.0","Outgoing IP address is ");
+   do_lst("percenthack","The percent hack is not allowed.","The percent hack is allowed for user%host@",".");
+   do_str("plusdomain",1,"plusdomain","Plus domain name is ");
+   do_lst("qmqpservers","No QMQP servers.","QMQP server: ",".");
+Index: remoteinfo.c
+===================================================================
+RCS file: /home/software/CVSREPOS/qmail/remoteinfo.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -u -r1.1.1.1 -r1.2
+--- remoteinfo.c	2001/05/30 16:55:47	1.1.1.1
++++ remoteinfo.c	2003/07/03 22:28:50	1.2
+@@ -44,12 +44,12 @@
+   s = socket(AF_INET,SOCK_STREAM,0);
+   if (s == -1) return 0;
+  
+-  byte_zero(&sin,sizeof(sin));
++/*  byte_zero(&sin,sizeof(sin));
+   sin.sin_family = AF_INET;
+   byte_copy(&sin.sin_addr,4,ipl);
+   sin.sin_port = 0;
+-  if (bind(s,(struct sockaddr *) &sin,sizeof(sin)) == -1) { close(s); return 0; }
+-  if (timeoutconn(s,ipr,113,timeout) == -1) { close(s); return 0; }
++  if (bind(s,(struct sockaddr *) &sin,sizeof(sin)) == -1) { close(s); return 0; } */
++  if (timeoutconn(s,ipr,ipl,113,timeout) == -1) { close(s); return 0; }
+   fcntl(s,F_SETFL,fcntl(s,F_GETFL,0) & ~O_NDELAY);
+  
+   len = 0;
+Index: timeoutconn.c
+===================================================================
+RCS file: /home/software/CVSREPOS/qmail/timeoutconn.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -u -r1.1.1.1 -r1.2
+--- timeoutconn.c	2001/05/30 16:55:47	1.1.1.1
++++ timeoutconn.c	2003/07/03 22:28:50	1.2
+@@ -10,9 +10,10 @@
+ #include "byte.h"
+ #include "timeoutconn.h"
+ 
+-int timeoutconn(s,ip,port,timeout)
++int timeoutconn(s,ip,outip,port,timeout)
+ int s;
+ struct ip_address *ip;
++struct ip_address *outip;
+ unsigned int port;
+ int timeout;
+ {
+@@ -22,6 +23,13 @@
+   fd_set wfds;
+   struct timeval tv;
+  
++  /* bind() an outgoing ipaddr */
++  byte_zero(&sin,sizeof(sin));
++  byte_copy(&sin.sin_addr.s_addr,4,outip);
++  sin.sin_family = AF_INET;
++
++  if (-1 == bind(s,(struct sockaddr *) &sin,sizeof(sin))) return -1;
++
+   byte_zero(&sin,sizeof(sin));
+   byte_copy(&sin.sin_addr,4,ip);
+   x = (char *) &sin.sin_port;

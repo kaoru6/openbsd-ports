@@ -24,7 +24,8 @@ MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		http://pobox.com/~djb/software/
 MASTER_SITES0=	http://www.nlc.net.au/pub/unix/mail/qmail/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} qmail-date-localtime.patch:0
+#DISTFILES=	${DISTNAME}${EXTRACT_SUFX} qmail-date-localtime.patch:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 # Override prefix here or on the 'make' commandline.
@@ -47,9 +48,12 @@ SETUPSCRIPTS=	${WRKSRC}/config	${WRKSRC}/config-fast
 FLAVORS=	localtime
 FLAVOR?=	localtime
 
+PATCH_LIST=	patch-Makefile  patch-qmail-smtpd-relay-reject \
+		patch-long-smtp-session patch-outgoingip
+
 .if ${FLAVOR:L:Mlocaltime}
-PATCHFILES=	qmail-date-localtime.patch
-PATCH_DIST_STRIP=	-p1
+PATCH_LIST+=   patch-qmail-date-localtime
+#PATCH_DIST_STRIP=	-p1
 .endif
 
 
