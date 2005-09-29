@@ -20,8 +20,10 @@ MASTER_SITES=		http://www.pdflib.com/products/pdflib/download/602src/
 #			tiff.35::graphics/tiff
 USE_GMAKE=yes
 
-FAKE=			lib
-CONFIGURE_STYLE=	gnu
+#FAKE=			lib
+#FAKE=			all
+FAKE_FLAGS=		prefix=${WRKINST}${PREFIX}
+CONFIGURE_STYLE=	autoconf
 #AUTOCONF_VERSION=	2.13
 #MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
@@ -40,8 +42,12 @@ MAKE_ENV=		${CONFIGURE_ENV}
 
 REGRESS_TARGET=		test
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pdflib
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/pdflib
+#do-install:
+#	pwd
+#	${MAKE_PROGRAM} prefix=${WRKINST} install
+
+#post-install:
+#	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pdflib
+#	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/pdflib
 
 .include <bsd.port.mk>
