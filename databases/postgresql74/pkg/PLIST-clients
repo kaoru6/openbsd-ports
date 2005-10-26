@@ -1,7 +1,7 @@
 @comment $OpenBSD: PLIST-clients,v 1.8 2003/02/12 17:09:03 naddy Exp $
-@pkgcfl postgresql-[0-9]*
-@pkgcfl pgsql-[0-9]*
-@pkgcfl pgsql-clients-[0-9]*
+@conflict postgresql-[0-9]*
+@conflict pgsql-[0-9]*
+@conflict pgsql-clients-[0-9]*
 bin/createdb
 bin/createlang
 bin/createuser
