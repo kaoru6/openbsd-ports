@@ -1,76 +1,13 @@
-@comment $OpenBSD$
-bin/apr-config
-bin/apu-config
+@comment $OpenBSD: PLIST,v 1.5 2005/10/02 09:02:05 alek Exp $
+@pkgpath devel/subversion,no_bindings
+%%SHARED%%
 bin/svn
 bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
 bin/svnserve
 bin/svnversion
-@comment build/apr_rules.mk
-@comment build/libtool
-include/apr-0/apr.h
-include/apr-0/apr_allocator.h
-include/apr-0/apr_anylock.h
-include/apr-0/apr_atomic.h
-include/apr-0/apr_base64.h
-include/apr-0/apr_buckets.h
-include/apr-0/apr_compat.h
-include/apr-0/apr_date.h
-include/apr-0/apr_dbm.h
-include/apr-0/apr_dso.h
-include/apr-0/apr_env.h
-include/apr-0/apr_errno.h
-include/apr-0/apr_file_info.h
-include/apr-0/apr_file_io.h
-include/apr-0/apr_fnmatch.h
-include/apr-0/apr_general.h
-include/apr-0/apr_getopt.h
-include/apr-0/apr_global_mutex.h
-include/apr-0/apr_hash.h
-include/apr-0/apr_hooks.h
-include/apr-0/apr_inherit.h
-include/apr-0/apr_ldap.h
-include/apr-0/apr_ldap_url.h
-include/apr-0/apr_lib.h
-include/apr-0/apr_md4.h
-include/apr-0/apr_md5.h
-include/apr-0/apr_mmap.h
-include/apr-0/apr_network_io.h
-include/apr-0/apr_optional.h
-include/apr-0/apr_optional_hooks.h
-include/apr-0/apr_poll.h
-include/apr-0/apr_pools.h
-include/apr-0/apr_portable.h
-include/apr-0/apr_proc_mutex.h
-include/apr-0/apr_queue.h
-include/apr-0/apr_reslist.h
-include/apr-0/apr_ring.h
-include/apr-0/apr_rmm.h
-include/apr-0/apr_sdbm.h
-include/apr-0/apr_sha1.h
-include/apr-0/apr_shm.h
-include/apr-0/apr_signal.h
-include/apr-0/apr_strings.h
-include/apr-0/apr_strmatch.h
-include/apr-0/apr_support.h
-include/apr-0/apr_tables.h
-include/apr-0/apr_thread_cond.h
-include/apr-0/apr_thread_mutex.h
-include/apr-0/apr_thread_proc.h
-include/apr-0/apr_thread_rwlock.h
-include/apr-0/apr_time.h
-include/apr-0/apr_uri.h
-include/apr-0/apr_user.h
-include/apr-0/apr_uuid.h
-include/apr-0/apr_version.h
-include/apr-0/apr_want.h
-include/apr-0/apr_xlate.h
-include/apr-0/apr_xml.h
-include/apr-0/apu.h
-include/apr-0/apu_compat.h
-include/apr-0/apu_version.h
-include/apr-0/apu_want.h
+include/subversion-1/
 include/subversion-1/mod_dav_svn.h
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
@@ -78,6 +15,7 @@ include/subversion-1/svn_base64.h
 include/subversion-1/svn_client.h
 include/subversion-1/svn_cmdline.h
 include/subversion-1/svn_config.h
+include/subversion-1/svn_ctype.h
 include/subversion-1/svn_dav.h
 include/subversion-1/svn_delta.h
 include/subversion-1/svn_diff.h
@@ -105,12 +43,6 @@ include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
-lib/apr.exp
-lib/aprutil.exp
-lib/libapr-0.a
-lib/libapr-0.la
-lib/libaprutil-0.a
-lib/libaprutil-0.la
 lib/libsvn_client-1.a
 lib/libsvn_client-1.la
 lib/libsvn_delta-1.a
@@ -137,42 +69,42 @@ lib/libsvn_subr-1.a
 lib/libsvn_subr-1.la
 lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
-man/man1/svn.1
-man/man1/svnadmin.1
-man/man1/svndumpfilter.1
-man/man1/svnlook.1
-man/man1/svnversion.1
-man/man5/svnserve.conf.5
-man/man8/svnserve.8
+@man man/man1/svn.1
+@man man/man1/svnadmin.1
+@man man/man1/svndumpfilter.1
+@man man/man1/svnlook.1
+@man man/man1/svnversion.1
+@man man/man5/svnserve.conf.5
+@man man/man8/svnserve.8
+share/examples/subversion/
+share/examples/subversion/backup/
+share/examples/subversion/backup/hot-backup.py
+share/examples/subversion/hook-scripts/
+share/examples/subversion/hook-scripts/README
+share/examples/subversion/hook-scripts/commit-access-control.cfg.example
+share/examples/subversion/hook-scripts/commit-access-control.pl
+share/examples/subversion/hook-scripts/commit-email.pl
+share/examples/subversion/hook-scripts/commit-email.rb
+share/examples/subversion/hook-scripts/mailer/
+share/examples/subversion/hook-scripts/mailer/mailer.conf.example
+share/examples/subversion/hook-scripts/mailer/mailer.py
+share/examples/subversion/hook-scripts/mailer/tests/
+share/examples/subversion/hook-scripts/mailer/tests/mailer-init.sh
+share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.output
+share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.sh
+share/examples/subversion/hook-scripts/mailer/tests/mailer-tweak.py
+share/examples/subversion/hook-scripts/propchange-email.pl
+share/examples/subversion/hook-scripts/svnperms.conf.example
+share/examples/subversion/hook-scripts/svnperms.py
 share/locale/de/LC_MESSAGES/subversion.mo
 share/locale/es/LC_MESSAGES/subversion.mo
+share/locale/fr/LC_MESSAGES/subversion.mo
+share/locale/it/LC_MESSAGES/subversion.mo
 share/locale/ja/LC_MESSAGES/subversion.mo
+share/locale/ko/LC_MESSAGES/subversion.mo
 share/locale/nb/LC_MESSAGES/subversion.mo
 share/locale/pl/LC_MESSAGES/subversion.mo
 share/locale/pt_BR/LC_MESSAGES/subversion.mo
 share/locale/sv/LC_MESSAGES/subversion.mo
-share/locale/zh_TW/LC_MESSAGES/subversion.mo
 share/locale/zh_CN/LC_MESSAGES/subversion.mo
-%%SHARED%%
-@dirrm include/subversion-1
-@dirrm include/apr-0
-@comment @dirrm build
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/nb/LC_MESSAGES
-@dirrm share/locale/nb
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale
+share/locale/zh_TW/LC_MESSAGES/subversion.mo
