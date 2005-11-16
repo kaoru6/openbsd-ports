@@ -2,8 +2,9 @@
 
 COMMENT=		"Powerful Multilingual File Viewer"
 
-DISTNAME=		${PKGNAME:C/[-\.]//g}
-PKGNAME=		lv-4.51
+VERSION=		4.51
+DISTNAME=		lv${VERSION:S/.//g}
+PKGNAME=		lv-${VERSION}
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.ff.iij4u.or.jp/~nrt/lv/
