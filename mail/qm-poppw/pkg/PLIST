@@ -3,4 +3,4 @@ bin/qmpasswd
 share/doc/qm-poppw/COPYRIGHT
 share/doc/qm-poppw/README.en
 share/doc/qm-poppw/README.ja
-@dirrm share/doc/qm-poppw
+share/doc/qm-poppw/
