@@ -3,7 +3,7 @@
 # ruby module
 
 RUN_DEPENDS+=::lang/ruby
-LIB_DEPENDS+=ruby.1.82::lang/ruby
+LIB_DEPENDS+=ruby.1.81::lang/ruby
 
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
