@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile,v 1.14 2005/04/17 21:36:52 espie Exp $
 
+BROKEN=		"Use binary distribution instead."
+
 COMMENT=		"C library to produce PDF files"
 
 VERSION=		6.0.2
