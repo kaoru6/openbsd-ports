@@ -4,3 +4,5 @@ RMD160 (djbdns-1.05-man-20021211.tar.gz) = ab2b7cb51dc8aeb5013870faa204561c93adc
 RMD160 (djbdns-1.05.tar.gz) = a832cbfd93e4ccec6a565492a4ee0b3c1b4b68ed
 SHA1 (djbdns-1.05-man-20021211.tar.gz) = f85e2b9ed194c922b336fb21b0cfddb9ce788c95
 SHA1 (djbdns-1.05.tar.gz) = 2efdb3a039d0c548f40936aa9cb30829e0ce8c3d
+SIZE (djbdns-1.05-man-20021211.tar.gz) = 17306
+SIZE (djbdns-1.05.tar.gz) = 85648
