@@ -2,7 +2,7 @@
 
 COMMENT=	"utilities for use with qmail"
 
-DISTNAME=	qtools-0.54
+DISTNAME=	qtools-0.56
 HOMEPAGE=	http://www.superscript.com/qtools/intro.html
 
 CATEGORIES=	mail
