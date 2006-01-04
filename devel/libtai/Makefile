@@ -11,6 +11,9 @@ MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=		http://cr.yp.to/libtai/
 
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} leapsecs.dat
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,7 +34,7 @@ pre-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtai.a ${PREFIX}/lib/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libtai/
-	${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${PREFIX}/share/libtai/
+	${INSTALL_DATA} ${FULLDISTDIR}/leapsecs.dat ${PREFIX}/share/libtai/
 	(cd ${WRKSRC}; ${INSTALL_DATA} ${HDRLIST} ${PREFIX}/include/; \
 		       ${INSTALL_MAN} ${MANLIST} ${PREFIX}/man/man3/; \
 		       ${INSTALL_PROGRAM} ${PROGLIST} ${PREFIX}/bin/)
