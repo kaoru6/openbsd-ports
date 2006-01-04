@@ -6,6 +6,7 @@ share/doc/postgresql/FAQ_DEV
 share/doc/postgresql/HISTORY
 share/doc/postgresql/INSTALL
 share/doc/postgresql/README
+share/doc/postgresql/README.OpenBSD
 share/doc/postgresql/README.mb.big5
 share/doc/postgresql/README.mb.jp
 share/doc/postgresql/TODO
@@ -383,6 +384,7 @@ share/doc/postgresql/html/release-7-3-7.html
 share/doc/postgresql/html/release-7-3-8.html
 share/doc/postgresql/html/release-7-3-9.html
 share/doc/postgresql/html/release-7-3-11.html
+share/doc/postgresql/html/release-7-3-12.html
 share/doc/postgresql/html/release-7-3.html
 share/doc/postgresql/html/release-7-4-1.html
 share/doc/postgresql/html/release-7-4-2.html
@@ -393,10 +395,12 @@ share/doc/postgresql/html/release-7-4-6.html
 share/doc/postgresql/html/release-7-4-7.html
 share/doc/postgresql/html/release-7-4-8.html
 share/doc/postgresql/html/release-7-4-9.html
+share/doc/postgresql/html/release-7-4-10.html
 share/doc/postgresql/html/release-7-4.html
 share/doc/postgresql/html/release-8-0-1.html
 share/doc/postgresql/html/release-8-0-2.html
 share/doc/postgresql/html/release-8-0-3.html
+share/doc/postgresql/html/release-8-0-4.html
 share/doc/postgresql/html/release-8-0.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html

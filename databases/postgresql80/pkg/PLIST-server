@@ -379,7 +379,6 @@ lib/postgresql/
 @man man/man1/pg_resetxlog.1
 @man man/man1/postgres.1
 @man man/man1/postmaster.1
-share/doc/postgresql/README.OpenBSD
 share/postgresql/pg_hba.conf.sample
 share/postgresql/pg_ident.conf.sample
 share/postgresql/pg_service.conf.sample

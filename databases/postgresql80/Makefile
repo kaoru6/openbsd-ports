@@ -4,7 +4,7 @@ COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	8.0.4
+VERSION=	8.0.5
 DISTNAME=	postgresql-${VERSION}
 FULLPKGNAME=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
