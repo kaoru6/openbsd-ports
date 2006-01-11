@@ -30,17 +30,6 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
 
-CONFIGURE_ENV+=	GNUMAKE=gmake
-
-#PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-#		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-#		patch-*
-
-no-post-install:
-	${INSTALL_DATA_DIR} ${FT_DOC}/image
-	${INSTALL_DATA} ${SFT_DOC}/image/* ${FT_DOC}/image
-	cd ${SFT_DOC}; ${INSTALL_DATA} ${SRCTYPE} ${FT_DOC}
-	${INSTALL_DATA_DIR} ${PREFIX}/include/freetype1
-	mv ${PREFIX}/include/freetype ${PREFIX}/include/freetype1
+CONFIGURE_ENV+=	GNUMAKE=${GMAKE}
 
 .include <bsd.port.mk>
