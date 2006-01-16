@@ -1,0 +1,279 @@
+Index: Makefile
+===================================================================
+RCS file: /home/cvs/ringlet/c/contrib/net/autorespond/Makefile,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -r1.1.1.1 -r1.2
+--- Makefile	3 Apr 2003 13:58:32 -0000	1.1.1.1
++++ Makefile	3 Apr 2003 14:51:10 -0000	1.2
+@@ -1,14 +1,19 @@
+-CC=gcc
+-OPTS=-O2
+-LIBS=
+-CFLAGS=-Wall -g
+-DESTDIR=
+-PREFIX=$(DESTDIR)/usr
+-
+ all: autorespond
+
+-autorespond: autorespond.c
+-	$(CC) $(OPTS) $(CFLAGS) $(LIBS) $< -o $@
++autorespond:	load autorespond.o strcasestr.o
++	./load autorespond strcasestr.o
++
++autorespond.o:	compile autorespond.c strcasestr.h
++	./compile autorespond.c
++
++strcasestr.o:	compile strcasestr.c strcasestr.h
++	./compile strcasestr.c
++
++strcasestr.h:	choose compile trystrcase.c strcasestr_ar.h strcasestr_sys.h
++	./choose cl trystrcase strcasestr_ar.h strcasestr_sys.h > strcasestr.h
++
++strcasestr.c:	choose compile trystrcase.c strcasestr_ar.c strcasestr_sys.c
++	./choose cl trystrcase strcasestr_ar.c strcasestr_sys.c > strcasestr.c
+ 
+ distclean: clean
+
+@@ -19,4 +24,27 @@
+ 	install -d $(PREFIX)/bin $(PREFIX)/share/man/man1
+ 	install autorespond $(PREFIX)/bin
+ 	install autorespond.1 $(PREFIX)/share/man/man1
++
++choose: \
++warn-auto.sh choose.sh conf-home
++	cat warn-auto.sh choose.sh \
++	| sed s}HOME}"`head -1 conf-home`"}g \
++	> choose
++	chmod 755 choose
++
++compile: \
++warn-auto.sh conf-cc
++	( cat warn-auto.sh; \
++	echo exec "`head -1 conf-cc`" '-c $${1+"$$@"}' \
++	) > compile
++	chmod 755 compile
++
++load: \
++warn-auto.sh conf-ld
++	( cat warn-auto.sh; \
++	echo 'main="$$1"; shift'; \
++	echo exec "`head -1 conf-ld`" \
++	'-o "$$main" "$$main".o $${1+"$$@"}' \
++	) > load
++	chmod 755 load
+
+Index: TARGETS
+===================================================================
+RCS file: TARGETS
+diff -N TARGETS
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ TARGETS	3 Apr 2003 14:51:10 -0000	1.4
+@@ -0,0 +1,7 @@
++load
++compile
++choose
++autorespond.o
++autorespond
++strcasestr.c
++strcasestr.h
+Index: autorespond.c
+===================================================================
+RCS file: /home/cvs/ringlet/c/contrib/net/autorespond/autorespond.c,v
+retrieving revision 1.1.1.1
+retrieving revision 1.2
+diff -u -r1.1.1.1 -r1.2
+--- autorespond.c	3 Apr 2003 13:58:32 -0000	1.1.1.1
++++ autorespond.c	3 Apr 2003 14:51:10 -0000	1.2
+@@ -80,6 +80,8 @@
+ #include <sys/wait.h>
+ #include <ctype.h>
+
++#include "strcasestr.h"
++
+ #define DEFAULT_MH	1	/* default value for message_handling flag */
+ #define DEFAULT_FROM	"$"	/* default "from" for the autorespond */
+
+@@ -374,35 +374,6 @@
+
+
+ /*********************************************************
+-** find string in string - ignore case **/
+-
+-char *strcasestr( char *_s1, char *_s2 )
+-{
+-	char *s1;
+-	char *s2;
+-	char *ptr;
+-
+-	s1 = strdup(_s1);
+-	s2 = strdup(_s2);
+-
+-	for ( ptr = s1; *ptr != '\0'; ptr++ )
+-		*ptr = tolower( *ptr );
+-
+-	for ( ptr = s2; *ptr != '\0'; ptr++ )
+-		*ptr = tolower( *ptr );
+-
+-	ptr = strstr( s1, s2 );
+-
+-	if ( ptr == (char *)NULL )
+-		return (char *)NULL;
+-	else
+-		return _s1 + (ptr - s1);
+-}
+-
+-
+-
+-
+-/*********************************************************
+ ** look up header tag in chain and try to find search string 
+ ** returns pointer to contetnt on success other wise NULL */
+
+Index: choose.sh
+===================================================================
+RCS file: choose.sh
+diff -N choose.sh
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ choose.sh	3 Apr 2003 14:05:19 -0000	1.1.1.1
+@@ -0,0 +1,18 @@
++
++result="$4"
++
++case "$1" in
++  *c*) ./compile $2.c >/dev/null 2>&1 || result="$3" ;;
++esac
++
++case "$1" in
++  *l*) ./load $2 >/dev/null 2>&1 || result="$3" ;;
++esac
++
++case "$1" in
++  *r*) ./$2 >/dev/null 2>&1 || result="$3" ;;
++esac
++
++rm -f $2.o $2
++
++exec cat "$result"
+Index: conf-cc
+===================================================================
+RCS file: conf-cc
+diff -N conf-cc
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ conf-cc	3 Apr 2003 14:51:10 -0000	1.2
+@@ -0,0 +1,5 @@
++cc -Wall -D_GNU_SOURCE
++
++This will be used to compile .c files.
++The _GNU_SOURCE define is needed with some glibc versions to
++enable some GNU extensions, including the strcasestr(3) function.
+Index: conf-home
+===================================================================
+RCS file: conf-home
+diff -N conf-home
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ conf-home	3 Apr 2003 14:05:19 -0000	1.1.1.1
+@@ -0,0 +1,4 @@
++/usr/local
++
++This is the dnscache home directory. Programs will be installed in
++.../bin.
+Index: conf-ld
+===================================================================
+RCS file: conf-ld
+diff -N conf-ld
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ conf-ld	3 Apr 2003 14:51:10 -0000	1.2
+@@ -0,0 +1,3 @@
++cc -s
++
++This will be used to link .o files into an executable.
+Index: strcasestr_ar.c
+===================================================================
+RCS file: strcasestr_ar.c
+diff -N strcasestr_ar.c
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ strcasestr_ar.c	3 Apr 2003 14:51:10 -0000	1.1
+@@ -0,0 +1,31 @@
++#include <ctype.h>
++#include <string.h>
++
++#include "strcasestr.h"
++
++/*********************************************************
++** find string in string - ignore case **/
++
++char *strcasestr( const char *_s1, const char *_s2 )
++{
++	char *s1;
++	char *s2;
++	char *ptr;
++
++	s1 = strdup(_s1);
++	s2 = strdup(_s2);
++
++	for ( ptr = s1; *ptr != '\0'; ptr++ )
++		*ptr = tolower( *ptr );
++
++	for ( ptr = s2; *ptr != '\0'; ptr++ )
++		*ptr = tolower( *ptr );
++
++	ptr = strstr( s1, s2 );
++
++	if ( ptr == (char *)NULL )
++		return (char *)NULL;
++	else
++		return _s1 + (ptr - s1);
++}
++
+Index: strcasestr_ar.h
+===================================================================
+RCS file: strcasestr_ar.h
+diff -N strcasestr_ar.h
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ strcasestr_ar.h	3 Apr 2003 14:51:10 -0000	1.1
+@@ -0,0 +1,6 @@
++#ifndef _INCLUDED_STRCASESTR_AR
++#define _INCLUDED_STRCASESTR_AR
++
++char *strcasestr( const char *_s1, const char *_s2 );
++
++#endif /* _INCLUDED */
+Index: strcasestr_sys.c
+===================================================================
+RCS file: strcasestr_sys.c
+diff -N strcasestr_sys.c
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ strcasestr_sys.c	3 Apr 2003 14:51:10 -0000	1.1
+@@ -0,0 +1 @@
++/* dummy */
+Index: strcasestr_sys.h
+===================================================================
+RCS file: strcasestr_sys.h
+diff -N strcasestr_sys.h
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ strcasestr_sys.h	3 Apr 2003 14:51:10 -0000	1.1
+@@ -0,0 +1 @@
++#include <string.h>
+Index: trystrcase.c
+===================================================================
+RCS file: trystrcase.c
+diff -N trystrcase.c
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ trystrcase.c	3 Apr 2003 14:51:10 -0000	1.1
+@@ -0,0 +1,6 @@
++#include <string.h>
++
++int main(void)
++{
++	return (strcasestr("a", "aa"));
++}
+Index: warn-auto.sh
+===================================================================
+RCS file: warn-auto.sh
+diff -N warn-auto.sh
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ warn-auto.sh	3 Apr 2003 14:05:19 -0000	1.1.1.1
+@@ -0,0 +1,2 @@
++#!/bin/sh
++# WARNING: This file was auto-generated. Do not edit!
