@@ -2,7 +2,7 @@
 
 COMMENT=	"handles various Japanese charsets"
 
-DISTNAME=	Jcode-2.02
+DISTNAME=	Jcode-2.03
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters japanese perl5
 
