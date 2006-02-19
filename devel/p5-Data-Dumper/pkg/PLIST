@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-${P5ARCH}/Data/Dumper.pm
-${P5ARCH}/auto/Data/Dumper/.packlist
-${P5ARCH}/auto/Data/Dumper/Dumper.bs
-${P5ARCH}/auto/Data/Dumper/Dumper.so
-${P5ARCH}/auto/Data/Dumper/
-${P5ARCH}/auto/Data/
-${P5ARCH}/Data/
