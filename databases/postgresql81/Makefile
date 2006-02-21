@@ -74,7 +74,7 @@ WANTLIB+=	perl
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-server"
-LIB_DEPENDS=	pq.4:postgresql-client-${VERSION}:databases/postgresql
+LIB_DEPENDS=	pq.4:postgresql-client-${VERSION}:databases/postgresql81
 .  elif ${SUBPACKAGE} == "-docs"
 WANTLIB=
 PKG_ARCH=	*
