@@ -2,7 +2,7 @@
 
 COMMENT=	"authoritative-only name server daemon"
 
-VERSION=	2.3.1
+VERSION=	2.3.3
 DISTNAME=	nsd-${VERSION}
 CATEGORIES=	net
 
