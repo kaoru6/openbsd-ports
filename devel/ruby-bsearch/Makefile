@@ -7,7 +7,7 @@ COMMENT=	"A binary search library for Ruby"
 DISTNAME=	ruby-bsearch-1.5
 CATEGORIES=	devel
 
-MASTER_SITES=	http://namazu.org/~satoru/ruby-bsearch/
+MASTER_SITES=	http://0xcc.net/ruby-bsearch/
 HOMEPAGE=	${MASTER_SITES}
 MAINTAINER=	kaoru@kaisei.org
 
