@@ -7,7 +7,7 @@ COMMENT=	"Romaji <-> Kana conversion library for Ruby"
 DISTNAME=	ruby-romkan-0.4
 CATEGORIES=	textproc
 
-MASTER_SITES=	http://namazu.org/~satoru/ruby-romkan/
+MASTER_SITES=	http://0xcc.net/ruby-romkan/
 HOMEPAGE=	${MASTER_SITES}
 MAINTAINER=	kaoru@kaisei.org
 
