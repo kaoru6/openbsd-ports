@@ -2,6 +2,9 @@
 # $FreeBSD: ports/textproc/p5-Spreadsheet-WriteExcel/Makefile,v 1.21 2004/11/09 14:05:13 skv Exp $
 # Original from: Sergey Skvortsov <skv@protey.ru>
 
+# Use /usr/ports/misc/p5-Spreadsheet-WriteExcel instead
+COMES_WITH=             4.0
+
 COMMENT=		"Write to a cross-platform Excel binary file"
 
 DISTNAME=	Spreadsheet-WriteExcel-2.15
