@@ -1,13 +1,7 @@
-gd is a graphics library. It allows your code to quickly draw images
-complete with lines, arcs, text, multiple colors, cut and paste from
-other images, and flood fills, and write out the result as a PNG, GIF
-or JPEG file. This is particularly useful in World Wide Web applications,
-where PNG, GIF and JPEG are three of the formats accepted for inline
-images by most browsers.
-
-gd does  not provide for every possible desirable graphics operation,
-but version 2.0 does include most frequently requested features,
-including both truecolor and palette images, resampling (smooth
-resizing of truecolor images) and so forth.
-
-WWW: ${HOMEPAGE}
+GD is an open source code library for the dynamic creation of images
+by programmers. GD is written in C, and "wrappers" are available
+for Perl, PHP and other languages. GD creates PNG, JPEG and GIF
+images, among other formats. GD is commonly used to generate charts,
+graphics, thumbnails, and most anything else, on the fly. While not
+restricted to use on the web, the most common applications of GD
+involve web site development.
