@@ -1,5 +1,7 @@
-# $Id: Makefile,v 1.3 2004/10/13 19:15:51 kaoru Exp $
+# $Id: Makefile,v 1.4 2006/09/21 07:38:10 kaoru Exp $
 # Originally by: taka@trans-nt.com
+
+IGNORE=		"strscan is bundled with Ruby 1.8 or later"
 
 COMMENT=	"fast scanning library for ruby program"
 
