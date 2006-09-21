@@ -2,7 +2,7 @@
 
 COMMENT=	"authoritative-only name server daemon"
 
-VERSION=	2.3.5
+VERSION=	3.0.1
 DISTNAME=	nsd-${VERSION}
 PKGNAME=	nsd-${VERSION}
 CATEGORIES=	net
@@ -36,10 +36,15 @@ CONFIGURE_ARGS+=	--enable-dnssec \
 
 NO_REGRESS=	Yes
 
-EXE=		nsd nsd-notify nsd-xfer zonec
-MAN8=		nsd.8 nsd-notify.8 nsd-xfer.8 zonec.8 nsdc.8
+EXE=		nsd nsd-checkconf nsd-notify nsd-patch nsd-xfer zonec
+MAN5=		nsd.conf.5
+MAN8=		nsd.8 nsd-checkconf.8 nsd-notify.8 nsd-patch.8 nsd-xfer.8 \
+		zonec.8 nsdc.8
 DOCDIR=		share/doc/nsd
-DOCFILES=	README RELNOTES CREDITS DIFFERENCES REQUIREMENTS
+DOCFILES=	README README.icc RELNOTES CREDITS REQUIREMENTS \
+		LICENSE UPGRADING TESTPLAN TODO \
+		NSD-DATABASE NSD-DIFFFILE NSD-FOR-BIND-USERS \
+		ChangeLog coding-style differences.tex
 
 EXAMPLESDIR=	share/examples/nsd
 
@@ -48,15 +53,17 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/sbin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/nsdc.sh ${PREFIX}/sbin/nsdc
+.for f in ${MAN5}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/man/man5
+.endfor
 .for f in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/man/man8
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/nsd.zones.sample ${PREFIX}/${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/nsdc.conf.sample ${PREFIX}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample ${PREFIX}/${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/${DOCDIR}
 .for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/${DOCDIR}
 .endfor
 
 .include <bsd.port.mk>
