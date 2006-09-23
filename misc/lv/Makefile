@@ -23,4 +23,11 @@ CONFIGURE_STYLE=	GNU
 
 WRKSRC=			${WRKDIST}/src
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/lv ${PREFIX}/bin/
+	cd ${PREFIX}/bin && ln lv lgrep
+	mkdir -p ${PREFIX}/lib/lv
+	${INSTALL_DATA} ${WRKDIST}/lv.hlp ${PREFIX}/lib/lv/
+	${INSTALL_MAN} ${WRKDIST}/lv.1 ${PREFIX}/man/man1/
+
 .include <bsd.port.mk>
