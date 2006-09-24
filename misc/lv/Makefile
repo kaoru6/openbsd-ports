@@ -20,11 +20,12 @@ WANTLIB=		c termcap
 MASTER_SITES=		http://www.ff.iij4u.or.jp/~nrt/freeware/
 
 CONFIGURE_STYLE=	GNU
+SEPARATE_BUILD=		simple
 
 WRKSRC=			${WRKDIST}/src
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lv ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/lv ${PREFIX}/bin/
 	cd ${PREFIX}/bin && ln lv lgrep
 	mkdir -p ${PREFIX}/lib/lv
 	${INSTALL_DATA} ${WRKDIST}/lv.hlp ${PREFIX}/lib/lv/
