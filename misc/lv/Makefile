@@ -19,7 +19,7 @@ WANTLIB=		c termcap
 
 MASTER_SITES=		http://www.ff.iij4u.or.jp/~nrt/freeware/
 
-CONFIGURE_STYLE=	GNU
+CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		simple
 
 WRKSRC=			${WRKDIST}/src
