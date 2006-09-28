@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+${P5ARCH}/
+${P5ARCH}/Crypt/
+${P5ARCH}/Crypt/GCrypt.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Crypt/
+${P5ARCH}/auto/Crypt/GCrypt/
+${P5ARCH}/auto/Crypt/GCrypt/GCrypt.bs
+${P5ARCH}/auto/Crypt/GCrypt/GCrypt.so
+@man man/man3p/Crypt::GCrypt.3p
