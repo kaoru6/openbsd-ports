@@ -10,6 +10,9 @@ HOMEPAGE=	http://www.yoshidam.net/Ruby_ja.html#uconv
 MAINTAINER=	kaoru@kaisei.org
 
 MODULES=                lang/ruby
+
+LIB_DEPENDS+=	ruby.1::lang/ruby
+
 CONFIGURE_STYLE=        simple
 
 #INSTALL_TARGET=         site-install
@@ -21,6 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	c m
 
 WRKSRC=		${WRKDIR}/uconv
 
