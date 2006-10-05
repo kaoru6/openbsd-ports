@@ -1,2 +1,2 @@
-@comment $Id: PLIST,v 1.1 2005/05/21 06:43:31 kaoru Exp $
+@comment $OpenBSD$
 lib/ruby/site_ruby/${REV}/bsearch.rb

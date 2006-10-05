@@ -1,2 +1,2 @@
-@comment $Id: PLIST,v 1.1 2005/05/21 06:34:03 kaoru Exp $
+@comment $OpenBSD$
 lib/ruby/site_ruby/${REV}/romkan.rb
