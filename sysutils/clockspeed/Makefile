@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	c
 
 # Not perfect; clockspeed won't work on non-Pentiums
 ONLY_FOR_ARCHS=	i386
