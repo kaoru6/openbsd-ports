@@ -5,7 +5,6 @@ COMMENT=        "easy-to-use, high-speed mailing list manager for qmail"
 DISTNAME=	ezmlm-idx-0.53.40-tnt-1
 HOMEPAGE=	http://ftp.ezmlm.org
 CATEGORIES=	mail
-NEED_VERSION=	1.230
 MAINTAINER=	cas@trans-nt.com
 
 MASTER_SITES=	http://ftp.ezmlm.org/pub/patches/ \
@@ -18,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	c
 
 
 # choose one of cz, da, de, en_US, fr, jp, pl, pt_BR, sv.
