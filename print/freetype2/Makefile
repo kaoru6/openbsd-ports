@@ -2,12 +2,11 @@
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
-COMMENT-doc=	"documentation for FreeType"
 
 VERSION=	2.1.10
 DISTNAME=	freetype-${VERSION}
-#PKGNAME=	${DISTNAME}
-#PKGNAME-doc=	freetype-doc-${VERSION}
+SHARED_LIBS=	freetype	9.8
+
 
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freetype/}
@@ -22,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		m
+WANTLIB=		z
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent

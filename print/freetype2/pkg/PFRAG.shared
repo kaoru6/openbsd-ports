@@ -1,2 +1,2 @@
 @comment $OpenBSD$
-@lib lib/libfreetype.so.9.8
+@lib lib/libfreetype.so.${LIBfreetype_VERSION}
