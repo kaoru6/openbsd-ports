@@ -3,7 +3,7 @@
 # Date created:		12 August 1999
 # Whom:			Hironori Ikura <hikura@trans-nt.com>
 #
-# $Id: Makefile,v 1.4 2006/01/04 08:25:19 kaoru Exp $
+# $Id: Makefile,v 1.5 2006/10/05 04:15:13 kaoru Exp $
 #
 
 COMMENT=	"qmail-popup passwd checking agent with APOP support"
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=  No
 PERMIT_PACKAGE_FTP=    No
 PERMIT_DISTFILES_CDROM=No
 PERMIT_DISTFILES_FTP=  Yes
+WANTLIB=	c
 
 MASTER_SITES=	ftp://ftp.cas.trans-nt.com/pub/network/qmail/
 
