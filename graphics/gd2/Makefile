@@ -15,7 +15,7 @@ LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 
 MODULES=	converters/libiconv
 
-WANTLIB=	c fontconfig freetype m z
+WANTLIB=	c m z
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -25,7 +25,15 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --without-xpm
 
+FLAVORS=	no_x11
+FLAVOR?=	no_x11
+
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_ARGS+= --without-x --without-freetype --without-fontconfig
+.else
+WANTLIB+=	freetype fontconfig
 USE_X11=	Yes
+.endif
 USE_LIBTOOL=	Yes
 
 post-install:
