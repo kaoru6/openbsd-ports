@@ -1,0 +1,14 @@
+$OpenBSD: patch-main.cf,v 1.5 2006/07/17 08:52:13 jakob Exp $
+
+--- conf/main.cf.orig	Fri Mar 24 21:38:54 2006
++++ conf/main.cf	Sat Apr  8 18:43:44 2006
+@@ -108,6 +108,9 @@ mail_owner = postfix
+ #inet_interfaces = $myhostname
+ #inet_interfaces = $myhostname, localhost
+ 
++# OpenBSD is IPv6-capable - use all available address families.            
++inet_protocols = all                                                       
++
+ # The proxy_interfaces parameter specifies the network interface
+ # addresses that this mail system receives mail on by way of a
+ # proxy or network address translation unit. This setting extends
