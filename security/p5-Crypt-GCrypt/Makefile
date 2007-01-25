@@ -2,7 +2,7 @@
 
 COMMENT=	"Perl interface to the GNU Cryptographic library"
 
-DISTNAME=	Crypt-GCrypt-1.15
+DISTNAME=	Crypt-GCrypt-1.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
