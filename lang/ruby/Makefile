@@ -1,22 +1,25 @@
-# $OpenBSD: Makefile,v 1.34 2005/12/29 17:27:31 msf Exp $
+# $OpenBSD: Makefile,v 1.54 2007/02/13 23:47:13 espie Exp $
 
-COMMENT=		"object oriented script language with threads"
+SHARED_ONLY=		Yes
+
+COMMENT-main=		"object oriented script language with threads"
 COMMENT-iconv=		"libiconv interface for ruby"
 COMMENT-gdbm=		"gdbm interface for ruby"
 COMMENT-tk=		"tk interface for ruby"
 
-SHARED_ONLY=		Yes
-VERSION=		1.8.4
+VERSION=		1.8.5
 DISTNAME=		ruby-${VERSION}
-PKGNAME-iconv=		ruby-iconv-${VERSION}
-PKGNAME-gdbm=		ruby-gdbm-${VERSION}
-PKGNAME-tk=		ruby-tk-${VERSION}
+SHARED_LIBS=		ruby 1.85
+PKGNAME-main=		${DISTNAME}p6
+PKGNAME-iconv=		ruby-iconv-${VERSION}p3
+PKGNAME-gdbm=		ruby-gdbm-${VERSION}p3
+PKGNAME-tk=		ruby-tk-${VERSION}p3
 
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.ruby-lang.org/
 
-MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org> 
+MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # GPL/Artistic/BSD/Public Domain/Beer-Ware
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,60 +31,58 @@ MASTER_SITES=		ftp://www.ruby-lang.org/pub/ruby/1.8/ \
                 	ftp://mirror.nucba.ac.jp/pub/ruby/1.8/ \
                 	ftp://ftp.kr.freebsd.org/pub/ruby/1.8/
 
-PSEUDO_FLAVORS= 	no_x11
-FLAVOR?=
-
-MULTI_PACKAGES=		-iconv -gdbm
-SUBPACKAGE?=
-
-MODULES=		converters/libiconv
-LIB_DEPENDS+=		gdbm.3::databases/gdbm
-
-.if !${FLAVOR:L:Mno_x11}
-MULTI_PACKAGES+=	-tk
-LIB_DEPENDS+=		tk84.::x11/tk/8.4 
-.endif 
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-ipv6 \
 			--with-dbm-type=bogus \
 			--with-opt-dir="${LOCALBASE}"
-CONFIGURE_ENV+=		PREFIX="${PREFIX}"
+CONFIGURE_ENV=		PREFIX="${PREFIX}" \
+			LIBruby_VERSION=${LIBruby_VERSION} \
+			CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE"
+
+MODULES=		converters/libiconv
+
+WANTLIB-main= 		c m readline termcap util crypto ncurses ssl z
+LIB_DEPENDS-main=
+RUN_DEPENDS-main=
+
+PSEUDO_FLAVORS= 	no_x11
+FLAVOR?=
+
+MULTI_PACKAGES=		-main -iconv -gdbm
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
+MULTI_PACKAGES+=	-tk
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.4 \
 			--with-tk-include=${PREFIX}/include/tk8.4 \
-			--with-X11-dir=${X11BASE} 
+			--with-X11-dir=${X11BASE}
 .endif
 
+WANTLIB-iconv=		c m
+LIB_DEPENDS-iconv=	ruby.>=1::lang/ruby \
+			${MODLIBICONV_LIB_DEPENDS}
+RUN_DEPENDS-iconv=	${MODLIBICONV_RUN_DEPENDS}
+
+WANTLIB-gdbm=		c m
+LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm \
+			ruby.>=1::lang/ruby
+RUN_DEPENDS-gdbm=
+
+.if !${FLAVOR:L:Mno_x11}
+WANTLIB-tk=		X11 c m tcl84
+LIB_DEPENDS-tk=		tk84:tk-8.4.*:x11/tk/8.4 \
+			ruby.>=1::lang/ruby
+RUN_DEPENDS-tk=
+.endif
+
+REGRESS_DEPENDS=	::lang/ruby
 INSTALL_TARGET=		install install-doc
+REV=			1.8
+SUB=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
+SUBST_VARS=		SUB REV
 
-WANTLIB= 		ssl termcap ncurses c crypto m util z readline
-.if defined(PACKAGING)
-.  if empty(SUBPACKAGE)
-MODULES=	
-LIB_DEPENDS=
-.  elif ${SUBPACKAGE} == "-iconv"
-MODULES=		converters/libiconv
-LIB_DEPENDS=		ruby.1.84::lang/ruby
-WANTLIB=		c m
-.  elif ${SUBPACKAGE} == "-gdbm"
-MODULES=
-LIB_DEPENDS=		ruby.1.84::lang/ruby \
-			gdbm.3::databases/gdbm
-WANTLIB=		c m
-.  elif ${SUBPACKAGE} == "-tk"
-MODULES=		
-LIB_DEPENDS=		ruby.1.84::lang/ruby \
-			tk84.::x11/tk/8.4
-WANTLIB=		X11 tcl84.1 c m
-.  endif
-.endif 
-
-REV=1.8
-SUB=${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
-SUBST_VARS=SUB REV
+# Building the ruby documentation consumes lots of memory.
+VMEM_WARNING=		Yes
 
 .include <bsd.port.mk>
