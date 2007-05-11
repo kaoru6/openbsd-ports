@@ -12,7 +12,7 @@ MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/
 MASTER_SITES0=	http://smarden.org/pape/djb/manpages/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-man-20021211${EXTRACT_SUFX}:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-man-20031023${EXTRACT_SUFX}:0
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
@@ -32,9 +32,9 @@ INSTALL_TARGET=	setup check
 MAN5LIST=	qualification
 MAN1LIST=	dnsfilter dnsipq dnsname dnsqr dnstxt dnsip \
 		dnsmx dnsq dnstrace dnstracesort
-MAN8LIST=	axfr-get dnscache pickdns rbldns tinydns axfrdns \
-		pickdns-conf rbldns-conf tinydns-conf walldns-conf \
-		dnscache-conf pickdns-data rbldns-data tinydns-data \
+MAN8LIST=	axfr-get dnscache rbldns tinydns axfrdns \
+		axfrdns-conf rbldns-conf tinydns-conf walldns-conf \
+		dnscache-conf rbldns-data tinydns-data \
 		walldns
 
 pre-build:
