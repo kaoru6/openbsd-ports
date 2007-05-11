@@ -11,9 +11,9 @@ MAINTAINER=	kaoru@kaisei.org
 
 MODULES=                lang/ruby
 
-LIB_DEPENDS+=	ruby.1::lang/ruby
+LIB_DEPENDS+=		ruby.>=1.84::lang/ruby
 
-CONFIGURE_STYLE=        simple
+CONFIGURE_STYLE=	extconf
 
 #INSTALL_TARGET=         site-install
 

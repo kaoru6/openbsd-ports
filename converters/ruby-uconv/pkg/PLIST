@@ -1,1 +1,1 @@
-lib/ruby/site_ruby/${REV}/${SUB}/uconv.so
+lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/uconv.so
