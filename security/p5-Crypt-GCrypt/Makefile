@@ -5,10 +5,6 @@ COMMENT=	"Perl interface to the GNU Cryptographic library"
 DISTNAME=	Crypt-GCrypt-1.16
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
-
-LIB_DEPENDS=	gcrypt::security/libgcrypt
-WANTLIB=	gcrypt
 
 MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
@@ -18,7 +14,10 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-CONFIGURE_STYLE=	perl
+MODULES=	cpan
+LIB_DEPENDS=	gcrypt::security/libgcrypt
+WANTLIB=	gcrypt
+
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 			GCRYPTINCPATH=${LOCALBASE}/include
 
