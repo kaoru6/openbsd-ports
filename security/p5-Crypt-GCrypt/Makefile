@@ -26,5 +26,7 @@ NOT_FOR_ARCHS=      ${NO_SHARED_ARCHS}
 
 post-extract:
 	@rm -f ${WRKSRC}/._Makefile.PL
+	@rm -f ${WRKSRC}/._GCrypt.pm
+	@rm -f ${WRKSRC}/._GCrypt.xs
 
 .include <bsd.port.mk>
