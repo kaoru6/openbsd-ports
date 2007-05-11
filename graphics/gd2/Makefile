@@ -2,9 +2,9 @@
 
 COMMENT=	"library for dynamic creation of images"
 
-DISTNAME=	gd-2.0.33
-PKGNAME=	${DISTNAME}p3
-SHARED_LIBS=	gd	20.33
+DISTNAME=	gd-2.0.34
+PKGNAME=	${DISTNAME}
+SHARED_LIBS=	gd	20.34
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/
 
