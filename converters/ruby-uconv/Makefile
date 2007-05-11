@@ -15,10 +15,6 @@ LIB_DEPENDS+=		ruby.>=1.84::lang/ruby
 
 CONFIGURE_STYLE=	extconf
 
-#INSTALL_TARGET=         site-install
-
-NO_REGRESS=             Yes
-
 # Ruby
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
