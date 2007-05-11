@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=YES
 
-ROMKAN_INSTALLDIR= ${PREFIX}/lib/ruby/site_ruby/${REV}
+ROMKAN_INSTALLDIR= ${PREFIX}/lib/ruby/site_ruby/${MODRUBY_REV}
 do-install:
 	mkdir -p ${ROMKAN_INSTALLDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} romkan.rb ${ROMKAN_INSTALLDIR}

@@ -1,2 +1,2 @@
 @comment $OpenBSD$
-lib/ruby/site_ruby/${REV}/romkan.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/romkan.rb
