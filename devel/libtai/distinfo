@@ -4,5 +4,7 @@ RMD160 (leapsecs.dat) = 88d644904caa47d034730951d3f2052f5a96f10c
 RMD160 (libtai-0.60.tar.gz) = 706111781e5e5bd7ae888e3cdc169d1d8d29de6f
 SHA1 (leapsecs.dat) = a30a531a4c9e81d623d285f23b9e23fbd4f5e29d
 SHA1 (libtai-0.60.tar.gz) = f4682fb2a98dd7d434aa0cecd9254a58a0bfd9fb
+SHA256 (leapsecs.dat) = 4e69538d4b6ee92a2b79666f245476710c90cb8f266d58c752e7da0a3b9530d3
+SHA256 (libtai-0.60.tar.gz) = 06dc42ccb77aee681fbd0e0754fc2180e1e9aeaa650838e9d74933d447a3d219
 SIZE (leapsecs.dat) = 184
 SIZE (libtai-0.60.tar.gz) = 17300
