@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 2004/11/10 14:00:53 kaoru Exp $
+# $Id: Makefile,v 1.7 2007/05/11 10:38:15 kaoru Exp $
 # Originally by: taka@trans-nt.com
 
 COMMENT=	" html/xhtml template library for Ruby"
@@ -14,8 +14,6 @@ HOMEPAGE=	http://amrita.sourceforge.jp/
 MAINTAINER=	taka@trans-nt.com
 
 MODULES=                lang/ruby
-
-#RUN_DEPENDS=	::lang/ruby ::textproc/ruby-strscan
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

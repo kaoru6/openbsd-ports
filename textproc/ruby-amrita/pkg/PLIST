@@ -1,19 +1,19 @@
-@comment $Id: PLIST,v 1.3 2004/11/10 13:47:16 kaoru Exp $
+@comment $Id: PLIST,v 1.4 2007/05/11 10:38:15 kaoru Exp $
 bin/amshandler
 bin/amx
 bin/ams
-lib/ruby/site_ruby/${REV}/amrita/parts.rb
-lib/ruby/site_ruby/${REV}/amrita/cgikit.rb
-lib/ruby/site_ruby/${REV}/amrita/handlers.rb
-lib/ruby/site_ruby/${REV}/amrita/merge.rb
-lib/ruby/site_ruby/${REV}/amrita/ams.rb
-lib/ruby/site_ruby/${REV}/amrita/amx.rb
-lib/ruby/site_ruby/${REV}/amrita/xml.rb
-lib/ruby/site_ruby/${REV}/amrita/parser.rb
-lib/ruby/site_ruby/${REV}/amrita/tag.rb
-lib/ruby/site_ruby/${REV}/amrita/template.rb
-lib/ruby/site_ruby/${REV}/amrita/format.rb
-lib/ruby/site_ruby/${REV}/amrita/node.rb
-lib/ruby/site_ruby/${REV}/amrita/node_expand.rb
-lib/ruby/site_ruby/${REV}/amrita/compiler.rb
-@dirrm lib/ruby/site_ruby/${REV}/amrita
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/parts.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/cgikit.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/handlers.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/merge.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/ams.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/amx.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/xml.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/parser.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/tag.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/template.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/format.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/node.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/node_expand.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/compiler.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/amrita/
