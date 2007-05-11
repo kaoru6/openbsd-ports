@@ -13,6 +13,8 @@ MAINTAINER=	kaoru@kaisei.org
 
 MODULES=                lang/ruby
 
+#LIB_DEPENDS=            ruby.>=1.84::lang/ruby
+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=YES
 
-INSTALLDIR= ${PREFIX}/lib/ruby/site_ruby/${REV}
+INSTALLDIR= ${PREFIX}/lib/ruby/site_ruby/${MODRUBY_REV}
 do-install:
 	mkdir -p ${INSTALLDIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} bsearch.rb ${INSTALLDIR}
