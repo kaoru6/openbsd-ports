@@ -2,7 +2,7 @@ COMMENT=	"Unicode conversion library with Japanese codesets support for Ruby"
 
 DISTNAME=	uconv-0.4.12
 PKGNAME=	ruby-${DISTNAME}
-CATEGORIES=	japanese ruby
+CATEGORIES=	converters japanese ruby
 
 MASTER_SITES=	http://www.yoshidam.net/
 HOMEPAGE=	http://www.yoshidam.net/Ruby_ja.html#uconv
