@@ -24,4 +24,7 @@ CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 
 NOT_FOR_ARCHS=      ${NO_SHARED_ARCHS}
 
-.include <bsd.port.mk>	
+post-extract:
+	@rm -f ${WRKSRC}/._Makefile.PL
+
+.include <bsd.port.mk>
