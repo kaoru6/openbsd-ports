@@ -31,8 +31,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # where the source files and patches can be fetched
 #
-MASTER_SITES=	ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
-	ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/
+#MASTER_SITES=	ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
+MASTER_SITES=	ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/
 MASTER_SITES0=	 ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/mh-6.8.4-JP-3.05-patch/
 
 PATCHFILES=	${DISTNAME}-20030114.patch.gz	\
@@ -43,7 +43,7 @@ PATCHFILES=	${DISTNAME}-20030114.patch.gz	\
 # Dependencies
 #
 #BUILD_DEPENDS=		???
-RUN_DEPENDS=	jless::japanese/less
+#RUN_DEPENDS=	jless::japanese/less
 #LIB_DEPENDS=		???
 #REGRESS_DEPENDS=	???
 
