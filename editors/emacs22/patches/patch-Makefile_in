@@ -17,21 +17,3 @@
  	      for subdir in `find $${dest} -type d ! -name RCS ! -name CVS -print` ; do \
  		chmod a+rx $${subdir} ; \
  		rm -rf $${subdir}/RCS ; \
-@@ -477,7 +476,7 @@
- 	   echo "Copying etc/DOC-* to $(DESTDIR)${docdir} ..." ; \
- 	   (cd ./etc; tar -chf - DOC*) \
- 	     |(cd $(DESTDIR)${docdir}; umask 022; tar -xvf - && cat > /dev/null) || exit 1; \
--	   (cd $(DESTDIR)$(docdir); chown $${LOGNAME:-$$USERNAME} DOC*; chmod a+r DOC*; \
-+	   (cd $(DESTDIR)$(docdir); chmod a+r DOC*; \
- 	    if test "`echo DOC-*`" != "DOC-*"; then rm DOC; fi); \
- 	else true; fi
- 	-unset CDPATH; \
-@@ -489,7 +488,7 @@
- 	   echo "Copying lisp/*.el and lisp/*.elc to $(DESTDIR)${lispdir} ..." ; \
- 	   (cd lisp; tar -chf - *.el *.elc) \
- 	     |(cd $(DESTDIR)${lispdir}; umask 022; tar -xvf - && cat > /dev/null) || exit 1; \
--	   (cd $(DESTDIR)${lispdir}; find . -exec chown $${LOGNAME:-$$USERNAME} {} ';') ; \
-+	   (cd $(DESTDIR)${lispdir}; \
- 	else true; fi
- 	-unset CDPATH; \
- 	if [ -n "${GZIP_PROG}" ]; \
