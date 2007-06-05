@@ -52,20 +52,20 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"
 
 SUBST_VARS=		GCCARCH VERSION
 
-WANTLIB-main=		c m ncurses ossaudio
+WANTLIB=		c m ncurses ossaudio
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
 .else
 USE_X11=Yes
-LIB_DEPENDS-main=		ungif.>=5::graphics/libungif \
+LIB_DEPENDS=		ungif.>=5::graphics/libungif \
 			jpeg.>=62::graphics/jpeg \
 			png.>=2::graphics/png \
 			tiff.>=35::graphics/tiff
-WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
+WANTLIB+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 .endif
 
-RUN_DEPENDS=		:emacs-${VERSION}*:${BUILD_PKGPATH}
-RUN_DEPENDS-main=
+#RUN_DEPENDS=		:emacs-${VERSION}*:${BUILD_PKGPATH}
+#RUN_DEPENDS-main=
 
 #PKG_ARCH-el=		*
 
