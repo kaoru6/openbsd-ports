@@ -2688,8 +2688,3 @@ share/emacs/${VERSION}/site-lisp/
 share/emacs/${VERSION}/site-lisp/subdirs.el
 share/emacs/site-lisp/
 share/emacs/site-lisp/subdirs.el
-var/
-var/games/
-var/games/emacs/
-var/games/emacs/snake-scores
-var/games/emacs/tetris-scores
