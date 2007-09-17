@@ -1,8 +1,6 @@
 # $OpenBSD: Makefile,v 1.30 2007/05/10 11:39:23 bernd Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
-COMES_WITH=	4.2
-
 COMMENT=	"XML 1.0 parser written in C"
 
 DISTNAME=	expat-2.0.0
