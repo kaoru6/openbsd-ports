@@ -1,4 +1,4 @@
-COMMENT=	"Unicode conversion library with Japanese codesets support for Ruby"
+COMMENT=	"Unicode conversion library for Ruby"
 
 DISTNAME=	uconv-0.4.12
 PKGNAME=	ruby-${DISTNAME}
