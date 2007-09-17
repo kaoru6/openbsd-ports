@@ -4,7 +4,7 @@ NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Network Kanji code conversion Filter"
 
-VERSION=	2.05
+VERSION=	2.0.7
 DISTNAME=	nkf${VERSION:S/.//g}
 PKGNAME=	ja-nkf-${VERSION}
 CATEGORIES=	japanese textproc
