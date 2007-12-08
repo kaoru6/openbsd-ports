@@ -62,7 +62,7 @@ PATCH_LIST+=   patch-qmail-date-localtime
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
-	@PREFIX=${PREFIX} ${SUDO} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
+	@PREFIX=${PREFIX} ${SUDO} ${SH} ${FILESDIR}/USERADD ${DISTNAME} PRE-INSTALL
 
 pre-install:
 	# preserve installer with correct prefix so it can be used by the
