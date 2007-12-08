@@ -1,6 +1,6 @@
 bin/cufilter
 ${P5SITE}/Mail/CheckUser.pm
-@dirrm ${P5SITE}/Mail
+${P5SITE}/Mail/
 man/man1/cufilter.1
 man/man3p/Mail::CheckUser.3p
-@dirrm man/man3p
+man/man3p/
