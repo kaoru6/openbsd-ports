@@ -1,4 +1,13 @@
 @comment $OpenBSD: PLIST,v 1.2 2000/09/15 12:08:20 camield Exp $
+@newgroup qmail:2850
+@newgroup nofiles:32750
+@newuser alias:2849:nofiles:daemon:&:/var/qmail/alias:/sbin/nologin
+@newuser qmaild:2850:nofiles:daemon:&:/var/qmail:/sbin/nologin
+@newuser qmaill:2851:nofiles:daemon:&:/var/qmail:/sbin/nologin
+@newuser qmailp:2852:nofiles:daemon:&:/var/qmail:/sbin/nologin
+@newuser qmailq:2853:qmail:daemon:&:/var/qmail:/sbin/nologin
+@newuser qmailr:2854:qmail:daemon:&:/var/qmail:/sbin/nologin
+@newuser qmails:2855:qmail:daemon:&:/var/qmail:/sbin/nologin
 @group qmail
 @comment qmailq:qmail 04711
 @owner qmailq
@@ -198,7 +207,7 @@ setup/dnsptr
 setup/hostname
 setup/ipmeprint
 setup/install
-@dirrm bin
-@dirrm boot
-@dirrm doc
-@dirrm setup
+bin/
+boot/
+doc/
+setup/
