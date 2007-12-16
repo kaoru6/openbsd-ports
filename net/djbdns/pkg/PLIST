@@ -54,5 +54,5 @@ bin/walldns-conf
 @man man/man8/walldns.8
 share/djbdns/dnsroots.global
 @exec if [ -f /etc/%f ]; then echo "\n!! WARNING !!\t/etc/%f exists\n\t\tPlease verify with %D/%F" ; else /bin/cp %D/%F /etc; fi
-@dirrm share/djbdns
+share/djbdns/
 @unexec echo "Please remove /etc/dnsroots.global manually"
