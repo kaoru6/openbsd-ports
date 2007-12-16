@@ -8,12 +8,18 @@ bin/dist
 bin/folder
 bin/folders
 bin/forw
+@mode 4755
+@owner root
+@group wheel
 bin/inc
 bin/mark
 bin/mhmail
 bin/mhn
 bin/mhparam
 bin/mhpath
+@mode 4755
+@owner root
+@group wheel
 bin/msgchk
 bin/msh
 bin/next
@@ -58,6 +64,9 @@ lib/mh/rcvdist
 lib/mh/rcvdistcomps
 lib/mh/rcvpack
 lib/mh/rcvstore
+@mode 2755
+@owner root
+@group tty
 lib/mh/rcvtty
 lib/mh/replcomps
 lib/mh/scan.default
