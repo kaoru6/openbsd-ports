@@ -1,0 +1,197 @@
+@comment $OpenBSD$
+bin/g[
+bin/gbase64
+bin/gbasename
+bin/gcat
+bin/gchgrp
+bin/gchmod
+bin/gchown
+bin/gchroot
+bin/gcksum
+bin/gcomm
+bin/gcp
+bin/gcsplit
+bin/gcut
+bin/gdate
+bin/gdd
+bin/gdf
+bin/gdir
+bin/gdircolors
+bin/gdirname
+bin/gdu
+bin/gecho
+bin/genv
+bin/gexpand
+bin/gexpr
+bin/gfactor
+bin/gfalse
+bin/gfmt
+bin/gfold
+bin/ggroups
+bin/ghead
+bin/ghostid
+bin/ghostname
+bin/gid
+bin/ginstall
+bin/gjoin
+bin/gkill
+bin/glink
+bin/gln
+bin/glogname
+bin/gls
+bin/gmd5sum
+bin/gmkdir
+bin/gmkfifo
+bin/gmknod
+bin/gmv
+bin/gnice
+bin/gnl
+bin/gnohup
+bin/god
+bin/gpaste
+bin/gpathchk
+bin/gpinky
+bin/gpr
+bin/gprintenv
+bin/gprintf
+bin/gptx
+bin/gpwd
+bin/greadlink
+bin/grm
+bin/grmdir
+bin/gseq
+bin/gsha1sum
+bin/gsha224sum
+bin/gsha256sum
+bin/gsha384sum
+bin/gsha512sum
+bin/gshred
+bin/gshuf
+bin/gsleep
+bin/gsort
+bin/gsplit
+bin/gstat
+bin/gstty
+@comment @owner root
+@comment @group wheel
+@mode 4555
+@comment bin/gsu
+bin/gsum
+bin/gsync
+bin/gtac
+bin/gtail
+bin/gtee
+bin/gtest
+bin/gtouch
+bin/gtr
+bin/gtrue
+bin/gtsort
+bin/gtty
+bin/guname
+bin/gunexpand
+bin/guniq
+bin/gunlink
+bin/guptime
+bin/gusers
+bin/gvdir
+bin/gwc
+bin/gwho
+bin/gwhoami
+bin/gyes
+@info info/coreutils.info
+lib/charset.alias
+@man man/man1/gbase64.1
+@man man/man1/gbasename.1
+@man man/man1/gcat.1
+@man man/man1/gchgrp.1
+@man man/man1/gchmod.1
+@man man/man1/gchown.1
+@man man/man1/gchroot.1
+@man man/man1/gcksum.1
+@man man/man1/gcomm.1
+@man man/man1/gcp.1
+@man man/man1/gcsplit.1
+@man man/man1/gcut.1
+@man man/man1/gdate.1
+@man man/man1/gdd.1
+@man man/man1/gdf.1
+@man man/man1/gdir.1
+@man man/man1/gdircolors.1
+@man man/man1/gdirname.1
+@man man/man1/gdu.1
+@man man/man1/gecho.1
+@man man/man1/genv.1
+@man man/man1/gexpand.1
+@man man/man1/gexpr.1
+@man man/man1/gfactor.1
+@man man/man1/gfalse.1
+@man man/man1/gfmt.1
+@man man/man1/gfold.1
+@man man/man1/ggroups.1
+@man man/man1/ghead.1
+@man man/man1/ghostid.1
+@man man/man1/ghostname.1
+@man man/man1/gid.1
+@man man/man1/ginstall.1
+@man man/man1/gjoin.1
+@man man/man1/gkill.1
+@man man/man1/glink.1
+@man man/man1/gln.1
+@man man/man1/glogname.1
+@man man/man1/gls.1
+@man man/man1/gmd5sum.1
+@man man/man1/gmkdir.1
+@man man/man1/gmkfifo.1
+@man man/man1/gmknod.1
+@man man/man1/gmv.1
+@man man/man1/gnice.1
+@man man/man1/gnl.1
+@man man/man1/gnohup.1
+@man man/man1/god.1
+@man man/man1/gpaste.1
+@man man/man1/gpathchk.1
+@man man/man1/gpinky.1
+@man man/man1/gpr.1
+@man man/man1/gprintenv.1
+@man man/man1/gprintf.1
+@man man/man1/gptx.1
+@man man/man1/gpwd.1
+@man man/man1/greadlink.1
+@man man/man1/grm.1
+@man man/man1/grmdir.1
+@man man/man1/gseq.1
+@man man/man1/gsha1sum.1
+@man man/man1/gsha224sum.1
+@man man/man1/gsha256sum.1
+@man man/man1/gsha384sum.1
+@man man/man1/gsha512sum.1
+@man man/man1/gshred.1
+@man man/man1/gshuf.1
+@man man/man1/gsleep.1
+@man man/man1/gsort.1
+@man man/man1/gsplit.1
+@man man/man1/gstat.1
+@man man/man1/gstty.1
+@man man/man1/gsu.1
+@man man/man1/gsum.1
+@man man/man1/gsync.1
+@man man/man1/gtac.1
+@man man/man1/gtail.1
+@man man/man1/gtee.1
+@man man/man1/gtest.1
+@man man/man1/gtouch.1
+@man man/man1/gtr.1
+@man man/man1/gtrue.1
+@man man/man1/gtsort.1
+@man man/man1/gtty.1
+@man man/man1/guname.1
+@man man/man1/gunexpand.1
+@man man/man1/guniq.1
+@man man/man1/gunlink.1
+@man man/man1/guptime.1
+@man man/man1/gusers.1
+@man man/man1/gvdir.1
+@man man/man1/gwc.1
+@man man/man1/gwho.1
+@man man/man1/gwhoami.1
+@man man/man1/gyes.1
