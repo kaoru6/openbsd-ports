@@ -8,19 +8,11 @@ bin/dist
 bin/folder
 bin/folders
 bin/forw
-@mode 4755
-@owner root
-@group wheel
-bin/inc
 bin/mark
 bin/mhmail
 bin/mhn
 bin/mhparam
 bin/mhpath
-@mode 4755
-@owner root
-@group wheel
-bin/msgchk
 bin/msh
 bin/next
 bin/packf
@@ -40,6 +32,12 @@ bin/sortm
 bin/vmh
 bin/whatnow
 bin/whom
+@mode 4755
+@owner root
+@group wheel
+bin/inc
+bin/msgchk
+@mode
 lib/mh/MailAliases
 lib/mh/ap
 lib/mh/components
@@ -64,10 +62,6 @@ lib/mh/rcvdist
 lib/mh/rcvdistcomps
 lib/mh/rcvpack
 lib/mh/rcvstore
-@mode 2755
-@owner root
-@group tty
-lib/mh/rcvtty
 lib/mh/replcomps
 lib/mh/scan.default
 lib/mh/scan.mailx
@@ -78,6 +72,11 @@ lib/mh/slocal
 lib/mh/spost
 lib/mh/tmac.h
 lib/mh/viamail
+@mode 2755
+@owner root
+@group tty
+lib/mh/rcvtty
+@mode
 @man man/man1/ali.1
 @man man/man1/anno.1
 @man man/man1/bbc.1
