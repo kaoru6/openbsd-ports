@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+%%SHARED%%
+bin/ksba-config
+include/ksba.h
+@info info/ksba.info
+lib/libksba.a
+lib/libksba.la
+share/aclocal/
+share/aclocal/ksba.m4
