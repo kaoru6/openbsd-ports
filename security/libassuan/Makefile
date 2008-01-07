@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/21 06:00:11 steven Exp $
+# $OpenBSD$
 
 COMMENT=		IPC library used by GnuPG and gpgme
 
