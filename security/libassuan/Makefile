@@ -22,6 +22,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libassuan/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/libassuan/
 EXTRACT_SUFX=   .tar.bz2
 
+LIB_DEPENDS=		pth::devel/pth
+
 SEPARATE_BUILD=		simple
 
 CONFIGURE_STYLE=	gnu

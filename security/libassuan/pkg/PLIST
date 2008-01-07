@@ -2,6 +2,7 @@
 bin/libassuan-config
 include/assuan.h
 @info info/assuan.info
+lib/libassuan-pth.a
 lib/libassuan.a
 share/aclocal/
 share/aclocal/libassuan.m4
