@@ -6477,8 +6477,6 @@ share/ri/${REV}/system/Resolv/DNS/Requester/RequestError/
 share/ri/${REV}/system/Resolv/DNS/Requester/RequestError/cdesc-RequestError.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/Sender/
 share/ri/${REV}/system/Resolv/DNS/Requester/Sender/cdesc-Sender.yaml
-share/ri/${REV}/system/Resolv/DNS/Requester/Sender/new-c.yaml
-share/ri/${REV}/system/Resolv/DNS/Requester/Sender/recv-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/Sender/
 share/ri/${REV}/system/Resolv/DNS/Requester/TCP/Sender/cdesc-Sender.yaml
@@ -6496,7 +6494,6 @@ share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/new-c.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/UnconnectedUDP/sender-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/cdesc-Requester.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/close-i.yaml
-share/ri/${REV}/system/Resolv/DNS/Requester/delete-i.yaml
 share/ri/${REV}/system/Resolv/DNS/Requester/new-c.yaml
 share/ri/${REV}/system/Resolv/DNS/Resource/
 share/ri/${REV}/system/Resolv/DNS/Resource/%3d%3d-i.yaml
