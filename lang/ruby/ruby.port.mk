@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.11 2006/12/01 14:04:06 steven Exp $
+# $OpenBSD: ruby.port.mk,v 1.19 2008/06/14 23:40:35 landry Exp $
 
 # ruby module
 
@@ -10,6 +10,8 @@ MODRUBY_RUN_DEPENDS+=	::lang/ruby
 
 BUILD_DEPENDS+=		::lang/ruby
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
+
+CATEGORIES+=		lang/ruby
 
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
@@ -28,7 +30,7 @@ CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
 .elif ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
 
-BUILD_DEPENDS+=		::devel/ruby-gems
+BUILD_DEPENDS+=		:ruby-gems->=1.0.1:devel/ruby-gems
 MODRUBY_RUN_DEPENDS+=	::devel/ruby-gems
 NO_BUILD=	Yes
 
@@ -36,10 +38,16 @@ SUBST_VARS+=	DISTNAME
 
 GEM=		${LOCALBASE}/bin/gem
 GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
-GEM_FLAGS=	--local --rdoc --no-force
+GEM_FLAGS=	--local --rdoc --no-force --verbose
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
+
+# Ignore specified gem dependencies.
+GEM_SKIPDEPENDS?=
+.  if !empty(GEM_SKIPDEPENDS)
+GEM_FLAGS+=	--skip-dependencies "${GEM_SKIPDEPENDS}"
+.  endif
 
 .  if !target(do-extract)
 do-extract:
@@ -55,23 +63,9 @@ pre-fake:
 		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
 	@cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
 .  endif
+# Most gems need a custom do-regress target. 
 .  if !target(do-regress)
-# XXX gem errors out w/o unit tests to run and I have not found any gem
-# which actually supports tests
 NO_REGRESS=	Yes
-
-# a generic regress target might look sth like this
-#do-regress:
-#	@if [ ! -d ${WRKINST} ]; then \
-#		_CLEAN_FAKE=Yes; \
-#	fi; \
-#	mkdir -p ${WRKINST}${GEM_BASE}; \
-#	${SUDO} ${GEM} install ${GEM_FLAGS} --test \
-#		--install-dir ${WRKINST}${GEM_BASE} \
-#		${FULLDISTDIR}/${DISTFILES}; \
-#	if [ ! -z "$$_CLEAN_FAKE" ]; then \
-#		${SUDO} rm -fr ${WRKINST}; \
-#	fi
 .  endif
 .  if !target(do-install)
 do-install:

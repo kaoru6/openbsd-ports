@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.54 2007/02/13 23:47:13 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2008/07/25 20:25:59 sthen Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		"object oriented script language with threads"
-COMMENT-iconv=		"libiconv interface for ruby"
-COMMENT-gdbm=		"gdbm interface for ruby"
-COMMENT-tk=		"tk interface for ruby"
+COMMENT-main=		object oriented script language with threads
+COMMENT-iconv=		libiconv interface for ruby
+COMMENT-gdbm=		gdbm interface for ruby
+COMMENT-tk=		tk interface for ruby
 
-VERSION=		1.8.5
-DISTNAME=		ruby-${VERSION}
-SHARED_LIBS=		ruby 1.85
-PKGNAME-main=		${DISTNAME}p6
-PKGNAME-iconv=		ruby-iconv-${VERSION}p3
-PKGNAME-gdbm=		ruby-gdbm-${VERSION}p3
-PKGNAME-tk=		ruby-tk-${VERSION}p3
+VERSION=		1.8.6
+PATCHLEVEL=		114
+DISTNAME=		ruby-${VERSION}-p${PATCHLEVEL}
+SHARED_LIBS=		ruby 2.0
+PKGNAME-main=		ruby-${VERSION}.${PATCHLEVEL}p2
+PKGNAME-iconv=		ruby-iconv-${VERSION}.${PATCHLEVEL}p0
+PKGNAME-gdbm=		ruby-gdbm-${VERSION}.${PATCHLEVEL}p0
+PKGNAME-tk=		ruby-tk-${VERSION}.${PATCHLEVEL}p0
 
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.ruby-lang.org/
 
-MAINTAINER=		Mathieu Sauve-Frankel <msf@openbsd.org>
+MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # GPL/Artistic/BSD/Public Domain/Beer-Ware
 PERMIT_PACKAGE_CDROM=	Yes
@@ -76,7 +77,7 @@ LIB_DEPENDS-tk=		tk84:tk-8.4.*:x11/tk/8.4 \
 RUN_DEPENDS-tk=
 .endif
 
-REGRESS_DEPENDS=	::lang/ruby
+REGRESS_DEPENDS=	:${PKGNAME-main}:lang/ruby
 INSTALL_TARGET=		install install-doc
 REV=			1.8
 SUB=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
