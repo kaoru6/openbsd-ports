@@ -8,10 +8,10 @@ COMMENT-gdbm=		gdbm interface for ruby
 COMMENT-tk=		tk interface for ruby
 
 VERSION=		1.8.6
-PATCHLEVEL=		114
+PATCHLEVEL=		287
 DISTNAME=		ruby-${VERSION}-p${PATCHLEVEL}
 SHARED_LIBS=		ruby 2.0
-PKGNAME-main=		ruby-${VERSION}.${PATCHLEVEL}p2
+PKGNAME-main=		ruby-${VERSION}.${PATCHLEVEL}p0
 PKGNAME-iconv=		ruby-iconv-${VERSION}.${PATCHLEVEL}p0
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}.${PATCHLEVEL}p0
 PKGNAME-tk=		ruby-tk-${VERSION}.${PATCHLEVEL}p0
