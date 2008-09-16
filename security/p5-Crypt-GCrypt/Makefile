@@ -2,7 +2,7 @@
 
 COMMENT=	"Perl interface to the GNU Cryptographic library"
 
-DISTNAME=	Crypt-GCrypt-1.16
+DISTNAME=	Crypt-GCrypt-1.20
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
@@ -22,10 +22,5 @@ CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 			GCRYPTINCPATH=${LOCALBASE}/include
 
 NOT_FOR_ARCHS=      ${NO_SHARED_ARCHS}
-
-post-extract:
-	@rm -f ${WRKSRC}/._Makefile.PL
-	@rm -f ${WRKSRC}/._GCrypt.pm
-	@rm -f ${WRKSRC}/._GCrypt.xs
 
 .include <bsd.port.mk>
