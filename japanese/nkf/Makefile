@@ -9,8 +9,8 @@ DISTNAME=	nkf${VERSION:S/.//g}
 PKGNAME=	ja-nkf-${VERSION}
 CATEGORIES=	japanese textproc
 
-HOMEPAGE=	http://www01.tcp-ip.or.jp/~furukawa/nkf_utf8/
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=	http://sourceforge.jp/projects/nkf/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=nkf/20770/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
