@@ -2,7 +2,7 @@
 
 COMMENT=	handles various Japanese charsets
 
-DISTNAME=	Jcode-2.06
+DISTNAME=	Jcode-2.07
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters japanese
 MODULES=	cpan
