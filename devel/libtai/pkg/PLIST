@@ -14,7 +14,7 @@ lib/libtai.a
 @man man/man3/caltime.3
 @man man/man3/caltime_tai.3
 @man man/man3/leapsecs.3
-@mn man/man3/tai.3
+@man man/man3/tai.3
 @man man/man3/tai_now.3
 @man man/man3/tai_pack.3
 @man man/man3/taia.3
