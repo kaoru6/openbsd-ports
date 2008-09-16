@@ -20,5 +20,6 @@ lib/libtai.a
 @man man/man3/taia.3
 @man man/man3/taia_now.3
 @man man/man3/taia_pack.3
-@sample share/libtai/leapsecs.dat
+share/libtai/leapsecs.dat
+@sample ${SYSCONFDIR}/leapsecs.dat
 share/libtai/

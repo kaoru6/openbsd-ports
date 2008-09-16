@@ -18,6 +18,7 @@ WANTLIB=	c
 
 ALL_TARGET=	default
 
+
 HDRLIST=	caldate.h caltime.h leapsecs.h tai.h taia.h
 
 MANLIST=	tai.3 tai_now.3 tai_pack.3 taia.3 taia_now.3 taia_pack.3 \
@@ -40,6 +41,7 @@ post-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtai.a ${PREFIX}/lib/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libtai/
+	${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${PREFIX}/share/libtai/
 	(cd ${WRKSRC}; ${INSTALL_DATA} ${HDRLIST} ${PREFIX}/include/; \
 		       ${INSTALL_MAN} ${MANLIST} ${PREFIX}/man/man3/; \
 		       ${INSTALL_PROGRAM} ${PROGLIST} ${PREFIX}/bin/)
