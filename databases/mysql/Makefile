@@ -1,29 +1,24 @@
-# $OpenBSD: Makefile,v 1.132 2007/08/08 21:33:51 robert Exp $
-# Uses pthreads
-
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
-BROKEN=		"gen_lex_hash hangs"
-.endif
+# $OpenBSD: Makefile,v 1.142 2008/07/25 20:25:59 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.45
+VERSION=	5.0.51a
 DISTNAME=	mysql-${VERSION}
-PKGNAME-main=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}
+PKGNAME-main=	mysql-client-${VERSION}p0
+PKGNAME-server=	mysql-server-${VERSION}p1
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
-SHARED_LIBS +=	mysqlclient_r        18.0     # .15.0
-SHARED_LIBS +=	mysqlclient          18.0     # .15.0
+SHARED_LIBS +=	mysqlclient_r        19.0     # .15.0
+SHARED_LIBS +=	mysqlclient          19.0     # .15.0
 
 MASTER_SITES=	http://mysql.serenitynet.com/Downloads/$V/
 
 HOMEPAGE=	http://www.mysql.com/
 
-MAINTAINER=	Brad Smith <brad@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -53,17 +48,17 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --with-extra-charsets=ujis,sjis,eucjpms,cp932,utf8,ucs2
 CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
+		 --with-archive-storage-engine \
 		 --with-big-tables \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
+		 --with-federated-storage-engine \
 		 --with-libwrap \
 		 --with-low-memory \
 		 --with-mysqld-user="_mysql" \
 		 --with-openssl \
 		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
-		 --with-vio \
 		 --without-bench \
 		 --without-debug \
 		 --without-docs \
@@ -96,6 +91,8 @@ WANTLIB-main=		${WANTLIB} ncurses readline
 
 PKG_ARCH-tests=	*
 WANTLIB-tests=
+
+MAKE_FLAGS=	mkdir_p='mkdir -p --'
 
 post-install:
 	cd ${PREFIX}/lib && \
