@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-clients,v 1.8 2003/02/12 17:09:03 naddy Exp $
-@lib lib/libecpg.so.4.1
-@lib lib/libecpg_compat.so.1.2
-@lib lib/libpgtypes.so.1.2
-@lib lib/libpq.so.3.1
