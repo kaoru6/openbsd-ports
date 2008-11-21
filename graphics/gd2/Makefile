@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.46 2006/08/02 10:10:35 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2007/09/15 20:09:40 simon Exp $
 
-COMMENT=	"library for dynamic creation of images"
+COMMENT=	library for dynamic creation of images
 
-DISTNAME=	gd-2.0.34
-PKGNAME=	${DISTNAME}
-SHARED_LIBS=	gd	20.34
+DISTNAME=	gd-2.0.35
+SHARED_LIBS=	gd	20.35
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.boutell.com/gd/http/
+MASTER_SITES=	${HOMEPAGE}releases/
 
-HOMEPAGE=	http://www.boutell.com/gd/
+HOMEPAGE=	http://www.libgd.org/
 
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png
 
 MODULES=	converters/libiconv
 
-WANTLIB=	c m z
+WANTLIB=	c expat m z
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -30,8 +29,8 @@ FLAVOR?=	no_x11
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x --without-freetype --without-fontconfig
-.else
 WANTLIB+=	freetype fontconfig
+.else
 USE_X11=	Yes
 .endif
 USE_LIBTOOL=	Yes
