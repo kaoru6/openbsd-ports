@@ -29,8 +29,8 @@ FLAVOR?=	no_x11
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x --without-freetype --without-fontconfig
-WANTLIB+=	freetype fontconfig
 .else
+WANTLIB+=	freetype fontconfig
 USE_X11=	Yes
 .endif
 USE_LIBTOOL=	Yes
