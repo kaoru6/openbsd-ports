@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.19 2008/06/14 23:40:35 landry Exp $
+# $OpenBSD: ruby.port.mk,v 1.21 2008/09/28 15:47:27 bernd Exp $
 
 # ruby module
 
@@ -7,6 +7,7 @@ MODRUBY_REV=		1.8
 RUBY=			${LOCALBASE}/bin/ruby
 
 MODRUBY_RUN_DEPENDS+=	::lang/ruby
+MODRUBY_LIB_DEPENDS+=	ruby.>=2::lang/ruby
 
 BUILD_DEPENDS+=		::lang/ruby
 RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
@@ -30,7 +31,7 @@ CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
 .elif ${CONFIGURE_STYLE:L:Mgem}
 EXTRACT_SUFX=	.gem
 
-BUILD_DEPENDS+=		:ruby-gems->=1.0.1:devel/ruby-gems
+BUILD_DEPENDS+=		:ruby-gems->=1.3.0:devel/ruby-gems
 MODRUBY_RUN_DEPENDS+=	::devel/ruby-gems
 NO_BUILD=	Yes
 
@@ -38,7 +39,7 @@ SUBST_VARS+=	DISTNAME
 
 GEM=		${LOCALBASE}/bin/gem
 GEM_BASE=	${PREFIX}/lib/ruby/gems/${MODRUBY_REV}
-GEM_FLAGS=	--local --rdoc --no-force --verbose
+GEM_FLAGS=	--local --rdoc --no-force --verbose --default-source-index
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
