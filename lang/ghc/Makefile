@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2008/07/15 20:08:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2008/10/02 19:50:52 kili Exp $
 # 
 # Ancient versions based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -8,11 +8,10 @@ COMMENT-main=		compiler for the functional language Haskell
 COMMENT-doc=		documentation for GHC
 
 DISTNAME=		ghc-${MODGHC_VER}
-PKGNAME-main=		ghc-${MODGHC_VER}p1
-PKGNAME-doc=		ghc-doc-${MODGHC_VER}
+PKGNAME-main=		ghc-${MODGHC_VER}p2
+PKGNAME-doc=		ghc-doc-${MODGHC_VER}p0
 CATEGORIES=		lang
 HOMEPAGE=		http://www.haskell.org/ghc/
-MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regress.
@@ -89,7 +88,8 @@ SUBST_VARS=		MODGHC_VER
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu dest autoconf
+AUTOCONF_VERSION=	2.57
 CONFIGURE_ARGS+=	--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib
 
