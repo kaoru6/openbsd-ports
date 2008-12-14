@@ -2,7 +2,7 @@
 
 COMMENT=	utility classes and extensions for rails framework 
 
-DISTNAME=       activesupport-2.1.0
+DISTNAME=       activesupport-2.2.2
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=     devel
 
