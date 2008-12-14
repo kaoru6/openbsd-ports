@@ -2,7 +2,7 @@
 
 COMMENT=	package management framework for the Ruby language
 
-V=		1.3.0
+V=		1.3.1
 DISTNAME=	rubygems-$V
 PKGNAME= 	ruby-gems-$V
 CATEGORIES=	devel
