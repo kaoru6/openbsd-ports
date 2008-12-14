@@ -964,7 +964,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Text/Format/tabstop%3d-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Text/Format/unexpand-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Text/cdesc-Text.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
-lib/ruby/gems/${MODRUBY_REV}/gems/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGELOG
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/MIT-LICENSE

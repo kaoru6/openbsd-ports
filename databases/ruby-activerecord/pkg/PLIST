@@ -1491,7 +1491,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/YAML/Omap/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/YAML/Omap/cdesc-Omap.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/YAML/cdesc-YAML.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
-lib/ruby/gems/${MODRUBY_REV}/gems/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGELOG
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README

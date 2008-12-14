@@ -3130,7 +3130,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/XmlSimple/xml_in_string-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/XmlSimple/xml_out-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/XmlSimple/xml_out-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
-lib/ruby/gems/${MODRUBY_REV}/gems/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGELOG
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
