@@ -2,7 +2,7 @@
 
 COMMENT=	easy email delivery and testing for ruby
 
-DISTNAME=	actionmailer-2.1.0
+DISTNAME=	actionmailer-2.2.2
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	mail
 
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=actionmailer/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS= 	:ruby-actionpack-2.1.0:devel/ruby-actionpack
+RUN_DEPENDS= 	:ruby-actionpack-2.2.2:devel/ruby-actionpack
 
 CONFIGURE_STYLE=ruby gem
 

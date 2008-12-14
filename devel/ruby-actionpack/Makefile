@@ -2,7 +2,7 @@
 
 COMMENT=	eases web-request routing, handling, and response
 
-DISTNAME=       actionpack-2.1.0
+DISTNAME=       actionpack-2.2.2
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=     devel
 
@@ -17,7 +17,7 @@ MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=actionpack/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-activesupport-2.1.0:devel/ruby-activesupport
+RUN_DEPENDS=	:ruby-activesupport-2.2.2:devel/ruby-activesupport
 
 CONFIGURE_STYLE=ruby gem
 
