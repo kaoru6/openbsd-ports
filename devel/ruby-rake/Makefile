@@ -2,8 +2,8 @@
 
 COMMENT=	ruby make
 
-DISTNAME=	rake-0.8.1
-PKGNAME=	ruby-${DISTNAME}p0
+DISTNAME=	rake-0.8.3
+PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	devel
 
 # MIT License
