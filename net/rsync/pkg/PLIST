@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.11 2009/01/06 16:34:34 naddy Exp $
+@bin bin/rsync
+@man man/man1/rsync.1
+@man man/man5/rsyncd.conf.5
+share/doc/rsync/
+share/doc/rsync/tech_report.tex
+@cwd ${SYSCONFDIR}
+@extra rsyncd.conf
