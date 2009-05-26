@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.64 2007/05/31 10:19:00 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.68 2008/02/29 12:25:22 jakob Exp $
 
-COMMENT=	"fast, secure sendmail replacement"
+COMMENT=	fast, secure sendmail replacement
 
 DISTNAME?=	postfix-${VERSION}
 .if defined(PATCHLEVEL)
@@ -24,14 +24,15 @@ HOMEPAGE=	http://www.postfix.org/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"cannot be sold, see section 4 of license"
+PERMIT_PACKAGE_CDROM=	cannot be sold, see section 4 of license
 PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	"cannot be sold, see section 4 of license"
+PERMIT_DISTFILES_CDROM=	cannot be sold, see section 4 of license
 PERMIT_DISTFILES_FTP=	yes
 
 MAKE_DEBUG?=
 MAKE_CCARGS?=	-DFD_SETSIZE=2048
 MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
+MAKE_CCARGS+=	-DDEF_DATA_DIR=\"/var/postfix\"
 MAKE_CCARGS+=	-DUSE_TLS
 MAKE_AUXLIBS+=	-lssl -lcrypto
 
@@ -76,7 +77,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
 .if ${FLAVOR:L:Mdb4}
-LIB_DEPENDS+=	lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS+=	lib/db4/db.>=4:db-4.*:databases/db/v4
 MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
 .endif
@@ -96,6 +97,8 @@ do-install:
 		mail_owner=_postfix \
 		setgid_group=_postdrop \
 		install_root=${WRKINST} \
+		data_directory=/var/postfix \
+		queue_directory=/var/spool/postfix \
 		daemon_directory=${TRUEPREFIX}/libexec/postfix \
 		command_directory=${TRUEPREFIX}/sbin \
 		sendmail_path=${TRUEPREFIX}/sbin/sendmail \
@@ -112,6 +115,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${PREFIX}/man/man1
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
 	@mv ${WRKINST}${SYSCONFDIR}/postfix/* ${PREFIX}/share/examples/postfix
+	@rm -fr ${WRKINST}/var/postfix
 	@rm -fr ${WRKINST}/var/spool/postfix
 	@chown -h ${BINOWN}:${BINGRP} ${PREFIX}/{sbin,libexec/postfix}/*
 	@chown -R ${MANOWN}:${MANGRP} ${PREFIX}/man
