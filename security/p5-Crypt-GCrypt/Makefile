@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
-LIB_DEPENDS=	gcrypt::security/libgcrypt
+LIB_DEPENDS=	gcrypt.>=14::security/libgcrypt
 WANTLIB=	gcrypt
 
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
