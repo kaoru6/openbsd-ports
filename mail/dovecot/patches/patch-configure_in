@@ -1,0 +1,95 @@
+$OpenBSD: patch-configure_in,v 1.16 2009/01/26 14:47:02 sthen Exp $
+--- configure.in.orig	Thu Jan 15 18:02:47 2009
++++ configure.in	Fri Jan 16 14:55:25 2009
+@@ -13,6 +13,7 @@ AC_PROG_CXX # lucene plugin needs this
+ AC_HEADER_STDC
+ AC_C_INLINE
+ AC_PROG_LIBTOOL
++LIBS="${LIBS} -liconv"
+ AM_ICONV
+ 
+ AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h malloc.h inttypes.h \
+@@ -1797,74 +1798,15 @@ fi
+ 
+ have_gssapi=no
+ if test $want_gssapi != no; then
+-	AC_CHECK_PROG(KRB5CONFIG, krb5-config, YES, NO)
+-	if test $KRB5CONFIG = YES; then
+-		if ! krb5-config --version gssapi 2>/dev/null > /dev/null; then
+-		  # krb5-config doesn't support gssapi.
+-		  KRB5_LIBS="`krb5-config --libs`"
+-		  KRB5_CFLAGS=`krb5-config --cflags`
+-		  AC_CHECK_LIB(gss, gss_acquire_cred, [
+-		    # Solaris
+-		    KRB5_LIBS="$KRB5_LIBS -lgss"
+-		  ], [
+-		    # failed
+-		    KRB5_LIBS=
+-		  ], $KRB5_LIBS)
+-		else
+-		  KRB5_LIBS=`krb5-config --libs gssapi`
+-		  KRB5_CFLAGS=`krb5-config --cflags gssapi`
+-		fi
+-		if test "$KRB5_LIBS" != ""; then
+-			AC_SUBST(KRB5_LIBS)
+-			AC_SUBST(KRB5_CFLAGS)
+-			
+-			# Although krb5-config exists, all systems still don't
+-			# have gssapi.h
+-			old_CFLAGS=$CFLAGS
+-			CFLAGS="$CFLAGS $KRB5_CFLAGS"
+-			AC_CHECK_HEADER([gssapi/gssapi.h], [
+-				AC_DEFINE(HAVE_GSSAPI_GSSAPI_H,, GSSAPI headers in gssapi/gssapi.h)
+-				have_gssapi=yes
+-			])
+-			AC_CHECK_HEADER([gssapi.h], [
+-				AC_DEFINE(HAVE_GSSAPI_H,, GSSAPI headers in gssapi.h)
+-				have_gssapi=yes
+-			])
+-			if test $have_gssapi = yes; then
+-				AC_DEFINE(HAVE_GSSAPI,, Build with GSSAPI support)
+-				AC_CHECK_HEADERS(gssapi/gssapi_ext.h gssapi_krb5.h gssapi/gssapi_krb5.h)
+-				AC_CHECK_LIB(gss, __gss_userok, [
+-					AC_DEFINE(HAVE___GSS_USEROK,,
+-						Define if you have __gss_userok())
+-					KRB5_LIBS="$KRB5_LIBS -lgss"
+-				],, $KRB5_LIBS)
+-
+-				# MIT has a #define for Heimdal acceptor_identity, but it's way too
+-				# difficult to test for it..
+-				old_LIBS=$LIBS
+-				LIBS="$LIBS $KRB5_LIBS"
+-				AC_CHECK_FUNCS(gsskrb5_register_acceptor_identity krb5_gss_register_acceptor_identity)
+-				LIBS=$old_LIBS
+-
+-				if test x$want_gssapi_plugin != xyes; then
+-				  AUTH_LIBS="$AUTH_LIBS $KRB5_LIBS"
+-				  AUTH_CFLAGS="$AUTH_CFLAGS $KRB5_CFLAGS"
+-				  AC_DEFINE(BUILTIN_GSSAPI,, GSSAPI support is built in)
+-				else
+-				  have_gssapi_plugin=yes
+-				fi
+-			else
+-			  if test $want_gssapi = yes; then
+-			    AC_ERROR([Can't build with GSSAPI support: gssapi.h not found])
+-			  fi
+-			fi
+-			CFLAGS=$old_CFLAGS
+-		fi
+-	else
+-	  if test $want_gssapi = yes; then
+-	    AC_ERROR([Can't build with GSSAPI support: krb5-config not found])
+-	  fi
+-	fi
++	# no krb5-config on OpenBSD, bring in the necessary libs and includes
++	# manually
++	AC_CHECK_HEADER([kerberosV/gssapi.h], [
++		AC_DEFINE(HAVE_GSSAPI,, Build with GSSAPI support)
++		AC_DEFINE(HAVE_GSSAPI_H,, Build with GSSAPI support)
++		AC_DEFINE(HAVE_GSSKRB5_REGISTER_ACCEPTOR_IDENTITY,, Have the gsskrb5_register_acceptor_identity function)
++		have_gssapi=yes
++	])
++	AUTH_LIBS="$LIBS -lkrb5 -lgssapi -lcrypto"
+ fi
+ AM_CONDITIONAL(GSSAPI_PLUGIN, test "$have_gssapi_plugin" = "yes")
+ 
