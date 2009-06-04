@@ -2,7 +2,7 @@
 
 COMMENT=	"Perl interface to the GNU Cryptographic library"
 
-DISTNAME=	Crypt-GCrypt-1.20
+DISTNAME=	Crypt-GCrypt-1.21
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 
