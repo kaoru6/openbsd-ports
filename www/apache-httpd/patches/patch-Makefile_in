@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile_in,v 1.5 2008/09/02 22:05:23 bernd Exp $
+--- Makefile.in.orig	Thu Jul 24 12:22:37 2008
++++ Makefile.in	Thu Jul 24 12:24:01 2008
+@@ -48,6 +48,8 @@ install-conf:
+ 	    			sed -e 's#@@ServerRoot@@#$(prefix)#g' \
+ 	    				-e 's#@@Port@@#$(PORT)#g' \
+ 	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
++					-e 's#@@User@@#$(rel_user)#g' \
++					-e 's#@@Group@@#$(rel_group)#g' \
+ 	    				-e '/@@LoadModule@@/d' \
+ 	    				< $$i; \
+ 	    		else \
+@@ -55,6 +57,8 @@ install-conf:
+ 	    				-e 's#@@ServerRoot@@#$(prefix)#g' \
+ 	    				-e 's#@@Port@@#$(PORT)#g' \
+ 	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
++					-e 's#@@User@@#$(rel_user)#g' \
++					-e 's#@@Group@@#$(rel_group)#g' \
+ 	    				-e 'p' \
+ 	    				< $$i; \
+ 	    			for j in $(DSO_MODULES) "^EOL^"; do \
+@@ -67,6 +71,8 @@ install-conf:
+ 	    				-e 's#@@ServerRoot@@#$(prefix)#g' \
+ 	    				-e 's#@@Port@@#$(PORT)#g' \
+ 	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
++					-e 's#@@User@@#$(rel_user)#g' \
++					-e 's#@@Group@@#$(rel_group)#g' \
+ 	    				< $$i; \
+ 	    		fi \
+ 	    	) > $(DESTDIR)$(sysconfdir)/original/$$i; \

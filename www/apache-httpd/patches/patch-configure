@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.5 2008/09/02 22:05:23 bernd Exp $
+--- configure.orig	Tue Jun 10 21:18:00 2008
++++ configure	Thu Jul 24 12:22:14 2008
+@@ -2816,7 +2816,7 @@ do
+   ap_last="${ap_cur}"
+   ap_cur=`eval "echo ${ap_cur}"`
+ done
+-exp_sysconfdir="${ap_cur}"
++exp_sysconfdir=%%CONFDIR%%
+ 
+ 
+   APACHE_VAR_SUBST="$APACHE_VAR_SUBST exp_sysconfdir"
