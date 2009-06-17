@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.142 2008/07/25 20:25:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2009/02/17 10:46:59 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite)
 
-VERSION=	5.0.51a
+VERSION=	5.0.77
 DISTNAME=	mysql-${VERSION}
-PKGNAME-main=	mysql-client-${VERSION}p0
-PKGNAME-server=	mysql-server-${VERSION}p1
+PKGNAME-main=	mysql-client-${VERSION}
+PKGNAME-server=	mysql-server-${VERSION}
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.0
-SHARED_LIBS +=	mysqlclient_r        19.0     # .15.0
-SHARED_LIBS +=	mysqlclient          19.0     # .15.0
+MASTER_SITES=	${MASTER_SITES_MYSQL:=Downloads/$V/}
 
-MASTER_SITES=	http://mysql.serenitynet.com/Downloads/$V/
+SHARED_LIBS +=	mysqlclient_r		19.0
+SHARED_LIBS +=	mysqlclient		19.0
 
 HOMEPAGE=	http://www.mysql.com/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -46,7 +46,8 @@ VMEM_WARNING=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.59
+# Should be 2.63
+AUTOCONF_VERSION= 2.62
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \
@@ -92,17 +93,14 @@ WANTLIB-main=		${WANTLIB} ncurses readline
 PKG_ARCH-tests=	*
 WANTLIB-tests=
 
-MAKE_FLAGS=	mkdir_p='mkdir -p --'
-
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
 	cd ${PREFIX}/lib && \
 		ln -sf mysql/libmysqlclient.so.${LIBmysqlclient_VERSION} . && \
 		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} .
-	sed -e s,@PREFIX@,${TRUEPREFIX},g ${FILESDIR}/README.OpenBSD > \
-		${WRKBUILD}/README.OpenBSD
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
+	cp ${FILESDIR}/README.OpenBSD ${WRKBUILD}/README.OpenBSD
+	${SUBST_CMD} ${WRKBUILD}/README.OpenBSD
 	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/mysql
-	${INSTALL_DATA_DIR} ${PREFIX}/info
 	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 
 do-regress:
