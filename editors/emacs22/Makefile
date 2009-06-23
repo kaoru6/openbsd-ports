@@ -1,72 +1,87 @@
-# $OpenBSD: Makefile,v 1.35 2007/02/14 16:55:28 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/02/18 12:16:15 jasper Exp $
 
-.if ${MACHINE_ARCH} == "hppa"
-BROKEN=			"hangs indefinitely until machine panics/hangs"
-.endif
+COMMENT-main=		GNU editor: extensible, customizable, self-documenting
+COMMENT-el=		elisp sources for those who want to read/modify them
 
-COMMENT=		"GNU editor: extensible, customizable, self documenting"
-#COMMENT-el=		"elisp sources for those who want to read/modify them"
-#COMMENT-leim=		"Library of Emacs Input Methods"
-
-VERSION=		22.1
+VERSION=		22.2
 DISTNAME=		emacs-${VERSION}
-#PKGNAME-main=		${DISTNAME}
-#FULLPKGNAME-el=		emacs-el-${VERSION}
-#FULLPKGNAME-leim=	emacs-leim-${VERSION}
+PKGNAME-main=		emacs-${VERSION}p2
+FULLPKGNAME-el=		emacs-el-${VERSION}p0
+FULLPKGPATH-el=		editors/emacs22,-el
 
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.gnu.org/software/emacs/
 
-MAINTAINER=		Rich Cannings <cannings@openbsd.org>
+MAINTAINER=		Eric Faurot <eric@openbsd.org>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
-#DISTFILES=		emacs-${VERSION}a.tar.gz leim-${VERSION}.tar.gz
 
-#MULTI_PACKAGES=		-main -el
+MULTI_PACKAGES=		-main -el
 
-FLAVORS=		no_x11
-FLAVOR?=		no_x11
+USE_GMAKE=		Yes
+
+FLAVORS=		gtk no_x11
+FLAVOR?=
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-mule
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS=		${GCCARCH} --with-pop --localstatedir=/var
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \
-			LDFLAGS="${ELF_TOOLCHAIN:L:S/yes/-Z/:S/no//} \
-				 -L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 # Disable propolice on powerpc due to gcc3+propolice bug.
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fno-stack-protector"
 .endif
 
-MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"
+MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
+			LOGNAME="${SHAREOWN}"
 
 SUBST_VARS=		GCCARCH VERSION
 
-WANTLIB=		c m ncurses ossaudio
+WANTLIB-main=		c m ncurses ossaudio
+
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=	--with-x=no
+.if ${FLAVOR:L:Mgtk}
+ERRORS=			"Fatal: gtk and no_x11 flavors are mutually exclusive"
+.endif
+CONFIGURE_ARGS+=	--without-x
+
+.elif ${FLAVOR:L:Mgtk}
+CONFIGURE_ARGS+=	--with-gtk
+USE_X11=		Yes
+LIB_DEPENDS-main+=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+			jpeg::graphics/jpeg \
+			png::graphics/png \
+			tiff::graphics/tiff \
+			ungif::graphics/libungif
+WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
+			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
+			atk-1.0 cairo expat fontconfig freetype glib-2.0 \
+			glitz gmodule-2.0 gobject-2.0 iconv intl pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0 pixman-1 pthread z
 .else
-USE_X11=Yes
-LIB_DEPENDS=		ungif.>=5::graphics/libungif \
-			jpeg.>=62::graphics/jpeg \
-			png.>=2::graphics/png \
-			tiff.>=35::graphics/tiff
-WANTLIB+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
+CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
+USE_X11=		Yes
+LIB_DEPENDS-main=	jpeg::graphics/jpeg \
+			png::graphics/png \
+			tiff::graphics/tiff \
+			ungif::graphics/libungif 
+WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 .endif
 
-#RUN_DEPENDS=		:emacs-${VERSION}*:${BUILD_PKGPATH}
-#RUN_DEPENDS-main=
-
-#PKG_ARCH-el=		*
+RUN_DEPENDS-el=		:emacs-${VERSION}*:${PKGPATH}
+PKG_ARCH-el=		*
 
 .include <bsd.port.mk>
