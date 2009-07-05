@@ -1,4 +1,8 @@
+# $OpenBSD$
+
 COMMENT=	"Unicode conversion library for Ruby"
+
+SHARED_ONLY=	Yes
 
 DISTNAME=	uconv-0.4.12
 PKGNAME=	ruby-${DISTNAME}
@@ -15,7 +19,7 @@ LIB_DEPENDS+=		ruby.>=1.84::lang/ruby
 
 CONFIGURE_STYLE=	extconf
 
-# Ruby
+# Ruby license
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
