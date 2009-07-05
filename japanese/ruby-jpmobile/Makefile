@@ -1,3 +1,5 @@
+# $OpenBSD$
+
 COMMENT=	"Rails plugin for Japanese mobile-phones"
 
 DISTNAME=	jpmobile-0.0.3
