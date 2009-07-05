@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+SHARED_ONLY=	Yes
+
 COMMENT=	"Perl interface to the GNU Cryptographic library"
 
 DISTNAME=	Crypt-GCrypt-1.21
