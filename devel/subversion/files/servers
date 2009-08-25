@@ -1,0 +1,4 @@
+# $OpenBSD$
+
+[global]
+store-plaintext-passwords=no

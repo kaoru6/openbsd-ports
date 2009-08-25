@@ -136,8 +136,8 @@ share/examples/subversion/client-side/svn2cl/svn2html.css
 share/examples/subversion/client-side/svn2cl/svn2html.xsl
 share/examples/subversion/client-side/svn_apply_autoprops.py
 share/examples/subversion/client-side/svn_export_empty_files.py
-share/examples/subversion/config
-@sample ${SYSCONFDIR}/subversion/config
+share/examples/subversion/servers
+@sample ${SYSCONFDIR}/subversion/servers
 share/examples/subversion/dumpprops.py
 share/examples/subversion/get-location-segments.py
 share/examples/subversion/getfile.py

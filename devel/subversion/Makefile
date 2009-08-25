@@ -7,7 +7,7 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	gnome-keyring support for subversion
 
-VERSION=		1.6.4
+VERSION=		1.6.5
 DISTNAME=		subversion-${VERSION}
 PKGNAME=		${DISTNAME}
 PKGNAME-main=		${DISTNAME}
@@ -142,8 +142,6 @@ WANTLIB-main+=	pthread
 CFLAGS+=	-pthread
 .endif
 
-# BSD make cannot build target autogen-swig to regenerate bindings
-USE_GMAKE=	Yes
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.62
@@ -166,10 +164,6 @@ CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2 \
 CONFIGURE_ARGS+=--without-apxs
 .endif
 
-.if !${FLAVOR:L:Mno_gnome-keyring}
-CONFIGURE_ARGS+=--with-gnome-keyring
-.endif
-
 REGRESS_DEPENDS=::lang/python/${MODPY_VERSION}
 MODPY_VERSION?=	2.5
 SUBST_VARS+=	LOCALBASE SO_VERSION
@@ -182,6 +176,11 @@ pre-configure:
 		${WRKSRC}/subversion/libsvn_subr/auth.c
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
+
+.if !${FLAVOR:L:Mno_gnome-keyring}
+CONFIGURE_ARGS+=--with-gnome-keyring
+REGRESS_DEPENDS+=:${PKGNAME-gnome-keyring}:devel/subversion,-gnome-keyring
+.endif
 
 .if !${FLAVOR:L:Mno_bindings}
 REGRESS_DEPENDS+=	:${PKGNAME-python}:devel/subversion,-python \
@@ -232,8 +231,8 @@ post-install:
 		${ALL_FAKE_FLAGS} install-swig-rb
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/
-	${INSTALL_DATA} ${FILESDIR}/config \
-			${PREFIX}/share/examples/subversion/config
+	${INSTALL_DATA} ${FILESDIR}/servers \
+			${PREFIX}/share/examples/subversion/servers
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/client-side
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/server-side
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts
