@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2009/03/18 14:34:10 pea Exp $
+# $OpenBSD: Makefile,v 1.120.2.2 2009/12/16 04:25:58 william Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -20,7 +20,7 @@ SHARED_LIBS=	ecpg		7.0 \
 
 HOMEPAGE=	http://www.postgresql.org/
 
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
