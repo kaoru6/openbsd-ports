@@ -1,0 +1,11 @@
+To completely uninstall this package you need to remove the following
+line from ${SYSCONFDIR}/apache2/httpd2.conf
+
+	LoadModule python_module ${PREFIX}/lib/apache2/mod_python.so
+
+And revert the HTTPD line of ${PREFIX}/sbin/apachectl2 to:
+
+	HTTPD='/usr/local/sbin/httpd2'
+
+Do not do this if you plan on re-installing this package at some future
+time.

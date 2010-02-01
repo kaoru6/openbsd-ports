@@ -1,0 +1,12 @@
+Before you can use ap2-mod_python, you need to enable it on your
+Apache2 configuration.
+
+Edit ${SYSCONFDIR}/apache2/httpd2.conf and add the following line:
+
+	LoadModule python_module ${PREFIX}/lib/apache2/mod_python.so
+
+Edit ${PREFIX}/sbin/apachectl2 and change the line that defines HTTPD to:
+
+	HTTPD='env LD_PRELOAD=/usr/lib/libpthread.so.8.0 /usr/local/sbin/httpd2'
+
+Restart your httpd2 for changes to make effect.
