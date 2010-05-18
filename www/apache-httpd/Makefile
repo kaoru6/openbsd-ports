@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/05/15 15:46:58 claudio Exp $
+# $OpenBSD: Makefile,v 1.22 2009/12/01 13:38:23 bernd Exp $
 
 COMMENT=	apache HTTP server
 
-V=		2.2.11
-PKGNAME=	apache-httpd-${V}p0
+V=		2.2.14
+PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
 
 CATEGORIES=	www net
@@ -30,7 +30,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
 WANTLIB+=		asn1 com_err gssapi krb5 sasl2
 LIB_DEPENDS+=		ldap,lber::databases/openldap
-LIB_DEPENDS+=		aprutil-1.>=2:apr-util-mt-*-ldap:devel/apr-util,ldap,mt
+LIB_DEPENDS+=		aprutil-1-mt.>=2:apr-util-mt-*-ldap:devel/apr-util,ldap,mt
 .else
 LIB_DEPENDS+=		aprutil-1-mt.>=2:apr-util-mt-*-!ldap:devel/apr-util,mt
 .endif
