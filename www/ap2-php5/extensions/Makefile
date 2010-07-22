@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.57.2.1 2010/05/27 03:55:15 william Exp $
 
-FULLPKGNAME-main=	php5-extensions-${V}
-FULLPKGPATH-main=	www/php5/extensions,-main
+FULLPKGNAME-main=	ap2-php5-extensions-${V}
+FULLPKGPATH-main=	www/ap2-php5/extensions,-main
 COMMENT-main=		informational package about PHP5 extensions
 
 MULTI_PACKAGES=	-main
@@ -93,11 +93,11 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 
 . if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
-FULLPKGNAME-gd=		php5-gd-${V}-no_x11
-FULLPKGPATH-gd=		www/php5/extensions,-gd,no_x11
+FULLPKGNAME-gd=		ap2-php5-gd-${V}-no_x11
+FULLPKGPATH-gd=		www/ap2-php5/extensions,-gd,no_x11
 . else
 USE_X11=		yes
-FULLPKGNAME-gd=		php5-gd-${V}
+FULLPKGNAME-gd=		ap2-php5-gd-${V}
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
 WANTLIB-gd+=		X11 Xpm freetype
 . endif
@@ -392,9 +392,9 @@ WANTLIB-xsl=		${WANTLIB} iconv xml2 z
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}p0
-FULLPKGPATH${i} ?=	www/php5/extensions,${i}
-RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
+FULLPKGNAME${i} ?=	ap2-php5${i}-${V}p0
+FULLPKGPATH${i} ?=	www/ap2-php5/extensions,${i}
+RUN_DEPENDS${i}=	:ap2-php5-core-${V}:www/ap2-php5/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor
 

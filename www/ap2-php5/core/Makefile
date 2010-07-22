@@ -3,15 +3,15 @@
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
 
-PKGNAME=	php5-core-${V}
-PKGNAME-main=	php5-core-${V}
+PKGNAME=	ap2-php5-core-${V}
+PKGNAME-main=	ap2-php5-core-${V}
 PKGNAME-fastcgi=php5-fastcgi-${V}
 
 DISTFILES=	php-${V}.tar.gz
 
 MULTI_PACKAGES=	-main -fastcgi
 
-CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
+CONFIGURE_ARGS+=--with-apxs2=/usr/local/sbin/apxs2 \
 		--without-mysql \
 		--enable-xml \
 		--enable-wddx \
