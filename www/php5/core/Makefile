@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2009/06/22 11:27:00 robert Exp $
+# $OpenBSD: Makefile,v 1.55.2.1 2010/05/27 03:55:15 william Exp $
 
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
@@ -25,9 +25,11 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--enable-ftp \
 		--with-pcre-regex \
 		--enable-sockets \
+		--enable-sysvmsg \
 		--enable-sysvsem \
 		--enable-sysvshm \
 		--enable-exif \
+		--enable-zend-multibyte \
 		--without-sqlite \
 		--without-pdo-sqlite \
 		--with-pear=${LOCALBASE}/share/php5 \

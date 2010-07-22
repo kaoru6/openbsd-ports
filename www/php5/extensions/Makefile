@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.45 2009/04/24 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.57.2.1 2010/05/27 03:55:15 william Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
+FULLPKGPATH-main=	www/php5/extensions,-main
 COMMENT-main=		informational package about PHP5 extensions
 
 MULTI_PACKAGES=	-main
@@ -93,8 +94,10 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 . if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
 FULLPKGNAME-gd=		php5-gd-${V}-no_x11
+FULLPKGPATH-gd=		www/php5/extensions,-gd,no_x11
 . else
 USE_X11=		yes
+FULLPKGNAME-gd=		php5-gd-${V}
 CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
 WANTLIB-gd+=		X11 Xpm freetype
 . endif
@@ -211,7 +214,7 @@ WANTLIB-ncurses=	${WANTLIB} ncurses panel
 # odbc
 PSEUDO_FLAVORS+=	no_odbc
 .if ${FLAVOR:L:Mno_odbc}
-CONFIGURE_ARGS+=	--without-odbc
+CONFIGURE_ARGS+=	--without-iodbc
 .else
 MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php5
@@ -289,7 +292,7 @@ LIB_DEPENDS-shmop=
 # soap
 PSEUDO_FLAVORS+=	no_soap
 .if ${FLAVOR:L:Mno_soap}
-CONFIGURE_ARGS+=	--without-soap
+CONFIGURE_ARGS+=	--disable-soap
 .else
 MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
@@ -331,6 +334,39 @@ CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	ct::databases/freetds
 .endif
 
+# pdo-dblib
+PSEUDO_FLAVORS+=	no_pdo_dblib
+.if ${FLAVOR:L:Mno_pdo_dblib}
+CONFIGURE_ARGS+=	--without-pdo-dblib
+.else
+MULTI_PACKAGES+=	-pdo_dblib
+COMMENT-pdo_dblib=	PDO DB-LIB support for php5
+CONFIGURE_ARGS+=        --with-pdo-dblib=shared,${LOCALBASE}
+LIB_DEPENDS-pdo_dblib=	sybdb.>=6::databases/freetds
+.endif
+
+# mssql
+PSEUDO_FLAVORS+=	no_mssql
+.if ${FLAVOR:L:Mno_mssql}
+CONFIGURE_ARGS+=	--without-mssql
+.else
+MULTI_PACKAGES+=	-mssql
+COMMENT-mssql=		microsoft sql access extensions for php5
+CONFIGURE_ARGS+=        --with-mssql=shared,${LOCALBASE}
+LIB_DEPENDS-mssql=	sybdb.>=6::databases/freetds
+.endif
+
+# tidy
+PSEUDO_FLAVORS+=	no_tidy
+.if ${FLAVOR:L:Mno_tidy}
+CONFIGURE_ARGS+=	--without-tidy
+.else
+MULTI_PACKAGES+=	-tidy
+COMMENT-tidy=		tidy HTML cleaner bindings
+CONFIGURE_ARGS+=	--with-tidy=shared
+LIB_DEPENDS-tidy=	tidy::www/tidy
+.endif
+
 # xml-rpc
 PSEUDO_FLAVORS+=	no_xmlrpc
 .if ${FLAVOR:L:Mno_xmlrpc}
@@ -355,20 +391,9 @@ LIB_DEPENDS-xsl=	xslt.>=3,exslt::textproc/libxslt
 WANTLIB-xsl=		${WANTLIB} iconv xml2 z
 .endif
 
-# zip
-PSEUDO_FLAVORS+=	no_zip
-.if ${FLAVOR:L:Mno_zip}
-CONFIGURE_ARGS+=	--disable-zip
-.else
-MULTI_PACKAGES+=	-zip
-COMMENT-zip=		zip functions for php5
-CONFIGURE_ARGS+=	--enable-zip=shared
-LIB_DEPENDS-zip=
-WANTLIB-zip=		${WANTLIB} z
-.endif
-
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}
+FULLPKGNAME${i} ?=	php5${i}-${V}p0
+FULLPKGPATH${i} ?=	www/php5/extensions,${i}
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
 MODULE_NAME${i}=	${i:S/-//g}
 .endfor
