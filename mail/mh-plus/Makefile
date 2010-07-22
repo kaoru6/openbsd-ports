@@ -10,6 +10,7 @@ COMMENT=		"Rand MH mail handling system + Japanese patches"
 #
 # What port/package will be created
 #
+PKGNAME=	mh-6.8.4p5
 DISTNAME=	mh-6.8.4-JP-3.05
 CATEGORIES=	mail
 
