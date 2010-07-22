@@ -26,8 +26,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # where the source files and patches can be fetched
 #
-MASTER_SITES=	ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/
-MASTER_SITES0=	 ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/net/mh/mh-6.8.4-JP-3.05-patch/
+MASTER_SITES=	ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/
+MASTER_SITES0=	ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/mh-6.8.4-JP-3.05-patch/
 
 PATCHFILES=	${DISTNAME}-20030114.patch.gz	\
 	${DISTNAME}-20030326.patch.gz	\
