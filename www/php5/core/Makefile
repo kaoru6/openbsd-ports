@@ -11,7 +11,7 @@ DISTFILES=	php-${V}.tar.gz
 
 MULTI_PACKAGES=	-main -fastcgi
 
-CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
+CONFIGURE_ARGS+=--with-apxs2=/usr/local/sbin/apxs2 \
 		--without-mysql \
 		--enable-xml \
 		--enable-wddx \
