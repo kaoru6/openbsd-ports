@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile,v 1.57.2.1 2010/05/27 03:55:15 william Exp $
 
+BROKEN=	Use ../php5 instead.
+
 FULLPKGNAME-main=	ap2-php5-extensions-${V}
 FULLPKGPATH-main=	www/ap2-php5/extensions,-main
 COMMENT-main=		informational package about PHP5 extensions
@@ -13,12 +15,16 @@ PREFIX?=		${CHROOT_DIR}
 
 FLAVORS=		no_x11
 FLAVOR?=
+FLAVOR+=		no_x11 no_gd no_curl no_dba no_gd no_gmp no_ldap \
+	no_pdo_pgsql no_pgsql no_sqlite no_pdo_sqlite no_soap no_snmp \
+	no_sybase_ct no_mssql no_tidy no_odbc no_pdo_dblib
 
 WANTLIB=		stdc++ m
 
 MODULES=		devel/gettext
 
 CONFIGURE_ARGS+=	--with-apxs2=/usr/local/sbin/apxs2 \
+#			--with-apxs=/usr/sbin/apxs \
 			--with-iconv-dir=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
 			--disable-dom \
