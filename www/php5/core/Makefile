@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.55.2.1 2010/05/27 03:55:15 william Exp $
 
-COMMENT-main=	server-side HTML-embedded scripting language with ap2 mod
+COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
 
 PKGNAME=	php5-core-${V}
@@ -11,7 +11,7 @@ DISTFILES=	php-${V}.tar.gz
 
 MULTI_PACKAGES=	-main -fastcgi
 
-CONFIGURE_ARGS+=--with-apxs2=/usr/local/sbin/apxs2 \
+CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--without-mysql \
 		--enable-xml \
 		--enable-wddx \

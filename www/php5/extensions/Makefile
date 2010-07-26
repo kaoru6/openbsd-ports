@@ -18,7 +18,7 @@ WANTLIB=		stdc++ m
 
 MODULES=		devel/gettext
 
-CONFIGURE_ARGS+=	--with-apxs2=/usr/local/sbin/apxs2 \
+CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-iconv-dir=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
 			--disable-dom \
