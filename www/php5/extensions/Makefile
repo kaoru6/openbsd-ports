@@ -392,7 +392,7 @@ WANTLIB-xsl=		${WANTLIB} iconv xml2 z
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}p0
+FULLPKGNAME${i} ?=	php5${i}-${V}
 FULLPKGPATH${i} ?=	www/php5/extensions,${i}
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
 MODULE_NAME${i}=	${i:S/-//g}
