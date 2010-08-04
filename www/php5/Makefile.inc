@@ -4,7 +4,7 @@
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-V=			5.2.13
+V=			5.2.14
 SUHOSIN_V=		0.9.29
 SUHOSIN_P_V=		0.9.7
 
