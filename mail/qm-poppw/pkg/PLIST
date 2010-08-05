@@ -1,5 +1,5 @@
-sbin/qm-poppw
-bin/qmpasswd
+@bin sbin/qm-poppw
+@bin bin/qmpasswd
 share/doc/qm-poppw/COPYRIGHT
 share/doc/qm-poppw/README.en
 share/doc/qm-poppw/README.ja
