@@ -38,6 +38,7 @@ bin/whom
 bin/inc
 bin/msgchk
 @mode
+lib/mh/
 lib/mh/MailAliases
 lib/mh/ap
 lib/mh/components
