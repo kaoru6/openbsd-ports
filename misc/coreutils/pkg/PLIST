@@ -1,103 +1,103 @@
 @comment $OpenBSD$
-bin/g[
-bin/gbase64
-bin/gbasename
-bin/gcat
-bin/gchgrp
-bin/gchmod
-bin/gchown
-bin/gchroot
-bin/gcksum
-bin/gcomm
-bin/gcp
-bin/gcsplit
-bin/gcut
-bin/gdate
-bin/gdd
-bin/gdf
-bin/gdir
-bin/gdircolors
-bin/gdirname
-bin/gdu
-bin/gecho
-bin/genv
-bin/gexpand
-bin/gexpr
-bin/gfactor
-bin/gfalse
-bin/gfmt
-bin/gfold
+@bin bin/g[
+@bin bin/gbase64
+@bin bin/gbasename
+@bin bin/gcat
+@bin bin/gchgrp
+@bin bin/gchmod
+@bin bin/gchown
+@bin bin/gchroot
+@bin bin/gcksum
+@bin bin/gcomm
+@bin bin/gcp
+@bin bin/gcsplit
+@bin bin/gcut
+@bin bin/gdate
+@bin bin/gdd
+@bin bin/gdf
+@bin bin/gdir
+@bin bin/gdircolors
+@bin bin/gdirname
+@bin bin/gdu
+@bin bin/gecho
+@bin bin/genv
+@bin bin/gexpand
+@bin bin/gexpr
+@bin bin/gfactor
+@bin bin/gfalse
+@bin bin/gfmt
+@bin bin/gfold
 bin/ggroups
-bin/ghead
-bin/ghostid
-bin/ghostname
-bin/gid
-bin/ginstall
-bin/gjoin
-bin/gkill
-bin/glink
-bin/gln
-bin/glogname
-bin/gls
-bin/gmd5sum
-bin/gmkdir
-bin/gmkfifo
-bin/gmknod
-bin/gmv
-bin/gnice
-bin/gnl
-bin/gnohup
-bin/god
-bin/gpaste
-bin/gpathchk
-bin/gpinky
-bin/gpr
-bin/gprintenv
-bin/gprintf
-bin/gptx
-bin/gpwd
-bin/greadlink
-bin/grm
-bin/grmdir
-bin/gseq
-bin/gsha1sum
-bin/gsha224sum
-bin/gsha256sum
-bin/gsha384sum
-bin/gsha512sum
-bin/gshred
-bin/gshuf
-bin/gsleep
-bin/gsort
-bin/gsplit
-bin/gstat
-bin/gstty
+@bin bin/ghead
+@bin bin/ghostid
+@bin bin/ghostname
+@bin bin/gid
+@bin bin/ginstall
+@bin bin/gjoin
+@bin bin/gkill
+@bin bin/glink
+@bin bin/gln
+@bin bin/glogname
+@bin bin/gls
+@bin bin/gmd5sum
+@bin bin/gmkdir
+@bin bin/gmkfifo
+@bin bin/gmknod
+@bin bin/gmv
+@bin bin/gnice
+@bin bin/gnl
+@bin bin/gnohup
+@bin bin/god
+@bin bin/gpaste
+@bin bin/gpathchk
+@bin bin/gpinky
+@bin bin/gpr
+@bin bin/gprintenv
+@bin bin/gprintf
+@bin bin/gptx
+@bin bin/gpwd
+@bin bin/greadlink
+@bin bin/grm
+@bin bin/grmdir
+@bin bin/gseq
+@bin bin/gsha1sum
+@bin bin/gsha224sum
+@bin bin/gsha256sum
+@bin bin/gsha384sum
+@bin bin/gsha512sum
+@bin bin/gshred
+@bin bin/gshuf
+@bin bin/gsleep
+@bin bin/gsort
+@bin bin/gsplit
+@bin bin/gstat
+@bin bin/gstty
 @comment @owner root
 @comment @group wheel
 @comment @mode 4555
-@comment bin/gsu
-bin/gsum
-bin/gsync
-bin/gtac
-bin/gtail
-bin/gtee
-bin/gtest
-bin/gtouch
-bin/gtr
-bin/gtrue
-bin/gtsort
-bin/gtty
-bin/guname
-bin/gunexpand
-bin/guniq
-bin/gunlink
-bin/guptime
-bin/gusers
-bin/gvdir
-bin/gwc
-bin/gwho
-bin/gwhoami
-bin/gyes
+@comment @bin bin/gsu
+@bin bin/gsum
+@bin bin/gsync
+@bin bin/gtac
+@bin bin/gtail
+@bin bin/gtee
+@bin bin/gtest
+@bin bin/gtouch
+@bin bin/gtr
+@bin bin/gtrue
+@bin bin/gtsort
+@bin bin/gtty
+@bin bin/guname
+@bin bin/gunexpand
+@bin bin/guniq
+@bin bin/gunlink
+@bin bin/guptime
+@bin bin/gusers
+@bin bin/gvdir
+@bin bin/gwc
+@bin bin/gwho
+@bin bin/gwhoami
+@bin bin/gyes
 @info info/coreutils.info
 lib/charset.alias
 @man man/man1/gbase64.1
