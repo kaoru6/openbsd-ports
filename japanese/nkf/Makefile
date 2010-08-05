@@ -4,13 +4,13 @@ NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Network Kanji code conversion Filter"
 
-VERSION=	2.0.7
-DISTNAME=	nkf${VERSION:S/.//g}
+VERSION=	2.1.0
+DISTNAME=	nkf-${VERSION}
 PKGNAME=	ja-nkf-${VERSION}
 CATEGORIES=	japanese textproc
 
 HOMEPAGE=	http://sourceforge.jp/projects/nkf/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=nkf/20770/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=nkf/44486/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
