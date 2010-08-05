@@ -1,20 +1,20 @@
 @comment $OpenBSD: PLIST,v 1.4 2001/01/11 13:19:37 avsm Exp $
-bin/envdir
-bin/envuidgid
-bin/fghack
-bin/multilog
-bin/setlock
-bin/setuidgid
-bin/softlimit
-bin/supervise
-bin/svc
-bin/svok
-bin/svscan
-bin/svstat
-bin/tai64n
-bin/tai64nlocal
-bin/pgrphack
-bin/readproctitle
+@bin bin/envdir
+@bin bin/envuidgid
+@bin bin/fghack
+@bin bin/multilog
+@bin bin/setlock
+@bin bin/setuidgid
+@bin bin/softlimit
+@bin bin/supervise
+@bin bin/svc
+@bin bin/svok
+@bin bin/svscan
+@bin bin/svstat
+@bin bin/tai64n
+@bin bin/tai64nlocal
+@bin bin/pgrphack
+@bin bin/readproctitle
 bin/svscanboot
 @man man/man8/envdir.8
 @man man/man8/envuidgid.8
