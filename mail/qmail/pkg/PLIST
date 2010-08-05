@@ -12,57 +12,57 @@
 @comment qmailq:qmail 04711
 @owner qmailq
 @mode 04711
-bin/qmail-queue
+@bin bin/qmail-queue
 @comment root:qmail 0700
 @owner root
 @mode 0700
-bin/qmail-newmrh
-bin/qmail-newu
-bin/qmail-start
-bin/qmail-lspawn
+@bin bin/qmail-newmrh
+@bin bin/qmail-newu
+@bin bin/qmail-start
+@bin bin/qmail-lspawn
 @comment root:qmail 0711
 @mode 0711
 bin/qmail-clean
 bin/qmail-getpw
 bin/qmail-local
-bin/qmail-popup
-bin/qmail-pw2u
-bin/qmail-remote
-bin/qmail-rspawn
-bin/qmail-send
-bin/splogger
+@bin bin/qmail-popup
+@bin bin/qmail-pw2u
+@bin bin/qmail-remote
+@bin bin/qmail-rspawn
+@bin bin/qmail-send
+@bin bin/splogger
 @comment root:qmail 0755
 @mode 0755
-bin/bouncesaying
-bin/condredirect
+@bin bin/bouncesaying
+@bin bin/condredirect
 bin/datemail
 bin/elq
-bin/except
-bin/forward
-bin/maildir2mbox
-bin/maildirmake
-bin/maildirwatch
+@bin bin/except
+@bin bin/forward
+@bin bin/maildir2mbox
+@bin bin/maildirmake
+@bin bin/maildirwatch
 bin/mailsubj
 bin/pinq
-bin/predate
-bin/preline
+@bin bin/predate
+@bin bin/preline
 bin/qail
-bin/qbiff
-bin/qmail-inject
-bin/qmail-pop3d
-bin/qmail-qmqpc
-bin/qmail-qmqpd
-bin/qmail-qmtpd
-bin/qmail-qread
+@bin bin/qbiff
+@bin bin/qmail-inject
+@bin bin/qmail-pop3d
+@bin bin/qmail-qmqpc
+@bin bin/qmail-qmqpd
+@bin bin/qmail-qmtpd
+@bin bin/qmail-qread
 bin/qmail-qstat
-bin/qmail-showctl
-bin/qmail-smtpd
-bin/qmail-tcpok
-bin/qmail-tcpto
-bin/qreceipt
-bin/qsmhook
-bin/sendmail
-bin/tcp-env
+@bin bin/qmail-showctl
+@bin bin/qmail-smtpd
+@bin bin/qmail-tcpok
+@bin bin/qmail-tcpto
+@bin bin/qreceipt
+@bin bin/qsmhook
+@bin bin/sendmail
+@bin bin/tcp-env
 @mode
 boot/binm1
 boot/binm1+df
