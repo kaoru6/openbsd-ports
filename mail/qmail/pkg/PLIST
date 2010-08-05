@@ -97,6 +97,8 @@ doc/SENDMAIL
 doc/TEST.deliver
 doc/TEST.receive
 doc/UPGRADE
+man/
+man/cat1/
 @man man/cat1/bouncesaying.0
 @man man/cat1/condredirect.0
 @man man/cat1/except.0
@@ -109,6 +111,7 @@ doc/UPGRADE
 @man man/cat1/qbiff.0
 @man man/cat1/qreceipt.0
 @man man/cat1/tcp-env.0
+man/cat5/
 @man man/cat5/addresses.0
 @man man/cat5/dot-qmail.0
 @man man/cat5/envelopes.0
@@ -119,9 +122,11 @@ doc/UPGRADE
 @man man/cat5/qmail-log.0
 @man man/cat5/qmail-users.0
 @man man/cat5/tcp-environ.0
+man/cat7/
 @man man/cat7/forgeries.0
 @man man/cat7/qmail-limits.0
 @man man/cat7/qmail.0
+man/cat8/
 @man man/cat8/qmail-clean.0
 @man man/cat8/qmail-command.0
 @man man/cat8/qmail-getpw.0
@@ -148,6 +153,7 @@ doc/UPGRADE
 @man man/cat8/qmail-tcpok.0
 @man man/cat8/qmail-tcpto.0
 @man man/cat8/splogger.0
+man/man1/
 @man man/man1/bouncesaying.1
 @man man/man1/condredirect.1
 @man man/man1/except.1
@@ -160,6 +166,7 @@ doc/UPGRADE
 @man man/man1/qbiff.1
 @man man/man1/qreceipt.1
 @man man/man1/tcp-env.1
+man/man5/
 @man man/man5/addresses.5
 @man man/man5/dot-qmail.5
 @man man/man5/envelopes.5
@@ -170,9 +177,11 @@ doc/UPGRADE
 @man man/man5/qmail-log.5
 @man man/man5/qmail-users.5
 @man man/man5/tcp-environ.5
+man/man7/
 @man man/man7/forgeries.7
 @man man/man7/qmail-limits.7
 @man man/man7/qmail.7
+man/man8/
 @man man/man8/qmail-clean.8
 @man man/man8/qmail-command.8
 @man man/man8/qmail-getpw.8
