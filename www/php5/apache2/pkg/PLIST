@@ -1,2 +1,2 @@
 @comment $OpenBSD$
-lib/php/libphp5ap2.so
+%%SHARED%%
