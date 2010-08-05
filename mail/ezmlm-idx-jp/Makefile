@@ -2,7 +2,7 @@
 
 COMMENT=        "easy-to-use, high-speed mailing list manager for qmail"
 
-DISTNAME=	ezmlm-idx-0.53.40-tnt-1
+DISTNAME=	ezmlm-idx-0.53.40-tnt
 HOMEPAGE=	http://ftp.ezmlm.org
 CATEGORIES=	mail
 MAINTAINER=	cas@trans-nt.com
