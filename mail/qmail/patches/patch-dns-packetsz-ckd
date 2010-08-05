@@ -1,5 +1,5 @@
---- qmail-1.03/dns.c.103	Mon Aug 17 16:06:58 1998
-+++ qmail-1.03/dns.c	Wed Aug 26 16:28:56 1998
+--- dns.c.103	Mon Aug 17 16:06:58 1998
++++ dns.c	Wed Aug 26 16:28:56 1998
 @@ -21,10 +21,12 @@
  static unsigned short getshort(c) unsigned char *c;
  { unsigned short u; u = c[0]; return (u << 8) + c[1]; }

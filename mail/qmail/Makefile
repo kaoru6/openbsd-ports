@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile,v 1.17 2001/05/06 01:46:43 lebel Exp $
 
-IGNORE=		"Use postfix instead!!!!!"
-
 COMMENT=	"secure, reliable, efficient, simple MTA"
 
 DISTNAME=	qmail-1.03
@@ -51,7 +49,8 @@ FLAVORS=	localtime
 FLAVOR?=	localtime
 
 PATCH_LIST=	patch-Makefile  patch-qmail-smtpd-relay-reject \
-		patch-long-smtp-session patch-outgoingip
+		patch-long-smtp-session patch-outgoingip \
+		patch-dns.c patch-qmail-local.c
 
 .if ${FLAVOR:L:Mlocaltime}
 PATCH_LIST+=   patch-qmail-date-localtime
