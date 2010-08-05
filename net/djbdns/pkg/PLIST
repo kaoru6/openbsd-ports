@@ -1,33 +1,33 @@
 @comment $OpenBSD: PLIST,v 1.8 2001/02/02 19:34:51 camield Exp $
-bin/axfr-get
-bin/axfrdns
-bin/axfrdns-conf
-bin/dnscache
-bin/dnscache-conf
-bin/dnsfilter
-bin/dnsip
-bin/dnsipq
-bin/dnsmx
-bin/dnsname
-bin/dnsq
-bin/dnsqr
-bin/dnstrace
+@bin bin/axfr-get
+@bin bin/axfrdns
+@bin bin/axfrdns-conf
+@bin bin/dnscache
+@bin bin/dnscache-conf
+@bin bin/dnsfilter
+@bin bin/dnsip
+@bin bin/dnsipq
+@bin bin/dnsmx
+@bin bin/dnsname
+@bin bin/dnsq
+@bin bin/dnsqr
+@bin bin/dnstrace
 bin/dnstracesort
-bin/dnstxt
-bin/pickdns
-bin/pickdns-conf
-bin/pickdns-data
-bin/random-ip
-bin/rbldns
-bin/rbldns-conf
-bin/rbldns-data
-bin/tinydns
-bin/tinydns-conf
-bin/tinydns-data
-bin/tinydns-edit
-bin/tinydns-get
-bin/walldns
-bin/walldns-conf
+@bin bin/dnstxt
+@bin bin/pickdns
+@bin bin/pickdns-conf
+@bin bin/pickdns-data
+@bin bin/random-ip
+@bin bin/rbldns
+@bin bin/rbldns-conf
+@bin bin/rbldns-data
+@bin bin/tinydns
+@bin bin/tinydns-conf
+@bin bin/tinydns-data
+@bin bin/tinydns-edit
+@bin bin/tinydns-get
+@bin bin/walldns
+@bin bin/walldns-conf
 @man man/man1/dnsfilter.1
 @man man/man1/dnsip.1
 @man man/man1/dnsipq.1
