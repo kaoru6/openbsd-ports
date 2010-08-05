@@ -1,30 +1,30 @@
 bin/ezmlm-accept
-bin/ezmlm-archive
+@bin bin/ezmlm-archive
 bin/ezmlm-check
-bin/ezmlm-clean
-bin/ezmlm-cron
-bin/ezmlm-gate
-bin/ezmlm-get
+@bin bin/ezmlm-clean
+@bin bin/ezmlm-cron
+@bin bin/ezmlm-gate
+@bin bin/ezmlm-get
 bin/ezmlm-glconf
-bin/ezmlm-idx
-bin/ezmlm-issubn
-bin/ezmlm-limit
-bin/ezmlm-list
-bin/ezmlm-make
-bin/ezmlm-manage
+@bin bin/ezmlm-idx
+@bin bin/ezmlm-issubn
+@bin bin/ezmlm-limit
+@bin bin/ezmlm-list
+@bin bin/ezmlm-make
+@bin bin/ezmlm-manage
 bin/ezmlm-mktab
-bin/ezmlm-moderate
-bin/ezmlm-reject
-bin/ezmlm-request
-bin/ezmlm-return
-bin/ezmlm-send
-bin/ezmlm-split
-bin/ezmlm-store
-bin/ezmlm-sub
-bin/ezmlm-tstdig
-bin/ezmlm-unsub
-bin/ezmlm-warn
-bin/ezmlm-weed
+@bin bin/ezmlm-moderate
+@bin bin/ezmlm-reject
+@bin bin/ezmlm-request
+@bin bin/ezmlm-return
+@bin bin/ezmlm-send
+@bin bin/ezmlm-split
+@bin bin/ezmlm-store
+@bin bin/ezmlm-sub
+@bin bin/ezmlm-tstdig
+@bin bin/ezmlm-unsub
+@bin bin/ezmlm-warn
+@bin bin/ezmlm-weed
 bin/ezmlmglrc
 bin/ezmlmrc
 bin/ezmlmsubrc
