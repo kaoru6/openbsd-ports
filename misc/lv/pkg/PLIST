@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-bin/lv
-bin/lgrep
+@bin bin/lv
+@bin bin/lgrep
 lib/lv/
 lib/lv/lv.hlp
 @man man/man1/lv.1
