@@ -1,42 +1,42 @@
 @comment $OpenBSD$
-bin/ali
-bin/anno
-bin/bbc
-bin/burst
-bin/comp
-bin/dist
-bin/folder
-bin/folders
-bin/forw
-bin/mark
-bin/mhmail
-bin/mhn
-bin/mhparam
-bin/mhpath
-bin/msh
-bin/next
-bin/packf
-bin/pgped
-bin/pgpshow
-bin/pick
-bin/prev
-bin/prompter
-bin/refile
-bin/repl
-bin/rmf
-bin/rmm
-bin/scan
-bin/send
-bin/show
-bin/sortm
-bin/vmh
-bin/whatnow
-bin/whom
+@bin bin/ali
+@bin bin/anno
+@bin bin/bbc
+@bin bin/burst
+@bin bin/comp
+@bin bin/dist
+@bin bin/folder
+@bin bin/folders
+@bin bin/forw
+@bin bin/mark
+@bin bin/mhmail
+@bin bin/mhn
+@bin bin/mhparam
+@bin bin/mhpath
+@bin bin/msh
+@bin bin/next
+@bin bin/packf
+@bin bin/pgped
+@bin bin/pgpshow
+@bin bin/pick
+@bin bin/prev
+@bin bin/prompter
+@bin bin/refile
+@bin bin/repl
+@bin bin/rmf
+@bin bin/rmm
+@bin bin/scan
+@bin bin/send
+@bin bin/show
+@bin bin/sortm
+@bin bin/vmh
+@bin bin/whatnow
+@bin bin/whom
 @mode 4755
 @owner root
 @group wheel
-bin/inc
-bin/msgchk
+@bin bin/inc
+@bin bin/msgchk
 @mode
 lib/mh/
 lib/mh/MailAliases
