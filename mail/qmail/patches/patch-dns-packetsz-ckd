@@ -1,3 +1,4 @@
+http://www.ckdhr.com/ckd/qmail-103.patch
 --- dns.c.103	Mon Aug 17 16:06:58 1998
 +++ dns.c	Wed Aug 26 16:28:56 1998
 @@ -21,10 +21,12 @@

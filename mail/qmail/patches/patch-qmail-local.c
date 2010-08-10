@@ -1,3 +1,4 @@
+http://www.ornl.gov/lists/mailing-lists/qmail/2000/10/msg00696.html
 --- qmail-local.c.old	1998-06-15 05:52:55.000000000 -0500
 +++ qmail-local.c	2003-01-09 14:22:48.000000000 -0600
 @@ -645,7 +645,7 @@
