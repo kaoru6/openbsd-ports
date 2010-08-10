@@ -45,13 +45,19 @@ SETUPBINARIES=	${WRKSRC}/dnsfq		${WRKSRC}/dnsip		\
 SETUPSCRIPTS=	${WRKSRC}/config	${WRKSRC}/config-fast
 
 ## flavor
-FLAVORS=	localtime
-FLAVOR?=	localtime
+FLAVORS=	localtime tarpit
+FLAVOR?=	localtime tarpit
 
 PATCH_LIST=	patch-Makefile  patch-qmail-smtpd-relay-reject \
 	patch-long-smtp-session patch-outgoingip \
 	patch-dns-packetsz-ckd patch-qmail-local.c \
 	patch-0.0.0.0  patch-sendmail-flagf patch-qmailqueue
+
+PATCH_LIST+=	patch-qmail-1.03-rfc2821.diff
+
+.if ${FLAVOR:L:Mtarpi}
+PATCH_LIST+=	patch-tarpit
+.endif
 
 .if ${FLAVOR:L:Mlocaltime}
 PATCH_LIST+=   patch-qmail-date-localtime
