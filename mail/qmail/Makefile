@@ -49,8 +49,9 @@ FLAVORS=	localtime
 FLAVOR?=	localtime
 
 PATCH_LIST=	patch-Makefile  patch-qmail-smtpd-relay-reject \
-		patch-long-smtp-session patch-outgoingip \
-		patch-dns.c patch-qmail-local.c
+	patch-long-smtp-session patch-outgoingip \
+	patch-dns-packetsz-ckd patch-qmail-local.c \
+	patch-0.0.0.0  patch-sendmail-flagf patch-qmailqueue
 
 .if ${FLAVOR:L:Mlocaltime}
 PATCH_LIST+=   patch-qmail-date-localtime
