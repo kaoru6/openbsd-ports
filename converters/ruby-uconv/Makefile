@@ -6,7 +6,7 @@ COMMENT=	Unicode conversion library for Ruby
 
 DISTNAME=	uconv-0.5.3
 PKGNAME=	ruby-${DISTNAME}
-CATEGORIES=	converters japanese
+CATEGORIES=	converters
 
 HOMEPAGE=	http://www.yoshidam.net/Ruby_ja.html#uconv
 
