@@ -1,18 +1,18 @@
 @comment $OpenBSD: PLIST,v 1.11 2005/10/12 05:37:43 fgsch Exp $
 %%SHARED%%
-@bin bin/annotate
+bin/annotate
 bin/bdftogd
-@bin bin/gd2copypal
-@bin bin/gd2togif
-@bin bin/gd2topng
-@bin bin/gdcmpgif
+bin/gd2copypal
+bin/gd2togif
+bin/gd2topng
+bin/gdcmpgif
 bin/gdlib-config
-@bin bin/gdparttopng
-@bin bin/gdtopng
-@bin bin/giftogd2
-@bin bin/pngtogd
-@bin bin/pngtogd2
-@bin bin/webpng
+bin/gdparttopng
+bin/gdtopng
+bin/giftogd2
+bin/pngtogd
+bin/pngtogd2
+bin/webpng
 include/entities.h
 include/gd.h
 include/gd_io.h
