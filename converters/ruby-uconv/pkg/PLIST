@@ -1,8 +1,4 @@
 @comment $OpenBSD$
-lib/ruby/
-lib/ruby/site_ruby/
-lib/ruby/site_ruby/${MODRUBY_REV}/
-lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/
 lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/uconv.so
 lib/ruby/site_ruby/${MODRUBY_REV}/uconv/
 lib/ruby/site_ruby/${MODRUBY_REV}/uconv/euc-jis-2004.rb
