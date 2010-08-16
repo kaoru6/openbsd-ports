@@ -1,30 +1,31 @@
 # $OpenBSD$
 
-COMMENT=	"Unicode conversion library for Ruby"
-
 SHARED_ONLY=	Yes
+
+COMMENT=	Unicode conversion library for Ruby
 
 DISTNAME=	uconv-0.4.12
 PKGNAME=	ruby-${DISTNAME}
-CATEGORIES=	converters japanese ruby
+CATEGORIES=	converters
 
-MASTER_SITES=	http://www.yoshidam.net/
 HOMEPAGE=	http://www.yoshidam.net/Ruby_ja.html#uconv
 
 MAINTAINER=	kaoru@kaisei.org
 
-MODULES=                lang/ruby
-
-LIB_DEPENDS+=		ruby.>=1.84::lang/ruby
-
-CONFIGURE_STYLE=	extconf
-
-# Ruby license
+# Ruby License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	c m
+
+MASTER_SITES=	http://www.yoshidam.net/
+
+MODULES=	lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
+
+CONFIGURE_STYLE=	extconf
 
 WRKSRC=		${WRKDIR}/uconv
 
