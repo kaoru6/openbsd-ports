@@ -1,5 +1,4 @@
 # $OpenBSD$
-# Original from:	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 COMMENT=	git repository hosting application
 
