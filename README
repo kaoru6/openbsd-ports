@@ -1,4 +1,4 @@
 Private OpenBSD ports skeleton.
 
--- 
-TAKAHASHI Kaoru
+Don't forget to "git config user.email alice@example.org" or
+ "git config --global user.email alice@example.org".
