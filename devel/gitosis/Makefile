@@ -19,21 +19,10 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	::devel/py-setuptools
-#RUN_DEPENDS =          ???
-#LIB_DEPENDS =          ???
-#REGRESS_DEPENDS =      ???
+MODPY_SETUPTOOLS=	Yes
 
+NO_REGRESS=	Yes
 
-#NO_BUILD =		Yes
-NO_REGRESS =		Yes
-
-WRKSRC=	${WRKDIR}/gitosis
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
-
-#do-build:
-#	cd ${WRKSRC} && python setup.py
-
+WRKSRC=		${WRKDIR}/gitosis
 
 .include <bsd.port.mk>
