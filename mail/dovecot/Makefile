@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2009/06/01 12:57:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.130 2010/02/28 17:58:53 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,13 @@ COMMENT-server= compact IMAP/POP3 server
 COMMENT-sieve=	Sieve mail filtering for Dovecot
 
 V_MAJOR=	1.1
-V_DOVECOT=	1.1.16
-V_SIEVE=	1.1.6
+V_DOVECOT=	1.1.20
+V_SIEVE=	1.1.7
 
 PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}
-FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}p7
+PKGNAME-server=	dovecot-${V_DOVECOT}p0
+FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}p0
+FULLPKGPATH-sieve= ${PKGPATH},-sieve
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
@@ -47,7 +48,8 @@ FLAVOR?=
 CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
 
 USE_LIBTOOL=		Yes
-AUTOCONF_VERSION=	2.61
+# Should be 2.63
+AUTOCONF_VERSION=	2.62
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-gssapi \
@@ -60,7 +62,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 MULTI_PACKAGES+=	-sieve
 SIEVE_DIR=		${WRKDIR}/dovecot-sieve-${V_SIEVE}
 AUTOCONF_DIR+=		${WRKSRC} ${SIEVE_DIR}
-RUN_DEPENDS-sieve=	::${BUILD_PKGPATH}
+RUN_DEPENDS-sieve=	::${PKGPATH}
 LIB_DEPENDS-sieve=	${MODLIBICONV_LIB_DEPENDS}
 .endif
 
