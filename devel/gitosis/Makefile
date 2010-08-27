@@ -18,13 +18,23 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://code.douglasthrift.net/files/gitosis/
 EXTRACT_SUFX=	.tar.bz2
 
-NO_BUILD =		Yes
+MODULES=	lang/python
+
+BUILD_DEPENDS=	::devel/py-setuptools
+#RUN_DEPENDS =          ???
+#LIB_DEPENDS =          ???
+#REGRESS_DEPENDS =      ???
+
+
+#NO_BUILD =		Yes
 NO_REGRESS =		Yes
 
-#WRKDIST =		??? if other than ${WRKDIR}/$DISTNAME
-#WRKSRC =		??? if other than ${WRKDIST}
+WRKSRC=	${WRKDIR}/gitosis
 #WRKBUILD =		??? if other than ${WRKSRC}
 #WRKCONF =		??? if other than ${WRKBUILD}
+
+#do-build:
+#	cd ${WRKSRC} && python setup.py
 
 
 .include <bsd.port.mk>
