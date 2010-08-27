@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.50 2009/05/18 15:05:37 jakob Exp $
+# $OpenBSD: Makefile,v 1.52 2010/01/08 06:30:48 jakob Exp $
 
 COMMENT=	authoritative-only name server daemon
 
-VERSION=	3.2.2
+VERSION=	3.2.4
 DISTNAME=	nsd-${VERSION}
 PKGNAME=	${DISTNAME}
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
-
-HOMEPAGE=	http://www.nlnetlabs.nl/nsd/
+HOMEPAGE=	http://www.nlnetlabs.nl/projects/nsd/
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
