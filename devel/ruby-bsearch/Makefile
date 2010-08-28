@@ -1,6 +1,7 @@
 # $OpenBSD$
-# $FreeBSD: ports/devel/ruby-bsearch/Makefile,v 1.10 2004/12/15 02:20:41 edwin Exp $
-# Originally by: knu@freebsd.org
+# $FreeBSD: ports/devel/ruby-bsearch/Makefile,v 1.13 2009/06/16 15:53:06 stas Exp $
+# Original from: Akinori MUSHA <knu@freebsd.org>
+#
 
 COMMENT=	A binary search library for Ruby
 
