@@ -2,7 +2,7 @@
 # $FreeBSD: ports/devel/ruby-bsearch/Makefile,v 1.10 2004/12/15 02:20:41 edwin Exp $
 # Originally by: knu@freebsd.org
 
-COMMENT=	"A binary search library for Ruby"
+COMMENT=	A binary search library for Ruby
 
 DISTNAME=	ruby-bsearch-1.5
 CATEGORIES=	devel
