@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/04/17 21:36:52 espie Exp $
-%%SHARED%%
-bin/pdflib-config
-include/pdflib.h
-lib/libpdf.a
-lib/libpdf.la
