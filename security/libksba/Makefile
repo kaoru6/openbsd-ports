@@ -7,7 +7,7 @@ DISTNAME=		libksba-${VERSION}
 CATEGORIES=		security
 SHARED_LIBS=		ksba	17.2
 
-HOMEPAGE=		http://www.gnu.org/directory/security/libksba.html
+HOMEPAGE=	http://www.gnupg.org/aegypten2/
 
 # ???
 PERMIT_PACKAGE_CDROM=	Yes

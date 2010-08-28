@@ -7,7 +7,7 @@ DISTNAME=		libassuan-${VERSION}
 CATEGORIES=		security
 #SHARED_LIBS=		assuan	13.0
 
-HOMEPAGE=		http://www.gnu.org/directory/security/libassuan.html
+HOMEPAGE=	http://www.gnupg.org/aegypten2/
 
 # ???
 PERMIT_PACKAGE_CDROM=	Yes
