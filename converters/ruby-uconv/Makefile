@@ -10,7 +10,7 @@ CATEGORIES=	converters
 
 HOMEPAGE=	http://www.yoshidam.net/Ruby_ja.html#uconv
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 # Ruby License
 PERMIT_PACKAGE_CDROM=	Yes
