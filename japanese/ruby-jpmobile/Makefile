@@ -8,7 +8,7 @@ CATEGORIES=	japanese www ruby
 
 HOMEPAGE=	http://jpmobile-rails.org/
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 # mit
 PERMIT_PACKAGE_CDROM=   Yes

@@ -6,7 +6,7 @@ CATEGORIES=	textproc ruby
 
 HOMEPAGE=	http://github.com/mislav/will_paginate/wikis
 
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 # mit
 PERMIT_PACKAGE_CDROM=   Yes

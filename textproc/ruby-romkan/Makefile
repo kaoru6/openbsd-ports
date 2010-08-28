@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 
 MASTER_SITES=	http://0xcc.net/ruby-romkan/
 HOMEPAGE=	${MASTER_SITES}
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 MODULES=                lang/ruby
 

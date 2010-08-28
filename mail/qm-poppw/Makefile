@@ -13,7 +13,7 @@ CATEGORIES=	mail
 
 HOMEPAGE=	http://www.cas.trans-nt.com/~cas/
 
-MAINTAINER=	kaoru@trans-nt.com
+MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 PERMIT_PACKAGE_CDROM=  No
 PERMIT_PACKAGE_FTP=    No
