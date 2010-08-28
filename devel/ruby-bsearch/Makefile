@@ -16,6 +16,7 @@ MODULES=                lang/ruby
 
 #LIB_DEPENDS=            ruby.>=1.84::lang/ruby
 
+# Ruby's licence
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
