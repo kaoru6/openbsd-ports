@@ -9,7 +9,7 @@ CATEGORIES=	devel
 
 MASTER_SITES=	http://0xcc.net/ruby-bsearch/
 HOMEPAGE=	${MASTER_SITES}
-MAINTAINER=	kaoru@kaisei.org
+MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
 MODULES=                lang/ruby
 
