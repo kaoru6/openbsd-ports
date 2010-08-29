@@ -1,5 +1,6 @@
 # $OpenBSD$
 # $FreeBSD: ports/devel/py-gitosis/Makefile,v 1.3 2010/03/10 13:05:42 miwi Exp $
+# Original from:	Douglas Thrift <douglas@douglasthrift.net>
 
 COMMENT=	Software for hosting git repositories
 
