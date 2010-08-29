@@ -1,12 +1,14 @@
 # $OpenBSD$
 
-COMMENT= 		"GNU versions core utilities"
+COMMENT-main= 		GNU versions of core utilities
+COMMENT-su=		GNU 'su'
 
 V=			6.9
 DISTNAME=		coreutils-$V
 CATEGORIES=		misc
 
-PKGNAME=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}
+PKGNAME-ls=		gnusu-$V
 
 HOMEPAGE=		http://www.gnu.org/software/coreutils/
 
@@ -30,6 +32,6 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--program-prefix=g --disable-nls
 
-#MULTI_PACKAGES=		-main -ls
+MULTI_PACKAGES=		-main -su
 
 .include <bsd.port.mk>

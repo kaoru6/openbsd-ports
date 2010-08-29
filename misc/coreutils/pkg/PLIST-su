@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@owner root
+@group wheel
+@mode 4555
+@bin bin/gsu
