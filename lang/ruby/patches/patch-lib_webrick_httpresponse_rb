@@ -1,7 +1,6 @@
 $OpenBSD$
-===================================================================
---- lib/webrick/httpresponse.rb	(revision 28759)
-+++ lib/webrick/httpresponse.rb	(working copy)
+--- lib/webrick/httpresponse.rb.orig
++++ lib/webrick/httpresponse.rb
 @@ -208,7 +208,7 @@
          @keep_alive = false
          self.status = HTTPStatus::RC_INTERNAL_SERVER_ERROR
