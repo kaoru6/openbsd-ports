@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2006/11/24 20:00:06 steven Exp $
+# $OpenBSD$
 
 COMMENT= 		"GNU versions core utilities"
 
