@@ -2,3 +2,27 @@ Private OpenBSD ports skeleton.
 
 Don't forget to "git config user.email alice@example.org" or
  "git config --global user.email alice@example.org".
+
+
+* bsd.port.mk port maintainer visible changes:
+
+** OPENBSD_4_9
+
+** OPENBSD_4_8 (bsd.port.mk,v 1.1026 2010/08/07)
+
+  - PLIST_DB ?= ${PORTSDIR}/plist/${MACHINE_ARCH}
+  - Remove redundant variables OPSYS and OPSYS_VER
+  - Support REVISION & EPOCH
+  - BROKEN-${ARCH}
+  - Override MAKE in CONFIGURE_ENV when USE_GMAKE
+
+
+** OPENBSD_4_7 (bsd.port.mk,v 1.979 2010/03/05)
+
+  - Add mips64el to LP64_ARCHS.
+  - Allow USE_LIBTOOL to be set to 'gnu';  'gnu' and 'yes' do the same for now.
+
+** OPENBSD_4_6 (bsd.port.mk,v 1.967 2009/06/17)
+
+
+
