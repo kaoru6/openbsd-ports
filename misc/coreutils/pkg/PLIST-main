@@ -168,7 +168,6 @@ lib/charset.alias
 @man man/man1/gsplit.1
 @man man/man1/gstat.1
 @man man/man1/gstty.1
-@comment @man man/man1/gsu.1
 @man man/man1/gsum.1
 @man man/man1/gsync.1
 @man man/man1/gtac.1
