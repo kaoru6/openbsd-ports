@@ -72,10 +72,6 @@ bin/ggroups
 @bin bin/gsplit
 @bin bin/gstat
 @bin bin/gstty
-@comment @owner root
-@comment @group wheel
-@comment @mode 4555
-@comment @bin bin/gsu
 @bin bin/gsum
 @bin bin/gsync
 @bin bin/gtac
