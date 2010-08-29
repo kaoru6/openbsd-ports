@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Mail/
+${P5SITE}/Mail/Audit/
+${P5SITE}/Mail/Audit/Attach.pm
+@man man/man3p/Mail::Audit::Attach.3p
