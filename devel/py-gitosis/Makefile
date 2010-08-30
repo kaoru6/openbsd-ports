@@ -11,7 +11,7 @@ HOMEPAGE=	http://eagain.net/gitweb/?p=gitosis.git;a=summary
 
 MAINTAINER=	TAKAHASHI Kaoru <kaoru@kaisei.org>
 
-# GPL2 or later
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
