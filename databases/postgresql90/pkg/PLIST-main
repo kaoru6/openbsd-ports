@@ -28,7 +28,6 @@ include/postgresql/informix/
 include/postgresql/informix/esql/
 include/postgresql/informix/esql/datetime.h
 include/postgresql/informix/esql/decimal.h
-include/postgresql/informix/esql/sqlda.h
 include/postgresql/informix/esql/sqltypes.h
 include/postgresql/internal/
 include/postgresql/internal/c.h
@@ -53,28 +52,30 @@ include/postgresql/pgtypes_timestamp.h
 include/postgresql/postgres_ext.h
 include/postgresql/sql3types.h
 include/postgresql/sqlca.h
+include/postgresql/sqlda-compat.h
+include/postgresql/sqlda-native.h
+include/postgresql/sqlda.h
 lib/libecpg.a
-@comment lib/libecpg.so
 @comment lib/libecpg.so.7
-@lib lib/libecpg.so.${LIBecpg_VERSION}
+@comment lib/libecpg.so
 lib/libecpg_compat.a
-@comment lib/libecpg_compat.so
 @comment lib/libecpg_compat.so.4
-@lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
+@comment lib/libecpg_compat.so
 lib/libpgport.a
 lib/libpgtypes.a
-@comment lib/libpgtypes.so
 @comment lib/libpgtypes.so.4
-@lib lib/libpgtypes.so.${LIBpgtypes_VERSION}
+@comment lib/libpgtypes.so
 lib/libpq.a
 @comment lib/libpq.so
 @comment lib/libpq.so.5
-@lib lib/libpq.so.${LIBpq_VERSION}
 lib/postgresql/
+lib/postgresql/euc2004_sjis2004.so
+lib/postgresql/libpqwalreceiver.so
+lib/postgresql/passwordcheck.so
+lib/postgresql/pg_upgrade_support.so
 lib/postgresql/pgxs/
 lib/postgresql/pgxs/config/
 lib/postgresql/pgxs/config/install-sh
-lib/postgresql/pgxs/config/mkinstalldirs
 lib/postgresql/pgxs/src/
 lib/postgresql/pgxs/src/Makefile.global
 lib/postgresql/pgxs/src/Makefile.port
@@ -85,161 +86,9 @@ lib/postgresql/pgxs/src/nls-global.mk
 lib/postgresql/pgxs/src/test/
 lib/postgresql/pgxs/src/test/regress/
 @bin lib/postgresql/pgxs/src/test/regress/pg_regress
-@man man/man1/clusterdb.1
-@man man/man1/createdb.1
-@man man/man1/createlang.1
-@man man/man1/createuser.1
-@man man/man1/dropdb.1
-@man man/man1/droplang.1
-@man man/man1/dropuser.1
-@man man/man1/ecpg.1
-@man man/man1/pg_config.1
-@man man/man1/pg_dump.1
-@man man/man1/pg_dumpall.1
-@man man/man1/pg_restore.1
-@man man/man1/psql.1
-@man man/man1/reindexdb.1
-@man man/man1/vacuumdb.1
-@man man/man7/abort.7
-@man man/man7/alter_aggregate.7
-@man man/man7/alter_conversion.7
-@man man/man7/alter_database.7
-@man man/man7/alter_domain.7
-@man man/man7/alter_foreign_data_wrapper.7
-@man man/man7/alter_function.7
-@man man/man7/alter_group.7
-@man man/man7/alter_index.7
-@man man/man7/alter_language.7
-@man man/man7/alter_operator.7
-@man man/man7/alter_operator_class.7
-@man man/man7/alter_operator_family.7
-@man man/man7/alter_role.7
-@man man/man7/alter_schema.7
-@man man/man7/alter_sequence.7
-@man man/man7/alter_server.7
-@man man/man7/alter_table.7
-@man man/man7/alter_tablespace.7
-@man man/man7/alter_text_search_configuration.7
-@man man/man7/alter_text_search_dictionary.7
-@man man/man7/alter_text_search_parser.7
-@man man/man7/alter_text_search_template.7
-@man man/man7/alter_trigger.7
-@man man/man7/alter_type.7
-@man man/man7/alter_user.7
-@man man/man7/alter_user_mapping.7
-@man man/man7/alter_view.7
-@man man/man7/analyze.7
-@man man/man7/begin.7
-@man man/man7/checkpoint.7
-@man man/man7/close.7
-@man man/man7/cluster.7
-@man man/man7/comment.7
-@man man/man7/commit.7
-@man man/man7/commit_prepared.7
-@man man/man7/copy.7
-@man man/man7/create_aggregate.7
-@man man/man7/create_cast.7
-@man man/man7/create_constraint_trigger.7
-@man man/man7/create_conversion.7
-@man man/man7/create_database.7
-@man man/man7/create_domain.7
-@man man/man7/create_foreign_data_wrapper.7
-@man man/man7/create_function.7
-@man man/man7/create_group.7
-@man man/man7/create_index.7
-@man man/man7/create_language.7
-@man man/man7/create_operator.7
-@man man/man7/create_operator_class.7
-@man man/man7/create_operator_family.7
-@man man/man7/create_role.7
-@man man/man7/create_rule.7
-@man man/man7/create_schema.7
-@man man/man7/create_sequence.7
-@man man/man7/create_server.7
-@man man/man7/create_table.7
-@man man/man7/create_table_as.7
-@man man/man7/create_tablespace.7
-@man man/man7/create_text_search_configuration.7
-@man man/man7/create_text_search_dictionary.7
-@man man/man7/create_text_search_parser.7
-@man man/man7/create_text_search_template.7
-@man man/man7/create_trigger.7
-@man man/man7/create_type.7
-@man man/man7/create_user.7
-@man man/man7/create_user_mapping.7
-@man man/man7/create_view.7
-@man man/man7/deallocate.7
-@man man/man7/declare.7
-@man man/man7/delete.7
-@man man/man7/discard.7
-@man man/man7/drop_aggregate.7
-@man man/man7/drop_cast.7
-@man man/man7/drop_conversion.7
-@man man/man7/drop_database.7
-@man man/man7/drop_domain.7
-@man man/man7/drop_foreign_data_wrapper.7
-@man man/man7/drop_function.7
-@man man/man7/drop_group.7
-@man man/man7/drop_index.7
-@man man/man7/drop_language.7
-@man man/man7/drop_operator.7
-@man man/man7/drop_operator_class.7
-@man man/man7/drop_operator_family.7
-@man man/man7/drop_owned.7
-@man man/man7/drop_role.7
-@man man/man7/drop_rule.7
-@man man/man7/drop_schema.7
-@man man/man7/drop_sequence.7
-@man man/man7/drop_server.7
-@man man/man7/drop_table.7
-@man man/man7/drop_tablespace.7
-@man man/man7/drop_text_search_configuration.7
-@man man/man7/drop_text_search_dictionary.7
-@man man/man7/drop_text_search_parser.7
-@man man/man7/drop_text_search_template.7
-@man man/man7/drop_trigger.7
-@man man/man7/drop_type.7
-@man man/man7/drop_user.7
-@man man/man7/drop_user_mapping.7
-@man man/man7/drop_view.7
-@man man/man7/end.7
-@man man/man7/execute.7
-@man man/man7/explain.7
-@man man/man7/fetch.7
-@man man/man7/grant.7
-@man man/man7/insert.7
-@man man/man7/listen.7
-@man man/man7/load.7
-@man man/man7/lock.7
-@man man/man7/move.7
-@man man/man7/notify.7
-@man man/man7/prepare.7
-@man man/man7/prepare_transaction.7
-@man man/man7/reassign_owned.7
-@man man/man7/reindex.7
-@man man/man7/release_savepoint.7
-@man man/man7/reset.7
-@man man/man7/revoke.7
-@man man/man7/rollback.7
-@man man/man7/rollback_prepared.7
-@man man/man7/rollback_to_savepoint.7
-@man man/man7/savepoint.7
-@man man/man7/select.7
-@man man/man7/select_into.7
-@man man/man7/set.7
-@man man/man7/set_constraints.7
-@man man/man7/set_role.7
-@man man/man7/set_session_authorization.7
-@man man/man7/set_transaction.7
-@man man/man7/show.7
-@man man/man7/start_transaction.7
-@man man/man7/table.7
-@man man/man7/truncate.7
-@man man/man7/unlisten.7
-@man man/man7/update.7
-@man man/man7/vacuum.7
-@man man/man7/values.7
-@man man/man7/with.7
+lib/postgresql/unaccent.so
+lib/postgresql/utf8_and_euc2004.so
+lib/postgresql/utf8_and_sjis2004.so
 share/postgresql/
 share/postgresql/conversion_create.sql
 share/postgresql/information_schema.sql
@@ -780,6 +629,7 @@ share/postgresql/timezone/Pacific/
 share/postgresql/timezone/Pacific/Apia
 share/postgresql/timezone/Pacific/Auckland
 share/postgresql/timezone/Pacific/Chatham
+share/postgresql/timezone/Pacific/Chuuk
 share/postgresql/timezone/Pacific/Easter
 share/postgresql/timezone/Pacific/Efate
 share/postgresql/timezone/Pacific/Enderbury
@@ -805,6 +655,7 @@ share/postgresql/timezone/Pacific/Noumea
 share/postgresql/timezone/Pacific/Pago_Pago
 share/postgresql/timezone/Pacific/Palau
 share/postgresql/timezone/Pacific/Pitcairn
+share/postgresql/timezone/Pacific/Pohnpei
 share/postgresql/timezone/Pacific/Ponape
 share/postgresql/timezone/Pacific/Port_Moresby
 share/postgresql/timezone/Pacific/Rarotonga
