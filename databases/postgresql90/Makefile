@@ -5,7 +5,7 @@ COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 
-VERSION=	8.4.4
+VERSION=	9.0rc1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -55,6 +55,7 @@ INCLUDES=	${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-perl \
 		--enable-integer-datetimes \
+		--disable-thread-safety \
 		--includedir="${PREFIX}/include/postgresql" \
 		--datadir="${PREFIX}/share/postgresql" \
 		--docdir="${PREFIX}/share/doc/postgresql" \
