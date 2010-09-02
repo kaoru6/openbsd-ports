@@ -13,10 +13,10 @@ PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.1 \
-		ecpg_compat	4.1 \
+SHARED_LIBS=	ecpg		7.2 \
+		ecpg_compat	4.2 \
 		pgtypes		4.1 \
-		pq		5.2
+		pq		5.3
 
 HOMEPAGE=	http://www.postgresql.org/
 
