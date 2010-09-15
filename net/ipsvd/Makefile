@@ -2,7 +2,7 @@
 
 COMMENT=		set of internet protocol service daemons for Unix
 
-DISTNAME=		ipsvd-0.12.1
+DISTNAME=		ipsvd-1.0.0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.smarden.org/ipsvd/
