@@ -4,9 +4,9 @@
 @man man/man8/ipsvd-cdb.8
 @man man/man8/tcpsvd.8
 @man man/man8/udpsvd.8
-sbin/ipsvd-cdb
-sbin/tcpsvd
-sbin/udpsvd
+@bin sbin/ipsvd-cdb
+@bin sbin/tcpsvd
+@bin sbin/udpsvd
 share/doc/ipsvd/
 share/doc/ipsvd/CHANGES
 share/doc/ipsvd/COPYING
