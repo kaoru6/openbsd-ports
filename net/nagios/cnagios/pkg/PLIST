@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.2 2009/12/15 21:59:05 okan Exp $
+@bin bin/cnagios
+share/doc/cnagios/
+@sample ${SYSCONFDIR}/cnagios/
+share/doc/cnagios/README
+share/doc/cnagios/cnagios.help
+@sample ${SYSCONFDIR}/cnagios/cnagios.help
+share/examples/cnagios/
+share/examples/cnagios/cnagios.pl
+@sample ${SYSCONFDIR}/cnagios/cnagios.pl
+share/examples/cnagios/cnagiosrc
+@sample ${SYSCONFDIR}/cnagios/cnagiosrc
