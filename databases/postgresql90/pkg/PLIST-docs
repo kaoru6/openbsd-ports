@@ -1,11 +1,4 @@
 @comment $OpenBSD: PLIST-docs,v 1.44 2010/03/23 10:24:45 pea Exp $
-lib/libecpg.so.6
-@lib lib/libecpg.so.${LIBecpg_VERSION}
-lib/libecpg_compat.so.3
-@lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
-lib/libpgtypes.so.3
-@lib lib/libpgtypes.so.${LIBpgtypes_VERSION}
-@lib lib/libpq.so.${LIBpq_VERSION}
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
 share/doc/postgresql/INSTALL
