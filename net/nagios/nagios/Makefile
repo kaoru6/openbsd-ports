@@ -44,8 +44,6 @@ CONFIGURE_ARGS+=--datadir=/var/www/nagios \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 
-USE_X11=	Yes
-
 FLAVORS=	chroot
 FLAVOR?=
 
@@ -65,6 +63,7 @@ WANTLIB-web=
 LIB_DEPENDS-web=
 RUN_DEPENDS-web=:nagios-${V}-chroot:net/nagios/nagios,chroot
 .else
+USE_X11=	Yes
 WANTLIB-web=	${WANTLIB} fontconfig freetype jpeg png z
 LIB_DEPENDS-web=gd::graphics/gd
 RUN_DEPENDS-web=:nagios-${V}-!chroot:net/nagios/nagios
