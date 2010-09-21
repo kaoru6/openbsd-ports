@@ -508,19 +508,24 @@ lib/postgresql/cyrillic_and_mic.so
 lib/postgresql/dict_int.so
 lib/postgresql/dict_snowball.so
 lib/postgresql/dict_xsyn.so
+lib/postgresql/euc2004_sjis2004.so
 lib/postgresql/euc_cn_and_mic.so
 lib/postgresql/euc_jp_and_sjis.so
 lib/postgresql/euc_kr_and_mic.so
 lib/postgresql/euc_tw_and_big5.so
 lib/postgresql/latin2_and_win1250.so
 lib/postgresql/latin_and_mic.so
+lib/postgresql/libpqwalreceiver.so
 lib/postgresql/pageinspect.so
+lib/postgresql/passwordcheck.so
 lib/postgresql/plperl.so
 lib/postgresql/plpgsql.so
 lib/postgresql/test_parser.so
+lib/postgresql/unaccent.so
 lib/postgresql/utf8_and_ascii.so
 lib/postgresql/utf8_and_big5.so
 lib/postgresql/utf8_and_cyrillic.so
+lib/postgresql/utf8_and_euc2004.so
 lib/postgresql/utf8_and_euc_cn.so
 lib/postgresql/utf8_and_euc_jp.so
 lib/postgresql/utf8_and_euc_kr.so
@@ -531,8 +536,15 @@ lib/postgresql/utf8_and_iso8859.so
 lib/postgresql/utf8_and_iso8859_1.so
 lib/postgresql/utf8_and_johab.so
 lib/postgresql/utf8_and_sjis.so
+lib/postgresql/utf8_and_sjis2004.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
+@man man/man1/initdb.1
+@man man/man1/pg_controldata.1
+@man man/man1/pg_ctl.1
+@man man/man1/pg_resetxlog.1
+@man man/man1/postgres.1
+@man man/man1/postmaster.1
 share/doc/postgresql/
 share/doc/postgresql/README.OpenBSD
 share/postgresql/pg_hba.conf.sample
