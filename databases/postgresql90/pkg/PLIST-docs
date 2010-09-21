@@ -1,6 +1,4 @@
 @comment $OpenBSD: PLIST-docs,v 1.44 2010/03/23 10:24:45 pea Exp $
-@bin bin/pg_archivecleanup
-@bin bin/pg_upgrade
 lib/libecpg.so.6
 @lib lib/libecpg.so.${LIBecpg_VERSION}
 lib/libecpg_compat.so.3

@@ -72,7 +72,6 @@ lib/postgresql/
 lib/postgresql/euc2004_sjis2004.so
 lib/postgresql/libpqwalreceiver.so
 lib/postgresql/passwordcheck.so
-lib/postgresql/pg_upgrade_support.so
 lib/postgresql/pgxs/
 lib/postgresql/pgxs/config/
 lib/postgresql/pgxs/config/install-sh
