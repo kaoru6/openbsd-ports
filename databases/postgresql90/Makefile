@@ -5,7 +5,7 @@ COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 
-VERSION=	9.0rc1
+VERSION=	9.0.0
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=--disable-spinlocks
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
-INSTALL_TARGET=	install
+INSTALL_TARGET=	install-world
 
 LIB_DEPENDS-main= xml2::textproc/libxml
 
