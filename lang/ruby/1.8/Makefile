@@ -33,12 +33,12 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -iconv -gdbm
 
-WANTLIB-iconv=		c m ruby18
+WANTLIB-iconv=		c m
 LIB_DEPENDS-iconv=	${MODLIBICONV_LIB_DEPENDS} \
 			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
 RUN_DEPENDS-iconv=	${MODLIBICONV_RUN_DEPENDS}
 
-WANTLIB-gdbm=		c gdbm m ruby18
+WANTLIB-gdbm=		c gdbm m
 LIB_DEPENDS-gdbm=	gdbm.>=3::databases/gdbm \
 			:ruby->=1.8,<=1.9:lang/ruby/${REV},-main
 RUN_DEPENDS-gdbm=       
