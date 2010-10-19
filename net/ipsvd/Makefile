@@ -23,6 +23,7 @@ DOCS=			benefits.html ipsvd-cdb.8.html tcpsvd.8.html \
 			examples.html ipsvd-instruct.5.html udpsvd.8.html \
 			index.html ipsvd.7.html upgrade.html install.html
 PKGDOCS=		CHANGES README COPYING
+USE_GROFF=	No
 
 pre-build:
 	echo "${CC} ${CFLAGS} ${COPTS}" > ${WRKSRC}/conf-cc
