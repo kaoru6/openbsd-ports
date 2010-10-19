@@ -19,6 +19,7 @@ WANTLIB=		c termcap
 
 MASTER_SITES=		http://www.ff.iij4u.or.jp/~nrt/freeware/
 
+USE_GROFF=	No
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		simple
 
