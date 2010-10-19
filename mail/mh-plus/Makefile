@@ -36,6 +36,7 @@ PATCHFILES=	${DISTNAME}-20030114.patch.gz	\
 
 #RUN_DEPENDS=	jless::japanese/less
 
+USE_GROFF=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=	--enable-batchmode \
 	--enable-apop --enable-rpop --with-pager=${PREFIX}/bin/jless
