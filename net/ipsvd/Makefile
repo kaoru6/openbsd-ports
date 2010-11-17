@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/09/07 19:21:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/10/18 18:36:48 espie Exp $
 
 COMMENT=		set of internet protocol service daemons for Unix
 
