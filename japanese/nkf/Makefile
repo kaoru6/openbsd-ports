@@ -4,13 +4,13 @@ SHARED_ONLY=	Yes
 
 COMMENT=	Network Kanji code conversion Filter
 
-VERSION=	2.1.0
+VERSION=	2.1.1
 DISTNAME=	nkf-${VERSION}
 PKGNAME=	ja-nkf-${VERSION}
 CATEGORIES=	japanese textproc
 
 HOMEPAGE=	http://sourceforge.jp/projects/nkf/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=nkf/44486/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=nkf/48945/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -23,7 +23,6 @@ WANTLIB=		c
 
 WRKSRC=		${WRKDIST}/NKF.mod
 CONFIGURE_STYLE=	perl
-USE_GROFF=	No
 
 post-build:
 	cd ${WRKDIST} && ${CC} -o nkf ${CFLAGS} nkf.c utf8tbl.c
