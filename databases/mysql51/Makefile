@@ -46,6 +46,7 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
+USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 # Should be 2.63
