@@ -47,6 +47,7 @@ MAKE_FILE=	GNUmakefile
 SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
+USE_GROFF=	Yes
 CONFIGURE_STYLE=gnu
 
 .include <bsd.own.mk>
