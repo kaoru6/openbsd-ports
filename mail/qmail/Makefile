@@ -49,6 +49,7 @@ FLAVORS=	localtime tarpit
 FLAVOR?=	localtime tarpit
 
 PATCH_LIST=	patch-Makefile  patch-qmail-smtpd-relay-reject \
+	patch-Makefile-mandoc \
 	patch-long-smtp-session patch-outgoingip \
 	patch-dns-packetsz-ckd patch-qmail-local.c \
 	patch-0.0.0.0  patch-sendmail-flagf patch-qmailqueue
