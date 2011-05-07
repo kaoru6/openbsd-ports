@@ -7,4 +7,7 @@ daemon_flags=""
 
 . /etc/rc.d/rc.subr
 
+pexp="qmail-send"
+daemon_flags="${daemon_flags} &"
+
 rc_cmd $1
