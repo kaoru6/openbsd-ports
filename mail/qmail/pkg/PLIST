@@ -220,3 +220,4 @@ bin/
 boot/
 doc/
 setup/
+@rcscript ${RCDIR}/qmail

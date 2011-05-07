@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/rc"
+daemon_flags=""
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
