@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2009/12/01 13:38:23 bernd Exp $
+# $OpenBSD: Makefile,v 1.27 2011/02/12 21:05:38 pea Exp $
 
 COMMENT=	apache HTTP server
 
-V=		2.2.16
+V=		2.2.15
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
+REVISION=	0
 
 CATEGORIES=	www net
 
@@ -17,22 +18,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_ONLY=		Yes
+USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
-WANTLIB=		c crypto m ssl expat apr-1-mt db.>=4 z pthread
+WANTLIB += c crypto m ssl expat apr-1-mt db>=4 z pcre pthread aprutil-1-mt>=2
 
-LIB_DEPENDS=		pcre::devel/pcre
+LIB_DEPENDS=		devel/pcre
 
 FLAVORS=		ldap
 FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
-WANTLIB+=		asn1 com_err gssapi krb5 sasl2
-LIB_DEPENDS+=		ldap,lber::databases/openldap
-LIB_DEPENDS+=		aprutil-1-mt.>=2:apr-util-mt-*-ldap:devel/apr-util,ldap,mt
+WANTLIB+=		asn1 com_err gssapi krb5 sasl2 ldap lber
+LIB_DEPENDS+=		databases/openldap
+LIB_DEPENDS+=		apr-util-mt-*-ldap:devel/apr-util,ldap,mt
 .else
-LIB_DEPENDS+=		aprutil-1-mt.>=2:apr-util-mt-*-!ldap:devel/apr-util,mt
+LIB_DEPENDS+=		apr-util-mt-*-!ldap:devel/apr-util,mt
 .endif
 
 MODULES=		converters/libiconv

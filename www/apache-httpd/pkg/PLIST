@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/12/01 13:38:23 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/06/27 17:27:03 robert Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
