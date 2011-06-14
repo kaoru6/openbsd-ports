@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=	--with-apxs=${LOCALBASE}/sbin/apxs2 \
 			--with-python=${LOCALBASE}/bin/python${MODPY_VERSION}
 USE_GMAKE=		Yes
 
-RUN_DEPENDS=		::www/apache-httpd
+RUN_DEPENDS=		www/apache-httpd
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
