@@ -2,10 +2,9 @@
 
 COMMENT=	apache HTTP server
 
-V=		2.2.15
+V=		2.2.19
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
-REVISION=	0
 
 CATEGORIES=	www net
 

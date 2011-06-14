@@ -5,8 +5,8 @@ $OpenBSD: patch-docs_man_rotatelogs_8,v 1.4 2008/09/02 22:05:23 bernd Exp $
  .el .ne 3
  .IP "\\$1" \\$2
  ..
--.TH "ROTATELOGS" 8 "2008-05-10" "Apache HTTP Server" "rotatelogs"
-+.TH "ROTATELOGS2" 8 "2008-05-10" "Apache HTTP Server" "rotatelogs"
+-.TH "ROTATELOGS" 8 "2010-11-06" "Apache HTTP Server" "rotatelogs"
++.TH "ROTATELOGS2" 8 "2010-11-06" "Apache HTTP Server" "rotatelogs"
  
  .SH NAME
 -rotatelogs \- Piped logging program to rotate Apache logs
