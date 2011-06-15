@@ -4,8 +4,9 @@
 
 COMMENT=	"Rand MH mail handling system + Japanese patches"
 
-PKGNAME=	mh-6.8.4p5
+PKGNAME=	mh-6.8.4
 DISTNAME=	mh-6.8.4-JP-3.05
+REVISION=	5
 CATEGORIES=	mail
 
 HOMEPAGE=	http://media.laic.u-hyogo.ac.jp/%7Ehayashi/internet/mh-plus.html
