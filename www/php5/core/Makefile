@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.55.2.1 2010/05/27 03:55:15 william Exp $
+# $OpenBSD: Makefile,v 1.64 2011/01/03 15:03:03 robert Exp $
+
+# doesn't set USE_LIBTOOL but use the bundled one because it needs some
+# specific options we don't have.
 
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
@@ -36,6 +39,7 @@ CONFIGURE_ARGS+=--with-apxs=/usr/sbin/apxs \
 		--enable-fastcgi \
 		--enable-force-cgi-redirect \
 		--with-config-file-scan-dir=${PHP_CONFIG_PATH}/php5
+USE_GROFF =	Yes
 		
 MODULES=	devel/gettext
 
@@ -47,8 +51,8 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
-WANTLIB=	c crypto m ssl stdc++ z pthread
-LIB_DEPENDS=	xml2.>=8::textproc/libxml
+WANTLIB=	c crypto m ssl z pthread xml2>=8
+LIB_DEPENDS=	textproc/libxml
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
