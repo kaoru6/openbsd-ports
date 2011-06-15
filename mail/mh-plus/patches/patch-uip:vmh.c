@@ -5,7 +5,8 @@
  #define	XYZ			/* XXX */
  
 -#if (defined(__FreeBSD__) && __FreeBSD__ >= 5) || (defined(linux))
-+#if (defined(__OpenBSD__) && __NCURSES_VERSION_MINOR__ >= 6)
++#if (defined(__OpenBSD__) && NCURSES_VERSION_MINOR >= 6)
  struct ldat
  {
- 	NCURSES_CH_T	*text;
+- 	NCURSES_CH_T	*text;
++ 	chtype		*text;
