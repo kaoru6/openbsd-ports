@@ -1,23 +1,15 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/31 18:06:54 aanriot Exp $
-bin/incm
+bin/cmew
+@bin bin/incm
 bin/mew-pinentry
-bin/mewcat
-bin/mewdecode
-bin/mewencode
+@bin bin/mewcat
+@bin bin/mewdecode
+@bin bin/mewencode
 bin/mewest
-bin/mewl
-info/mew.info
-info/mew.info-1
-info/mew.info-2
-info/mew.info-3
-info/mew.info-4
-@man man/man1/incm.1
-@man man/man1/mew-pinentry.1
-@man man/man1/mewcat.1
-@man man/man1/mewdecode.1
-@man man/man1/mewencode.1
-@man man/man1/mewest.1
-@man man/man1/mewl.1
+@bin bin/mewl
+bin/smew
+share/emacs/
+share/emacs/site-lisp/
 share/emacs/site-lisp/etc/
 share/emacs/site-lisp/etc/Mew.img
 share/emacs/site-lisp/etc/Mew.png
@@ -121,8 +113,6 @@ share/emacs/site-lisp/mew-local.el
 share/emacs/site-lisp/mew-local.elc
 share/emacs/site-lisp/mew-mark.el
 share/emacs/site-lisp/mew-mark.elc
-share/emacs/site-lisp/mew-md5.el
-share/emacs/site-lisp/mew-md5.elc
 share/emacs/site-lisp/mew-message.el
 share/emacs/site-lisp/mew-message.elc
 share/emacs/site-lisp/mew-mime.el
@@ -131,14 +121,10 @@ share/emacs/site-lisp/mew-minibuf.el
 share/emacs/site-lisp/mew-minibuf.elc
 share/emacs/site-lisp/mew-mule.el
 share/emacs/site-lisp/mew-mule.elc
-share/emacs/site-lisp/mew-mule0.el
-share/emacs/site-lisp/mew-mule0.elc
 share/emacs/site-lisp/mew-mule3.el
 share/emacs/site-lisp/mew-mule3.elc
 share/emacs/site-lisp/mew-net.el
 share/emacs/site-lisp/mew-net.elc
-share/emacs/site-lisp/mew-nmz.el
-share/emacs/site-lisp/mew-nmz.elc
 share/emacs/site-lisp/mew-nntp.el
 share/emacs/site-lisp/mew-nntp.elc
 share/emacs/site-lisp/mew-nntp2.el
@@ -177,8 +163,6 @@ share/emacs/site-lisp/mew-summary4.el
 share/emacs/site-lisp/mew-summary4.elc
 share/emacs/site-lisp/mew-syntax.el
 share/emacs/site-lisp/mew-syntax.elc
-share/emacs/site-lisp/mew-temacs.el
-share/emacs/site-lisp/mew-temacs.elc
 share/emacs/site-lisp/mew-thread.el
 share/emacs/site-lisp/mew-thread.elc
 share/emacs/site-lisp/mew-unix.el
@@ -195,7 +179,23 @@ share/emacs/site-lisp/mew-virtual.el
 share/emacs/site-lisp/mew-virtual.elc
 share/emacs/site-lisp/mew-win32.el
 share/emacs/site-lisp/mew-win32.elc
-share/emacs/site-lisp/mew-xemacs.el
-share/emacs/site-lisp/mew-xemacs.elc
 share/emacs/site-lisp/mew.el
 share/emacs/site-lisp/mew.elc
+share/info/
+share/info/mew.info
+share/info/mew.info-1
+share/info/mew.info-2
+share/info/mew.info-3
+share/info/mew.info-4
+share/info/mew.info-5
+share/man/
+share/man/man1/
+@man share/man/man1/cmew.1
+@man share/man/man1/incm.1
+@man share/man/man1/mew-pinentry.1
+@man share/man/man1/mewcat.1
+@man share/man/man1/mewdecode.1
+@man share/man/man1/mewencode.1
+@man share/man/man1/mewest.1
+@man share/man/man1/mewl.1
+@man share/man/man1/smew.1
