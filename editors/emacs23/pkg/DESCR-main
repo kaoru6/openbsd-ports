@@ -14,4 +14,4 @@ read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy
 
 Flavors:
 	no_x11     - build without X11 support
-	gtk        - build with gtk2 toolkit instead of athena
+	athena     - build with athena toolkit instead of gtk2
