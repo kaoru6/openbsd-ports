@@ -32,7 +32,7 @@ FLAVOR ?=
 
 GCCARCH =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
-AUTOCONF_VERSION =	2.67
+AUTOCONF_VERSION =	2.64
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	${GCCARCH} --localstatedir=/var
 
