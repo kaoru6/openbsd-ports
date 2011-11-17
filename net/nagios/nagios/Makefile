@@ -3,7 +3,7 @@
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		3.2.1
+V=		3.2.3
 DISTNAME=	nagios-${V}
 PKGNAME-main=	nagios-${V}
 PKGNAME-web=	nagios-web-${V}
