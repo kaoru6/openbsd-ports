@@ -6,6 +6,18 @@ Don't forget to "git config user.email alice@example.org" or
 
 * bsd.port.mk port maintainer visible changes:
 
+** OPENBSD_5_1
+
+  - PROPERTIES variable
+  - BASESYSCONFDIR
+
+** OPENBSD_5_0
+
+  - remove USE_MOTIF
+  - support of xz
+  - Add infrastructure for ccache in port builds.
+  - regress-depends-list
+
 ** OPENBSD_4_9
 
   - allow BUILD_DEPENDS = somepath>=version:patch
