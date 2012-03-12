@@ -3,6 +3,7 @@
 COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-6.3
+REVISION=	1
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
 
@@ -21,7 +22,7 @@ RUN_DEPENDS=		editors/emacs23
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS+=	elispdir=$(PREFIX)/share/emacs/site-lisp \
+CONFIGURE_ARGS+=	elispdir=$(PREFIX)/share/emacs/site-lisp/mew \
 			etcdir=$(PREFIX)/share/emacs/site-lisp/etc
 
 USE_GROFF =	Yes
