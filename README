@@ -6,6 +6,9 @@ Don't forget to "git config user.email alice@example.org" or
 
 * bsd.port.mk port maintainer visible changes:
 
+** OPENBSD_5_3
+** OPENBSD_5_2
+
 ** OPENBSD_5_1
 
   - PROPERTIES variable
