@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@owner root
-@group wheel
-@mode 4555
-@bin bin/gsu
-@man man/man1/gsu.1
