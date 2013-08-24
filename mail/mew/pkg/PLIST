@@ -15,13 +15,6 @@ share/emacs/site-lisp/etc/Mew.img
 share/emacs/site-lisp/etc/Mew.png
 share/emacs/site-lisp/etc/Mew.xbm
 share/emacs/site-lisp/etc/Mew.xpm
-share/emacs/site-lisp/etc/etc/
-share/emacs/site-lisp/etc/etc/COLOR
-share/emacs/site-lisp/etc/etc/mew-Plain.xpm
-share/emacs/site-lisp/etc/etc/mew-curr.xpm
-share/emacs/site-lisp/etc/etc/mew-folder.xpm
-share/emacs/site-lisp/etc/etc/mew-inc2.xpm
-share/emacs/site-lisp/etc/etc/mew-kill.xpm
 share/emacs/site-lisp/etc/mew-Audio.xpm
 share/emacs/site-lisp/etc/mew-Blank.xpm
 share/emacs/site-lisp/etc/mew-External.xpm
